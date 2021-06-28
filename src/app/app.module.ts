@@ -11,6 +11,7 @@ import { ModalLoginCadastroComponent } from './modal-login-cadastro/modal-login-
 import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DevsHomeComponent } from './devs-home/devs-home.component';
     ModalLoginCadastroComponent,
     MenuComponent,
     SobreNosComponent,
-    DevsHomeComponent
+    DevsHomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
