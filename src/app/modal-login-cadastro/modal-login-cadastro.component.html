@@ -1,1 +1,74 @@
-<p>modal-login-cadastro works!</p>
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class= "btn ms-auto" type="button" id="fecharModal" data-bs-dismiss="modal" >
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">login</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">cadastro</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="text" name="usuario" id="usuario" placeholder="usuário">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="password" name="senha" id="senha" placeholder="senha">
+                            </div>
+                            <div class="form-group">
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn">login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="text" name="nome" id="nomeCompleto " placeholder="nome completo">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="text" name="email" id="email" placeholder="email">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="text" name="usuario" id="usuario" placeholder="usuario">
+                            </div>
+                            <div class="form-group mb-4">
+                                <input class="form-control" type="password" name="senha" id="senha" placeholder="senha">
+                            </div>
+                            <div class="form-group">
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" class="btn">enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            
+            
+
+        </div>
+        
+    </div>
+    </div>
+</div>
