@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
 import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.co
     MenuComponent,
     SobreNosComponent,
     DevsHomeComponent,
-    PesquisaProdutoComponent
+    PesquisaProdutoComponent,
+    HomeComponent
+
   ],
   imports: [
     BrowserModule,
