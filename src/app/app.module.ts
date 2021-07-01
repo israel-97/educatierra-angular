@@ -8,7 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroselHomeComponent } from './carrosel-home/carrosel-home.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { ModalLoginCadastroComponent } from './modal-login-cadastro/modal-login-cadastro.component';
+
 import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
@@ -23,7 +23,6 @@ import { HttpClientModule } from '@angular/common/http'
     CarroselHomeComponent,
     ProdutosComponent,
     RodapeComponent,
-    ModalLoginCadastroComponent,
     MenuComponent,
     SobreNosComponent,
     DevsHomeComponent,
