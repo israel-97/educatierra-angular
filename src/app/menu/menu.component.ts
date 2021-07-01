@@ -3,6 +3,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { environment } from 'src/environments/environment.prod';
+import { User } from '../model/User';
 
 @Component({
   selector: 'app-menu',
@@ -11,6 +12,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
   usuarioLogin: UsuarioLogin =  new UsuarioLogin()
+  user: User = new User()
 
   constructor(
     private auth: AuthService,
@@ -32,11 +34,21 @@ export class MenuComponent implements OnInit {
       environment.email = this.usuarioLogin.email
       environment.usuario = this.usuarioLogin.usuario
 
-      this.router.navigate(['/home'])
+     /*  this.router.navigate(['/produtos']) */
     }, erro =>{
       if(erro.status == 500){
         alert('Usuário ou senha estão incorretos')
       }
+    })
+
+  }
+
+  cadastrar(){
+    this.auth.cadastrar(this.user).subscribe((resposta: User) => {
+      this.user = resposta
+
+     /*  this.router.navigate(['/home']) */
+      alert('Usuário cadastrado com sucesso!')
     })
   }
 
