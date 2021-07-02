@@ -12,7 +12,6 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
-import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewProdComponent } from './view-prod/view-prod.component';
@@ -29,8 +28,7 @@ import { RankingComponent } from './ranking/ranking.component'
     RodapeComponent,
     MenuComponent,
     SobreNosComponent,
-    DevsHomeComponent,
-    PesquisaProdutoComponent,
+    DevsHomeComponent,   
     HomeComponent,
     ViewProdComponent,
     EntrarContatoComponent,
