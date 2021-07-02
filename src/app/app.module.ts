@@ -14,7 +14,11 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
 import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { ViewProdComponent } from './view-prod/view-prod.component';
+import { EntrarContatoComponent } from './entrar-contato/entrar-contato.component';
+import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
+import { RankingComponent } from './ranking/ranking.component'
 
 
 @NgModule({
@@ -27,7 +31,11 @@ import { HttpClientModule } from '@angular/common/http'
     SobreNosComponent,
     DevsHomeComponent,
     PesquisaProdutoComponent,
-    HomeComponent
+    HomeComponent,
+    ViewProdComponent,
+    EntrarContatoComponent,
+    ApresentacaoComponent,
+    RankingComponent
 
   ],
   imports: [
