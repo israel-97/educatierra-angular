@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,12 +8,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroselHomeComponent } from './carrosel-home/carrosel-home.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { RodapeComponent } from './rodape/rodape.component';
-import { ModalLoginCadastroComponent } from './modal-login-cadastro/modal-login-cadastro.component';
+
 import { MenuComponent } from './menu/menu.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './devs-home/devs-home.component';
 import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ViewProdComponent } from './view-prod/view-prod.component';
+import { EntrarContatoComponent } from './entrar-contato/entrar-contato.component';
+import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
+import { RankingComponent } from './ranking/ranking.component'
 
 
 @NgModule({
@@ -21,18 +27,23 @@ import { HomeComponent } from './home/home.component';
     CarroselHomeComponent,
     ProdutosComponent,
     RodapeComponent,
-    ModalLoginCadastroComponent,
     MenuComponent,
     SobreNosComponent,
     DevsHomeComponent,
     PesquisaProdutoComponent,
-    HomeComponent
+    HomeComponent,
+    ViewProdComponent,
+    EntrarContatoComponent,
+    ApresentacaoComponent,
+    RankingComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
