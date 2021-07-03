@@ -1,0 +1,20 @@
+.form-group button{
+    border-radius: 20px;
+    padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
+    background-color: #0F5C8C;
+
+    color: white;
+    font-weight: 500;
+}
+
+.modal-content{
+    border-radius: 15px;
+}
+
+.modal-header{
+    border-bottom: none;
+    height: 10px;
+    padding-top:25px;
+    padding-bottom: 0;
+    padding-top: 30px;
+}

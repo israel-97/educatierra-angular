@@ -44,7 +44,7 @@ import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component'
 
     EditPerfilComponent,
     CardsProdutoComponent,
-    ListaCategoriaComponent
+    ListaCategoriaComponent,
 
     MenuProdutosComponent
 
