@@ -1,5 +1,5 @@
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-entrar-contato',
@@ -7,18 +7,20 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./entrar-contato.component.css']
 })
 export class EntrarContatoComponent implements OnInit {
-  public formulario: FormGroup;
 
+  formulario: FormGroup;
 
-   constructor(
-    private FormBuilder: FormBuilder,
-   ) { }
+  constructor(private FormBuilder: FormBuilder) { }
 
   ngOnInit() {
+    /* this.formulario = new FormGroup({
+      nome: new FormControl(null),
+      email: new FormControl(null)
+    }); */
 
     this.formulario = this.FormBuilder.group({
-      nome: [null, [Validators.required,Validators.minLength(3),Validators.maxLength(100) ]],
-      email: [null, [Validators.required,Validators.email]]
+      nome:[null],
+      email:[null]
     })
   }
 
