@@ -1,0 +1,18 @@
+.button1 {
+    background-color: #0f5c8c;
+    border-radius: 20px;
+    padding: 8px 40px;
+}
+
+.form-control
+{
+    max-height:100px;
+}
+
+#botao:hover { 
+    background-color: #0f5c8c;
+    border-color: #fc8b00;
+    border-width: 2px;
+    font-style:#fc8b00;
+    transition: 0.2s;
+}
