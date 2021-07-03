@@ -17,7 +17,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewProdComponent } from './view-prod/view-prod.component';
 import { EntrarContatoComponent } from './entrar-contato/entrar-contato.component';
 import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
-import { RankingComponent } from './ranking/ranking.component'
+import { RankingComponent } from './ranking/ranking.component';
+import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
+import { CardsProdutoComponent } from './cards-produto/cards-produto.component';
+import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component'
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { RankingComponent } from './ranking/ranking.component'
     ViewProdComponent,
     EntrarContatoComponent,
     ApresentacaoComponent,
-    RankingComponent
+    RankingComponent,
+    EditPerfilComponent,
+    CardsProdutoComponent,
+    ListaCategoriaComponent
 
   ],
   imports: [
