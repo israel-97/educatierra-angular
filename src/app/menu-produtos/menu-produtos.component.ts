@@ -9,7 +9,7 @@ export class MenuProdutosComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
