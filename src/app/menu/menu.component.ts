@@ -13,6 +13,8 @@ import { User } from '../model/User';
 export class MenuComponent implements OnInit {
   usuarioLogin: UsuarioLogin =  new UsuarioLogin()
   user: User = new User()
+  confirmarSenha: string
+  
 
   constructor(
     private auth: AuthService,
@@ -23,6 +25,11 @@ export class MenuComponent implements OnInit {
   ngOnInit(){
     window.scroll(0,0)
   }
+
+  confirmSenha(event: any) {
+    this.confirmarSenha = event.target.value
+  }
+
 
   logar(){
     this.auth.logar(this.usuarioLogin).subscribe((resposta: UsuarioLogin) => {
@@ -49,6 +56,12 @@ export class MenuComponent implements OnInit {
 
      /*  this.router.navigate(['/home']) */
       alert('Usuário cadastrado com sucesso!')
+
+      
+    }, erro =>{
+      if(erro.status == 400){
+        alert('Usuário já cadastrado!')
+      }
     })
   }
 
