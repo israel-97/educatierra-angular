@@ -1,3 +1,4 @@
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarContatoComponent implements OnInit {
 
-  constructor() { }
+  formulario: FormGroup;
 
-  ngOnInit(): void {
+  constructor(private FormBuilder: FormBuilder) { }
+
+  ngOnInit() {
+    /* this.formulario = new FormGroup({
+      nome: new FormControl(null),
+      email: new FormControl(null)
+    }); */
+
+    this.formulario = this.FormBuilder.group({
+      nome:[null],
+      email:[null]
+    })
   }
 
 }
+
