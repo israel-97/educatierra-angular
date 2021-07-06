@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component';
 import { HomeComponent } from './home/home.component';
 import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
 
@@ -11,7 +12,8 @@ const routes: Routes = [
     {path:'home', component:HomeComponent},
     {path:'produtos', component:ProdutosComponent},
     {path:'tema', component: TemaComponent},
-    {path:'admin', component: PaginaAdministradorComponent}
+    {path:'admin', component: PaginaAdministradorComponent},
+    {path: 'categoria-editar/:id', component: CategoriaDeleteComponent},
     
     
 ];

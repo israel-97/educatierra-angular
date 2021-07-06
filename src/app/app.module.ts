@@ -25,7 +25,8 @@ import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.compo
 import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component';
 import { TemaComponent } from './tema/tema.component'
 import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component';
-import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component'
+import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component'
 
 
 
@@ -50,7 +51,8 @@ import { PaginaAdministradorComponent } from './pagina-administrador/pagina-admi
     MenuProdutosComponent,
     TemaComponent,
     ProdutosFavoritosComponent,
-    PaginaAdministradorComponent
+    PaginaAdministradorComponent,
+    CategoriaDeleteComponent
   ],
   imports: [
     BrowserModule,
