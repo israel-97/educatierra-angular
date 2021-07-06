@@ -53,17 +53,13 @@ export class MenuComponent implements OnInit {
   cadastrar(){
     this.auth.cadastrar(this.user).subscribe((resposta: User) => {
       this.user = resposta
-
      /*  this.router.navigate(['/home']) */
       alert('Usuário cadastrado com sucesso!')
 
-      
     }, erro =>{
       if(erro.status == 400){
         alert('Usuário já cadastrado!')
       }
     })
   }
-
-
 }
