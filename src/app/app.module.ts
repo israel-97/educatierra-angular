@@ -49,6 +49,8 @@ import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.co
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
+    TemaComponent,
+    ProdutosFavoritosComponent
     CategoriaComponent,
     ProdutosFavoritosComponent,
     CategoriaDeleteComponent
