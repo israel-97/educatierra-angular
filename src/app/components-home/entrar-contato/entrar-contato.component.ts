@@ -1,4 +1,3 @@
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,21 +7,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrarContatoComponent implements OnInit {
 
-  formulario: FormGroup;
-
-  constructor(private FormBuilder: FormBuilder) { }
+  constructor() { }
 
   ngOnInit() {
-    /* this.formulario = new FormGroup({
-      nome: new FormControl(null),
-      email: new FormControl(null)
-    }); */
+    this.validacaoNome(),
+    this.validacaoEmail(),
+    this.validacaoMensagem()
+    /* this.enviar() */
+  }
 
-    this.formulario = this.FormBuilder.group({
-      nome:[null],
-      email:[null]
+  validacaoNome() {
+    let nome = (<HTMLSelectElement>document.querySelector('#nome')!)
+    
+    nome.addEventListener('keyup', () => {
+      if(nome.value.length < 3) {
+        nome.setAttribute('style','border-color:red !important;')
+      } else {
+        nome.setAttribute('style','border-color:green !important; border-width: 4px;')
+      }
     })
   }
 
-}
+  validacaoEmail() {
+    let txtEmail = (<HTMLSelectElement>document.querySelector('#txtEmail')!)
 
+    txtEmail.addEventListener('keyup', () => {
+      if(txtEmail.value.indexOf('@') == -1 || txtEmail.value.indexOf('.') == -1) {
+        txtEmail.setAttribute('style','border-color:red !important;')
+      } else {
+        txtEmail.setAttribute('style','border-color:green !important;')
+      }
+    })
+  }
+
+  validacaoMensagem(){
+    let txtMensagem = (<HTMLSelectElement>document.querySelector('#txtMensagem')!)
+
+    txtMensagem.addEventListener('onkeyup', () => {
+      if (txtMensagem.value.length >= 100) {
+      txtMensagem.setAttribute('style', 'border-color:red !important;')
+      } else {
+        txtMensagem.setAttribute('style', 'border-color:green !important; display:none;')
+      }
+    }) 
+
+     
+  } 
+
+  /* enviar(){
+    if (nomeOk == true && emailOk == true && mensagemOk == true) {
+      alert ('Formulário enviado com sucesso!')
+    } else {
+      alert ('Preencha o formulário corretamente antes de enviar')
+    }
+  } */ //desabilitar botão enquanto todos os campos não estiverem validados
+  
+
+}

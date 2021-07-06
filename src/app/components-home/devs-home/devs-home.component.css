@@ -1,214 +1,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
 
+/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css">
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet"> */
+
+.col-sm-6 {
+    background-color: aquamarine;
+  }
+
+.col-lg-3 {
+  background-color:bisque;
+}
+
+.col-xl-3 {
+background-color: rosybrown;
+}
+
+
+
+p,a,h1,h2,h3,h4 { 
+	margin: 0;
+	padding: 0;
+}
+
+.section-team { /* distanciamento componente anterior */
+	font-family: "Poppins", sans-serif;
+	padding: 80px 0;
+}
+
+.section-team .header-section { /* margem msg entre cards */
+	margin-bottom: 30px;
+}
+
+.section-team .header-section .small-title { /* devs */
+    margin-bottom: 25px;
+	font-size: 36px;
+    font-weight: 500;
+    color: #ff9d00;
+}
+
+.section-team .header-section .title { /* tamanho mensagem */
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.section-team .single-person { /* card */
+	margin-top: 30px;
+	padding: 30px;
+	background-color: #fff;
+	border-radius: 5px;
+}
+
+.section-team .single-person:hover { /* degrade card */
+	background: linear-gradient(to right, #ff9d00, #ffc261);
+}
+
+.section-team .single-person .person-image { /* estilização do card */
+    position: relative;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    border: 4px dashed transparent;
+    transition: padding .5s;
+}
+
+.section-team .single-person:hover .person-image { /* pontilhado */
+	padding: 12px;
+    border: 4px dashed #003b71;
+}
+
+.section-team .single-person .person-image img { /* tamanho das fotos */
+	width: 100%;
+    border-radius: 50%;
+}
+
+.section-team .single-person .person-image .icon { /* esfera icone degrade */
+	position:absolute; 
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: linear-gradient(to right, #ff9d00, #003b71);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.section-team .single-person:hover .person-image .icon { /* esfera icone fundo */
+	background: none;
+	background-color: #fff;
+	color: #003b71;
+}
+
+.section-team .single-person .person-info .full-name { /* fonte do nome dev */
+	margin-bottom: 10px;
+	font-size: 28px;
+    font-weight: 700;
+}
+
+.section-team .single-person .person-info .speciality { /* cor subtitulo nome dev */
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #003b71;
+}
+
+.section-team .single-person:hover .full-name,
+.section-team .single-person:hover .speciality { /* cor nome dev com mouse */
+	color: #fff;
+}
+
+/* Meu exemplo
+
 h1, h2 {
     font-family: 'Poppins', sans-serif;
 }
 
-/*.container-fluid {
+.container-fluid {
     background-color: #f2aa52;
-}*/
+}
 
 img {
     border: 3px solid black;
-}
-
-
-
-.img-container{
-  position: absolute;
-  overflow: hidden;
-  border-radius: 80%;
-  width: 20%;
-  background-color: gray;
-  z-index: 1;
-}
-
-.img-container:after{
-  content: '';
-  padding-bottom: 100%;
-}
-
-.coluna-membro:hover .borda{
-  opacity: 1;
-  transform: translateX(7%);
-}
-
-.coluna-membro:hover .imagem-perfil{
-  transform: translateX(-8%);
-}
-
-.imagem-perfil{
-  transition: all .5s;
-  width: 250px;
-  height: 250px;
-}
-
-.conteudo{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.coluna-membro{
-  height: 350px;
-}
-
-.borda{
-  position: absolute;
-  top: 0;
-  z-index: 0;
-  background-color: transparent;
-  border: 3px solid transparent;
-  overflow: visible;
-  opacity: 0;
-  transition: all .5s;
-  background-image: linear-gradient(white, white),
-                    linear-gradient(180deg, rgba(255,0,230,1) 0%, rgba(105,11,179,1) 100%);
-  background-origin: border-box;
-  background-clip: content-box, border-box
-}
-
-.z-index-1{
-  z-index: 1;
-}
-
-.coluna-membro:hover .transition-delay-0s{
-  transition: all 1s 0s;
-}
-.coluna-membro:hover .transition-delay-05s{
-  transition: all 1s .3s;
-
-}
-.coluna-membro:hover .transition-delay-1s{
-  transition: all 1s 0.6s;
-}
-
-.coluna-membro:hover .social-logo{
-  opacity: 1;
-}
-
-.social-logo{
-  width: 15%;
-  height: 15%;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 5px 1px #777777;
-  transition: .5s;
-  opacity: 0;
-}
-
-.social-logo:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(255,0,230,1) 0%, rgba(105,11,179,1) 100%);
-  transition: 0.5s;
-  opacity: 0;
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.social-logo:hover::before{
-  opacity: 1;
-}
-
-.logo-start{
-  position: absolute;
-  right: 0;
-  top: 15%;
-}
-
-.logo-center{
-  position: absolute;
-  right: -7.6%;
-  top: 42.4%
-}
-
-.logo-end{
-  position: absolute;
-  right: 0;
-  bottom: 15%;
-}
-
-.img-container img{
-  object-fit: cover;
-  width: inherit;
-}
-
-.nome-membro{
-  position: absolute;
-  bottom: 5%;
-  right: 10%;
-  left: 10%;
-}
-
-@media (hover: none) {
-  .coluna-membro .borda{
-      opacity: 1;
-      transform: translateX(7%);
-  }
-  .coluna-membro .imagem-perfil{
-      transform: translateX(-8%);
-  }
-  .social-logo{
-      opacity: 1;
-  }
-}
-
-@media (max-width: 576px){
-  .coluna-membro{
-      height: 70vw;
-  }
-
-  h2{
-      font-size: 2rem;
-  }
-}
-
-@media (min-width: 576px){
-  .coluna-membro{
-      height: 200px;
-  }
-}
-
-@media (min-width: 768px){
-  .coluna-membro{
-      height: 195px;
-  }
-}
-
-@media (min-width: 992px){
-  .coluna-membro{
-      height: 255px;
-  }
-}
-
-.botao-saiba{
-  margin-top: 5%;
-
-  width: 200px;
-  height: 61px;
-  left: 84px;
-  top: 704px;
-
-  background: linear-gradient(90deg, #D0217E 0%, rgba(109, 44, 144, 0.97) 100%);
-  border: none;
-  border-radius: 100px;
-
-  transition: 0.6s;
-
-}
-.botao-saiba:hover{
-
-  background: linear-gradient(90deg, rgba(109, 44, 144, 0.97), #D0217E 100%  10%);
-
-  border: 1px solid white;
-  -webkit-box-shadow: 3px 7px 5px rgba(50, 50, 50, 0.77);
--moz-box-shadow:    3px 7px 5px rgba(50, 50, 50, 0.77);
-box-shadow:         3px 1px 5px rgba(50, 50, 50, 0.77);
-
-  transition: 0.6s;
-}
+} */

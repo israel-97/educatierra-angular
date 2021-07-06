@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5" id="contato">
+<div class="container-fluid mt-5">
     <h5 class="text-center">entre em contato</h5>
 
     <div class=" mt-4 d-flex justify-content-center">
@@ -7,20 +7,22 @@
 
             <form>
                 <div class="form-group">
-                    <input type="text"
+                    <input id="nome" type="text"
                     class="form-control border-dark"
                     placeholder="nome">
                 </div>
 
                 <div class="form-group mt-3">
-                    <input type="email"
+                    <input id="txtEmail" type="email"
                     class="form-control border-dark"
                     aria-describedby="emailHelp"
                     placeholder="e-mail">
                 </div>
 
-                <!-- <div class="form-group mt-3">
-                    <textarea name="text"
+                <div class="form-group mt-3">
+                    <textarea
+                    cols="12" rows='5' onkeyup=""
+                     id="#txtMensagem" name="text"
                      class="form-control border-dark"
                      rows="4"
                      placeholder="mensagem">
@@ -35,11 +37,10 @@
                     placeholder="e-mail">Enviar
                     </button>
 
-                </div> -->
+                </div>
 
             </form>
 
         </div>
     </div>
 </div>
-
