@@ -1,15 +1,10 @@
-import { Categoria } from "./Produto"
-import { User } from "./User"
+import { Produto } from "./Produto"
 
-export class Produto{
 
-    public id: number
-    public descricao: string
-    public linkImagem: string
-    public linkAcesso: string
-    public tipoProduto: string
-    public categoria: Categoria
-    public usuario: User
-    public favoritadoPor: User[]
-    public statusTermo: boolean
+
+export class Categoria{
+    public id:number
+    public materia:string
+    public descricao:string
+    public produto: Produto[]
 }

@@ -30,7 +30,6 @@ export class MenuComponent implements OnInit {
     this.confirmarSenha = event.target.value
   }
 
-
   logar(){
     this.auth.logar(this.usuarioLogin).subscribe((resposta: UsuarioLogin) => {
       this.usuarioLogin = resposta
@@ -40,14 +39,21 @@ export class MenuComponent implements OnInit {
       environment.id = this.usuarioLogin.id
       environment.email = this.usuarioLogin.email
       environment.usuario = this.usuarioLogin.usuario
-
-     /*  this.router.navigate(['/produtos']) */
+      environment.adminUsuario = this.usuarioLogin.adminUsuario
+      console.log(environment.adminUsuario) 
+      
+      if(environment.adminUsuario == true){
+       this.router.navigate(['/admin'])
+      }
+      else{
+        this.router.navigate(['/home'])
+      }
+     
     }, erro =>{
       if(erro.status == 500){
         alert('Usuário ou senha estão incorretos')
       }
     })
-
   }
 
   cadastrar(){
