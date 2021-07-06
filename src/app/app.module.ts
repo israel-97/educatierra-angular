@@ -23,8 +23,9 @@ import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component'
 import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component';
-import { TemaComponent } from './tema/tema.component'
-import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component'
+import { CategoriaComponent} from './categoria/categoria.component'
+import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component'
 
 
 
@@ -50,6 +51,9 @@ import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favori
     MenuProdutosComponent,
     TemaComponent,
     ProdutosFavoritosComponent
+    CategoriaComponent,
+    ProdutosFavoritosComponent,
+    CategoriaDeleteComponent
   ],
   imports: [
     BrowserModule,
