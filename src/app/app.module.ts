@@ -23,7 +23,8 @@ import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component'
 
-import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component'
+import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component';
+import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component'
 
 
 
@@ -46,7 +47,8 @@ import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component'
     CardsProdutoComponent,
     ListaCategoriaComponent,
 
-    MenuProdutosComponent
+    MenuProdutosComponent,
+      ProdutosFavoritosComponent
 
   ],
   imports: [
