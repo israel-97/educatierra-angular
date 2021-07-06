@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Categoria } from '../model/Categoria';
-import { CategoriaService } from '../service/categoria.service';
+import { Categoria } from '../../model/Categoria';
+import { CategoriaService } from '../../service/categoria.service';
 
 @Component({
   selector: 'app-categoria',

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UsuarioLogin } from '../model/UsuarioLogin';
+import { UsuarioLogin } from '../../model/UsuarioLogin';
 import { Router } from '@angular/router';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../../service/auth.service';
 import { environment } from 'src/environments/environment.prod';
-import { User } from '../model/User';
+import { User } from '../../model/User';
 
 @Component({
   selector: 'app-apresentacao',
