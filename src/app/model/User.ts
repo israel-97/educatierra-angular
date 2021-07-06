@@ -5,4 +5,5 @@ export class User{
     public senha: string
     public usuario: string
     public foto: string
+    public adminUsuario: boolean;
 }
