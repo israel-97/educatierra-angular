@@ -24,7 +24,8 @@ import { CardsProdutoComponent } from './cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component'
 import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component';
 import { TemaComponent } from './tema/tema.component'
-import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component'
+import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component';
+import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component'
 
 
 
@@ -43,13 +44,13 @@ import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favori
     EntrarContatoComponent,
     ApresentacaoComponent,
     RankingComponent,
-
     EditPerfilComponent,
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    TemaComponent
-    ProdutosFavoritosComponent
+    TemaComponent,
+    ProdutosFavoritosComponent,
+    PaginaAdministradorComponent
   ],
   imports: [
     BrowserModule,

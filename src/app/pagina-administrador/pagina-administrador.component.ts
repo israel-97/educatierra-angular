@@ -5,11 +5,12 @@ import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
-  selector: 'app-tema',
-  templateUrl: './tema.component.html',
-  styleUrls: ['./tema.component.css']
+  selector: 'app-pagina-administrador',
+  templateUrl: './pagina-administrador.component.html',
+  styleUrls: ['./pagina-administrador.component.css']
 })
-export class TemaComponent implements OnInit {
+export class PaginaAdministradorComponent implements OnInit {
+
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   
@@ -23,6 +24,8 @@ export class TemaComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home']) 
     }
+    this.todasCategorias()
+    this.categoriaService.refreshToken()
   } 
 
   todasCategorias(){
@@ -38,5 +41,4 @@ cadastrarCategoria(){
     this.categoria= new Categoria()
   })
 }
-
 }
