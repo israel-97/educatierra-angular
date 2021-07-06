@@ -4,108 +4,69 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.navbar{
+    height: 70px;
+    background: #F9A844;
+}
 
-#navBar{
+.navbar small{
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
     
+    line-height: 1.2em;
+}
+
+.nav-link{
+    color: white;
+
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.nav-item{
+    margin-left: 15px;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+  
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+
+    height: 2px;
+    width: 0;
+    left: 50%;
+
     position: absolute;
-width: 100%;
-height: 122px;
-left: 0px;
-top: 0px;
-
-background: #F9A844;
-}
-.font{
-    font-family: Poppins;
-font-size: 28px;
-font-style: normal;
-font-weight: 400;
-line-height: 42px;
-letter-spacing: 0em;
-text-align: left;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;   
 }
 
-
-
-/** propriedades de tamanho e altura dos objetos**/
-
-
-
-
-
-
-
-#properitiesUser{ /** User img  **/
-    height: 62px;
-    width: 63px;
-    left: 1282px;
-    top: 30px;
-    border-radius: 0px;
-    
-    
-
-
-}
-#properitiesEduca{
-    height: 31px;
-    width: 65px;
-    left: 107px;
-    top: 25px;
-    border-radius: nullpx;
-    
-
-
-}
-#properitiesTierra{
-    height: 31px;
-    width: 0px;
-    left: 107px;
-    top: 56px;
-    border-radius: nullpx;
-
-}
-#properitiesHome{
-    height: 36px;
-    width: 98px;
-    left: 417px;
-    top: 40px;
-    border-radius: nullpx;
-    
-
-}
-#properitiesProdutos{
-    height: 36px;
-    width: 142px;
-    left: 544px;
-    top: 40px;
-    border-radius: nullpx;
-    
-}
-#properitiesSobreNos{
-    height: 36px;
-    width: 168px;
-    left: 701px;
-    top: 40px;
-    border-radius: nullpx;
-    
-
-}
-#properitiesContato{
-    height: 36px;
-    width: 134px;
-    left: 869px;
-    top: 40px;
-    border-radius: nullpx;
-    
-
+.nav-link:hover:after { 
+    width: 100%; 
+    left: 0;  
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
-
-*{
-    font-family: 'Poppins', sans-serif;
+.navbar-toggler{
+    border-radius: 50px;
+    background-color: black;
 }
 
+#navbarSupportedContent{
+    background: #F9A844;
+}
+
+/*estilização do modal de cadastro e login*/
 .modal-content{
     border-radius: 15px;
 }
@@ -113,14 +74,13 @@ text-align: left;
 .modal-header{
     border-bottom: none;
     height: 10px;
-    padding-top:25px;
-    padding-bottom: 0;
-    padding-top: 30px;
+
+    padding: 30px 0px 0px 0px;
 }
 
 #fecharModal {
     color: #0F5C8C;
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 900;
 
     text-decoration: none;
@@ -136,6 +96,9 @@ text-align: left;
 #pills-home-tab, 
 #pills-profile-tab{
     background-color: transparent;
+
+    border-radius: 0;
+
     letter-spacing: .1em;
     color:#0F5C8C;
     font-size: 18px;
@@ -143,28 +106,90 @@ text-align: left;
 
     padding: 10px 10px 5px 0px;/* topo | direita | inferior | esquerda */
 }
+
 #pills-home-tab{
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
-.nav-link .active {
-    border: 2px solid #D860B3;
-}
+/* .active {
+    border-radius: none;
+    border-bottom: 2px solid #D860B3;
+} */
 
 .form-control{
     padding-left: 15px;
+    border-radius: 20px;
 }
 
+/* .form-group input{
+    border:1.5px solid #0F5C8C;
+    background-color: transparent;
+    color: #0F5C8C;
+} */
+
 .form-group button{
-    border-radius: 20px;
+    border-radius: 25px;
     padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
+
     background-color: #0F5C8C;
 
     color: white;
     font-weight: 500;
 }
 
-.form-group button:focus{
+.form-group button:hover{
+    border:2px solid #0F5C8C;
+    background-color: transparent;
+
+    color: #0F5C8C;
+}
+
+.form-group button:focus,
+.form-group input:focus, 
+.form-group select{
     box-shadow: none;
 }
 
+/* .form-check{
+    background-color: #0F5C8C;
+
+    border: .1px solid #0F5C8C;
+  
+    box-sizing: border-box;
+    position: relative;
+
+    height:30px;
+    width: 90px;
+}
+.form-check label {
+
+    background: white no-repeat center center;
+
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    right: 1px;
+    top: 1px;
+
+    text-align: center;
+ 
+    color:#0F5C8C;
+    font-size: 15px;
+    font-weight: 500; 
+
+    padding-top: 9px;
+}
+
+.form-check input:checked + label {
+    background-color:#0F5C8C;
+    color: #FFFF;
+} */
+
+select {
+    box-shadow: none;
+    outline: none;
+}
+
+option{
+    width: 30px;
+}
