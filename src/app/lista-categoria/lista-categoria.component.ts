@@ -9,7 +9,7 @@ export class ListaCategoriaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
 }
