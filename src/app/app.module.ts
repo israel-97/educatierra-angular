@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,19 +50,20 @@ import { Categoria } from './model/Categoria';
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
+    TemaComponent,
     ProdutosFavoritosComponent,
     PaginaAdministradorComponent,
-    ProdutosFavoritosComponent,
     Categoria,
-    ProdutosFavoritosComponent,
-    CategoriaDeleteComponent
+    CategoriaDeleteComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,4 +12,5 @@ export class Produto{
     private usuario: User
     private favoritadoPor: User[]
     private statusTermo: boolean
+
 }
