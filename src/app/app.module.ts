@@ -48,7 +48,7 @@ import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favori
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    TemaComponent
+    TemaComponent,
     ProdutosFavoritosComponent
   ],
   imports: [
