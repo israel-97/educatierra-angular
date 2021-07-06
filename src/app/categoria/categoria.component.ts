@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
-  selector: 'app-tema',
-  templateUrl: './tema.component.html',
-  styleUrls: ['./tema.component.css']
+  selector: 'app-categoria',
+  templateUrl: './categoria.component.html',
+  styleUrls: ['./categoria.component.css']
 })
-export class TemaComponent implements OnInit {
+export class CategoriaComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   
