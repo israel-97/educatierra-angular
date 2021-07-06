@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 
 @Component({
-  selector: 'app-categoria',
-  templateUrl: './categoria.component.html',
-  styleUrls: ['./categoria.component.css']
+  selector: 'app-pagina-administrador',
+  templateUrl: './pagina-administrador.component.html',
+  styleUrls: ['./pagina-administrador.component.css']
 })
-export class CategoriaComponent implements OnInit {
+export class PaginaAdministradorComponent implements OnInit {
+
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
   
@@ -23,6 +24,8 @@ export class CategoriaComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home']) 
     }
+    this.todasCategorias()
+    this.categoriaService.refreshToken()
   } 
 
   todasCategorias(){
@@ -38,5 +41,4 @@ cadastrarCategoria(){
     this.categoria= new Categoria()
   })
 }
-
 }

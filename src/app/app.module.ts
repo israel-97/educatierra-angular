@@ -23,11 +23,11 @@ import { EditPerfilComponent } from './edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './lista-categoria/lista-categoria.component'
 import { MenuProdutosComponent } from './menu-produtos/menu-produtos.component';
-import { CategoriaComponent} from './categoria/categoria.component'
 import { ProdutosFavoritosComponent } from './produtos-favoritos/produtos-favoritos.component';
+import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
+import { CategoriaComponent} from './categoria/categoria.component'
 import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component'
-
-
+import { Categoria } from './model/Categoria';
 
 
 @NgModule({
@@ -44,14 +44,14 @@ import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.co
     EntrarContatoComponent,
     ApresentacaoComponent,
     RankingComponent,
-
     EditPerfilComponent,
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    TemaComponent,
-    ProdutosFavoritosComponent
-    CategoriaComponent,
+    ProdutosFavoritosComponent,
+    PaginaAdministradorComponent,
+    ProdutosFavoritosComponent,
+    Categoria,
     ProdutosFavoritosComponent,
     CategoriaDeleteComponent
   ],
