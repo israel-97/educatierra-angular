@@ -22,11 +22,11 @@ export class CategoriaDeleteComponent implements OnInit {
   ngOnInit() {
     window.scroll(0,0) 
     if(environment.token == ''){
-      this.router.navigate(['/home']) //ve se ta certo o home mano 
+      this.router.navigate(['/admin']) //ve se ta certo o home mano 
     }
     this.idCategoria = this.route.snapshot.params['id']
     this.categoriaPeloId(this.idCategoria)
-    
+    this.categoriaService.refreshToken()
   }
 
   categoriaPeloId(id:number){
@@ -37,6 +37,7 @@ export class CategoriaDeleteComponent implements OnInit {
 
   apagar(){
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
+      console.log(environment.adminUsuario)
       alert('Deleted')
       this.router.navigate(['/admin'])
     })

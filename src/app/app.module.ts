@@ -30,6 +30,7 @@ import { CategoriaComponent} from './components-produto/categoria/categoria.comp
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoriaEditComponent } from './components-produto/categoria-edit/categoria-edit.component';
 
 
 @NgModule({

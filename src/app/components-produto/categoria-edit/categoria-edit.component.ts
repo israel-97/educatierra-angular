@@ -19,21 +19,24 @@ export class CategoriaEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0) 
-    if(environment.token == ''){
-      this.router.navigate(['/admin']) 
+    window.scroll(0, 0)
+    if (environment.token == '') {
+      this.router.navigate(['/admin'])
     }
+    let id = this.route.snapshot.params['id']
+    this.categoriaPeloId(id)
+    this.categoriaService.refreshToken()
   }
 
-  categoriaPeloId(id:number){
-    this.categoriaService.categoriaPeloId(id).subscribe((resp:Categoria)=>{
+  categoriaPeloId(id: number) {
+    this.categoriaService.categoriaPeloId(id).subscribe((resp: Categoria) => {
       this.categoria = resp
     })
   }
 
-  atualizar(){
 
-    this.categoriaService.putCategoria(this.categoria).subscribe((resp:Categoria)=>{
+  atualizar() {
+    this.categoriaService.putCategoria(this.categoria).subscribe((resp: Categoria) => {
       this.categoria = resp
       alert('Label Updated! ')
       this.router.navigate(['/admin'])

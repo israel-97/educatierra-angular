@@ -25,7 +25,7 @@ export class CategoriaService {
     return this.http.get<Categoria[]>('http://localhost:8083/categorias', this.token)
   }
 
-  categoriaPeloId(id: number): Observable<Categoria>{ //trocar para
+  categoriaPeloId(id: number): Observable<Categoria>{
     return this.http.get<Categoria>(`http://localhost:8083/categorias/${id}`, this.token)
   }
 
@@ -33,8 +33,8 @@ export class CategoriaService {
     return this.http.post<Categoria>('http://localhost:8083/categorias', categoria, this.token)
   }
 
-  putCategoria(Categoria:Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('http://localhost:8083/categorias', Categoria,this.token)
+  putCategoria(categoria:Categoria): Observable<Categoria>{
+    return this.http.put<Categoria>('http://localhost:8083/categorias', categoria,this.token)
   }
   
   deleteCategoria(id:number ){ 

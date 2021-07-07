@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { Categoria } from './model/Categoria';
 import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
 import { ProdutosComponent } from './components-produto/produtos/produtos.component';
+import { CategoriaEditComponent } from './components-produto/categoria-edit/categoria-edit.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,7 +14,9 @@ const routes: Routes = [
     {path:'admin', component: PaginaAdministradorComponent},
     {path: 'categoria-editar/:id', component: CategoriaDeleteComponent},
     {path: 'categoria', component: Categoria},
-    {path: 'categoria-delete/:id',component:CategoriaDeleteComponent}   
+    {path: 'categoria-delete/:id',component:CategoriaDeleteComponent},
+    {path: 'categoria-edit/:id', component: CategoriaEditComponent}
+    
 ];
 
 @NgModule({
