@@ -62,7 +62,7 @@
                     <td>{{item.materia}}</td> 
                     <td>{{item.descricao}}</td> 
                     <td class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-info me-3">Editar</button>
+                        <button type="button" class="btn btn-info me-3" [routerLink]="['/categoria-edit', categoria.id]">Editar</button>
                         <button type="button" class="btn btn-danger " [routerLink]="['/categoria-delete', categoria.id]" >Deletar</button>
                     </td> 
                   </tr>                

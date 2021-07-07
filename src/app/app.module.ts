@@ -29,6 +29,7 @@ import { PaginaAdministradorComponent } from './pagina-administrador/pagina-admi
 import { CategoriaComponent} from './components-produto/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoriaEditComponent } from './components-produto/categoria-edit/categoria-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProdutosFavoritosComponent,
     PaginaAdministradorComponent,  
     CategoriaDeleteComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CategoriaEditComponent
 
   ],
   imports: [
