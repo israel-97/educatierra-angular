@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
+// import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
@@ -28,8 +28,7 @@ import { ProdutosFavoritosComponent } from './components-produto/produtos-favori
 import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
 import { CategoriaComponent} from './components-produto/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
-
-
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -61,7 +60,7 @@ import { CategoriaDeleteComponent } from './components-produto/categoria-delete/
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    //NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
