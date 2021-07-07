@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {NgxPaginationModule} from 'ngx-pagination';
+// import {NgxPaginationModule} from 'ngx-pagination';
 
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroselHomeComponent } from './components-home/carrosel-home/carrosel-home.component';
@@ -30,7 +29,7 @@ import { PaginaAdministradorComponent } from './pagina-administrador/pagina-admi
 import { CategoriaComponent} from './components-produto/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
-
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -64,7 +63,7 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    //NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
