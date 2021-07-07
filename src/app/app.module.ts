@@ -29,6 +29,7 @@ import { ProdutosFavoritosComponent } from './components-produto/produtos-favori
 import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
 import { CategoriaComponent} from './components-produto/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
+import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 
 
 
@@ -53,7 +54,8 @@ import { CategoriaDeleteComponent } from './components-produto/categoria-delete/
     ProdutosFavoritosComponent,
     PaginaAdministradorComponent,  
     CategoriaDeleteComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CategoriaEditComponent
 
   ],
   imports: [
