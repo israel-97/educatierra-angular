@@ -25,12 +25,21 @@ export class CategoriaDeleteComponent implements OnInit {
       this.router.navigate(['/home']) //ve se ta certo o home mano 
     }
     this.idCategoria = this.route.snapshot.params['id']
+    this.categoriaPeloId(this.idCategoria)
+    
+  }
+
+  categoriaPeloId(id:number){
+    this.categoriaService.categoriaPeloId(id).subscribe((resp:Categoria)=>{
+      this.categoria = resp
+    })
   }
 
   apagar(){
     this.categoriaService.deleteCategoria(this.idCategoria).subscribe(()=>{
       alert('Deleted')
-      this.router.navigate(['/tema'])
+      this.router.navigate(['/admin'])
     })
   }
+ 
 }
