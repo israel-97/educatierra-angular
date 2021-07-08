@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
@@ -13,10 +13,11 @@ export class PaginaAdministradorComponent implements OnInit {
 
   categoria: Categoria = new Categoria()
   listaCategorias: Categoria[]
-  
+ 
   constructor(
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(){
@@ -26,6 +27,7 @@ export class PaginaAdministradorComponent implements OnInit {
     }
     this.todasCategorias()
     this.categoriaService.refreshToken()
+    
   } 
 
   todasCategorias(){
@@ -41,4 +43,15 @@ cadastrarCategoria(){
     this.categoria= new Categoria()
   })
 }
+categoriaPeloId(id:number){
+  this.categoriaService.categoriaPeloId(id).subscribe((resp:Categoria)=>{
+    this.categoria = resp
+  })
+}
+
+
+
+
+
+
 }

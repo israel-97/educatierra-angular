@@ -28,7 +28,10 @@ import { ProdutosFavoritosComponent } from './components-produto/produtos-favori
 import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
 import { CategoriaComponent} from './components-produto/categoria/categoria.component';
 import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
+import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategoriaEditComponent } from './components-produto/categoria-edit/categoria-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +54,8 @@ import { AppRoutingModule } from './app-routing.module';
     ProdutosFavoritosComponent,
     PaginaAdministradorComponent,  
     CategoriaDeleteComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    CategoriaEditComponent
 
   ],
   imports: [
