@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
       console.log(environment.id) 
       
       if(environment.adminUsuario == true){
-       this.router.navigate(['/admin'])
+       this.router.navigate(['/categorias'])
       }
       else{
         this.router.navigate(['/produtos'])
