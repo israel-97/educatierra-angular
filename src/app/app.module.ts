@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 // import {NgxPaginationModule} from 'ngx-pagination';
 
-
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroselHomeComponent } from './components-home/carrosel-home/carrosel-home.component';
@@ -19,18 +18,13 @@ import { ViewProdComponent } from './view-prod/view-prod.component';
 import { EntrarContatoComponent } from './components-home/entrar-contato/entrar-contato.component';
 import { ApresentacaoComponent } from './components-home/apresentacao/apresentacao.component';
 import { RankingComponent } from './components-home/ranking/ranking.component';
-
 import { EditPerfilComponent } from './components-produto/edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './components-produto/cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './components-produto/lista-categoria/lista-categoria.component';
 import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
-import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
-import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
-import { CategoriaComponent} from './components-produto/categoria/categoria.component';
-import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
-import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { AppRoutingModule } from './app-routing.module';
-import { CategoriaEditComponent } from './components-produto/categoria-edit/categoria-edit.component';
+import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
+
 
 
 @NgModule({
@@ -51,12 +45,7 @@ import { CategoriaEditComponent } from './components-produto/categoria-edit/cate
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    ProdutosFavoritosComponent,
-    PaginaAdministradorComponent,  
-    CategoriaDeleteComponent,
-    CategoriaComponent,
-    CategoriaEditComponent
-
+    ProdutosFavoritosComponent,  
   ],
   imports: [
     BrowserModule,
