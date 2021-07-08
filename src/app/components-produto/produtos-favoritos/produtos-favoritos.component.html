@@ -1,4 +1,4 @@
-<p>produtos-favoritos works!</p>
+
 <div class="container">
 
     <div class="row">
@@ -78,17 +78,15 @@
 
 </div>
 
-<div class="container mt-5">
+<div class="container">
     <div class="row-wrap d-flex justify-content-center">
         <div class="col-md-8">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
-                    <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
+                    <div class="card h-100" style="max-width: 18rem;">
                         <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title text-center">{{item.nome}}</h5>
-                            <p class="card-text">{{item.descricao}}</p>
-                            <p class="card-text">{{item.linkAcesso}}</p>
+                            <h5 class="card-title text-center" >Card title</h5>
                         </div>
                         <div class="card-footer">
                             <span
@@ -100,7 +98,7 @@
                         </div>
                     </div>
                 </div>
-
+                
             </div>
         </div>
 
