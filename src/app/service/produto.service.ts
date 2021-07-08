@@ -25,10 +25,7 @@ todosProdutos(): Observable<Produto[]>{
 }
 
 cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto> {
-  return this.htpp.post<Produto>(`http://localhost:8083/cadastro-produto/usuario/${idUsuario}/categoria/${idCategoria}`, produto, this.token)
+  return this.htpp.post<Produto>(`http://localhost:8083/usuarios/cadastro-produto/usuario/${idUsuario}/categoria/${idCategoria}`, produto, this.token)
 
 }
 }
-
-
-
