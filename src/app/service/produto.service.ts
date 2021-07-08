@@ -32,3 +32,8 @@ cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Obse
 
 
 }
+
+
+
+
+

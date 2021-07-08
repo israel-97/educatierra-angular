@@ -12,15 +12,13 @@
          <!--/ logo do projeto -->
 
          <!-- nome do projeto -->
-        <div class="d-flex flex-column text-white ms-2 mt-0">
+        <div class="d-flex flex-column text-white ms-1 mt-0">
             <small>educa</small>
             <small>tierra</small>
         </div>
          <!-- /nome do projeto -->
-        
       </div>
  
-  
       <!-- links para navegação no site -->
       <ul class="navbar-nav flex-row d-none d-md-flex">
 
@@ -55,7 +53,6 @@
   </nav>
   <!-- Navbar -->
   
-  
 <!-- modal de login e cadastro -->
 <div class="modal fade" id="loginCadastroModal" tabindex="-1" aria-labelledby="TituloModalCentralizado"
     aria-hidden="true">
@@ -73,20 +70,20 @@
                 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                     
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        <button class="nav-link active text-center" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" data-mdb-toggle="tab"
                             aria-selected="true">login</button>
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        <button class="nav-link text-center" id="pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                             aria-selected="false">cadastro</button>
                     </li>
 
                 </ul>
 
-                <div class="tab-content" id="pills-tabContent">
+                <div class="tab-content mt-4" id="pills-tabContent">
                     <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                         aria-labelledby="pills-home-tab">
 
@@ -132,30 +129,6 @@
                                     <input [(ngModel)]='user.usuario' class="form-control" type="text" name="usuario"
                                         id="usuario" placeholder="usuario">
                                 </div>
-
-                                <!-- <div class="form-group mb-4 d-flex align-items-center justify-content-center">
-                                    <p>tipo de usuário</p>
-                                    <div class="form-check me-4">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="professor">
-                                        <label class="form-check-label" for="professor">
-                                          professor
-                                        </label>
-                                      </div>
-
-                                      <div class="form-check me-4">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="estudante" checked>
-                                        <label class="form-check-label" for="estudante">
-                                          estudante
-                                        </label>
-                                      </div>
-
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="outro" checked>
-                                        <label class="form-check-label" for="outro">
-                                          outro
-                                        </label>
-                                      </div>
-                                </div> -->
 
                                 <div class="form-group mb-4">
                                     <select class="form-control" aria-label="Default select example">

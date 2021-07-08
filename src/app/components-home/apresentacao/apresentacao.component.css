@@ -3,7 +3,11 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+h1{
+    font-weight: 700;
+    line-height: 2.5rem;
 
+}
 .fs-40{
     font-size: 40px;
 }
@@ -36,22 +40,4 @@ button:hover{
 
 .btn:focus{
     box-shadow: none;
-}
-
-.tipo_sanguineo label {
-    background: #FFFF no-repeat center center;
-
-    display: block;
-    position: absolute;
-    bottom: 1px;
-    left: 1px;
-    right: 1px;
-    top: 1px;
-
-    border-radius: 50%;
-    padding-top: 14px;
-    text-align: center;
- 
-    color:#DD0122;
-    font-size: 20px; 
 }
