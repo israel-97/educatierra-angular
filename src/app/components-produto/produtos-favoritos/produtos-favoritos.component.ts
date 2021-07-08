@@ -57,12 +57,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   }
 
   cadastrarProduto() {
-    this.categoria.id = this.idCategoria
-    this.produto.categoria = this.categoria
-
-    this.user.id = this.idUser
-    this.produto.usuario = this.user
-
+   
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
       alert('Produto cadastrado com sucesso!')

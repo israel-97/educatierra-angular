@@ -105,12 +105,17 @@
     </div>
 </div>
 
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="exampleModalLabel">Editar Perfil</h5>
+                <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -125,37 +130,29 @@
                     <label for="descricao"></label>
                     <textarea class="form-control" name="descricao" id="" cols="3" placeholder="Insira aqui a descrição do produto"></textarea>
                 </div>
+
+                <div class="form-group">
+                    <label for="linkAcesso"></label>
+                    <input type="text" class="form-control" id="linkAcesso" placeholder="Compartilhe aqui o link do produto">
+                </div>
               
-                <div class="form-group">
+                <div class="form-group mb-3">
                     <label for="linkImagem"></label>
-                    <input type="text" class="form-control" id="titulo" placeholder="E-mail">
+                    <input type="text" class="form-control" id="titulo" placeholder="Insira aqui o link da imagem do produto">
                 </div>
-
+                
                 <div class="form-group">
-                    <label for="linkAcesso"></label>
-                    <input type="text" class="form-control" id="linkAcesso" placeholder="Insira o link do produto">
-                </div>
-
-                <div class="form-group">
-                    <label for="linkAcesso"></label>
-                    <input type="text" class="form-control" id="linkAcesso" placeholder="Insira o link do produto">
-                </div>
-
-                <div class="form-group mb-4">
                     <select class="form-control" aria-label="tipoProduto">
                         <option selected>selecione o tipo de produto</option>
                         <option value="VÍDEO">vídeo</option>
-                        <option value="EBOOK">e-book</option>
-                        <option value="COLEÇÃO">coleção</option>
+                        <option value="EBOOK">e-book</option>                        
                         <option value="RESUMO">resumo</option>
                       </select>
                 </div>
-
             
-
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-primary ">Enviar</button>
+                <button type="button" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </div>
