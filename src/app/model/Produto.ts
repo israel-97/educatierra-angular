@@ -2,15 +2,15 @@ import { Categoria } from "./Categoria"
 import { User } from "./User"
 
 export class Produto{
-    private id: number
-    private nome: string
-    private descricao:string
-    private linkImagem:string
-    private linkAcesso:string
-    private tipoProduto: string
-    private categoria: Categoria
-    private usuario: User
-    private favoritadoPor: User[]
-    private statusTermo: boolean
+    public id: number
+    public nome: string
+    public descricao:string
+    public linkImagem:string
+    public linkAcesso:string
+    public tipoProduto: string
+    public categoria: Categoria
+    public usuario: User
+    public favoritadoPor: User[]
+    public statusTermo: boolean
 
 }

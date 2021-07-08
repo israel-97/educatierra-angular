@@ -25,7 +25,7 @@ export class CategoriaService {
     return this.http.get<Categoria[]>('http://localhost:8083/categorias', this.token)
   }
 
-  temaPeloId(id: number): Observable<Categoria>{
+  categoriaPeloId(id: number): Observable<Categoria>{
     return this.http.get<Categoria>(`http://localhost:8083/categorias/${id}`, this.token)
   }
 
