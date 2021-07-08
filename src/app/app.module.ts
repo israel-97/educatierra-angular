@@ -25,6 +25,7 @@ import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-p
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
+import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
 
 
 
@@ -47,7 +48,8 @@ import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.c
     ListaCategoriaComponent,
     MenuProdutosComponent,
     ProdutosFavoritosComponent,
-    ProdutoEditarComponent,  
+    ProdutoEditarComponent,
+    ProdutoDeleteComponent,  
   ],
   imports: [
     BrowserModule,

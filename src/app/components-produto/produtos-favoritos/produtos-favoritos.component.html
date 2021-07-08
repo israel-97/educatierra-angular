@@ -30,8 +30,8 @@
                                 <span
                                     class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
                                 <div>
-                                    <a class="me-3" href="">Atualizar</a>
-                                    <a href="">Deletar</a>
+                                    <a class="me-3"  href="">Atualizar</a>
+                                    <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
                                 </div>
                             </div>
                         </div>
