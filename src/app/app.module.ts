@@ -30,6 +30,7 @@ import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.co
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
+import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
 
 
 
@@ -53,12 +54,14 @@ import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.c
     ListaCategoriaComponent,
     MenuProdutosComponent,
     ProdutosFavoritosComponent,
-
+    ProdutoEditarComponent,
+    ProdutoDeleteComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
     CategoriaEditComponent,  
 
-    ProdutoEditarComponent,  
+    
+
 
   ],
   imports: [
