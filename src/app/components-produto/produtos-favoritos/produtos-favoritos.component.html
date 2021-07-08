@@ -16,10 +16,15 @@
 
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
-                        <div class="card h-100" style="max-width: 18rem;">
+                        <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
                             <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Card title</h5>
+                                <h5 class="card-title text-center">{{item.nome}}</h5>
+                                <p class="card-text">{{item.descricao}}</p>
+                                <p class="card-text">{{item.linkAcesso}}</p>
+
+                                <p class="card-text">by: {{item.usuario.usuario}}</p>
+
                             </div>
                             <div class="card-footer">
                                 <span
@@ -84,8 +89,8 @@
 
                 <div class="form-group">
                     <label for="texto">Escolha uma categoria</label>
-                    <select name="categoria" id="categoria" class="form-control">
-
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}</option>
                     </select>
                 </div>
 
@@ -97,19 +102,19 @@
 
                 <div class="form-group">
                     <label for="descricao"></label>
-                    <textarea class="form-control" name="descricao" id="" cols="3"
+                    <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
                         placeholder="Insira aqui a descrição do produto"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="linkAcesso"></label>
-                    <input type="text" class="form-control" id="linkAcesso"
+                    <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
                         placeholder="Compartilhe aqui o link do produto">
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="linkImagem"></label>
-                    <input type="text" class="form-control" id="titulo"
+                    <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
                         placeholder="Insira aqui o link da imagem do produto">
                 </div>
 
@@ -124,7 +129,8 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss='modal' >Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)='cadastrarProduto()'>Publicar </button>
             </div>
         </div>
     </div>
