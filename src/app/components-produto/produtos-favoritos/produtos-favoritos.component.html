@@ -1,66 +1,158 @@
 <div class="container">
 
-    <div class="d-flex align-items-start">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-                type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Meus Produtos</button>
-            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-                type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Meus Favoritos</button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="d-flex align-items-start">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                        aria-selected="true">Meus Produtos</button>
+                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                        aria-selected="false">Meus Favoritos</button>
+                </div>
+
+                <div class="tab-content" id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col" class="d-flex justify-content-center">
+                                        Nome do produto</th>
+                                    <th scope="col">Preço unitário</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><button type="button" class="btn btn-outline-dark">x</button></th>
+                                    <td class="d-flex justify-content-center"><img src="https://i.imgur.com/vumlaUt.jpg"
+                                            width="50px" height="50px" alt=""></td>
+                                    <td>Livro - Robson Crusoé</td>
+                                    <td>R$ 32,99</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Produto</th>
+                                    <th scope="col" class="d-flex justify-content-center">Nome do produto</th>
+                                    <th scope="col">Preço unitário</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
+                                    <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt="">
+                                    </td>
+                                    <td>Livro - A menina que roubava livros</td>
+                                    <td>R$ 49,99</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container mt-5">
+    <div class="row-wrap d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
+                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{item.nome}}</h5>
+                            <p class="card-text">{{item.descricao}}</p>
+                            <p class="card-text">{{item.linkAcesso}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
+                            <span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#slick</span>
+                            <span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#velcro</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="tab-content" id="v-pills-tabContent">
+    </div>
+</div>
 
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Produto</th>
-                            <th scope="col" class="d-flex justify-content-center">
-                                Nome do produto</th>
-                            <th scope="col">Preço unitário</th>
-                            
-                        </tr>
-                    </thead>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="exampleModalLabel">Editar Perfil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
 
-                    <tbody >
-                        <tr>
-                            <th scope="row"><button type="button" class="btn btn-outline-dark">x</button></th>
-                            <td class="d-flex justify-content-center"><img src="https://i.imgur.com/vumlaUt.jpg" width="50px" height="50px" alt=""></td>
-                            <td>Livro - Robson Crusoé</td>
-                            <td>R$ 32,99</td>
-                        </tr>
+                <div class="form-group">
+                    <label for="nome"></label>
+                    <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome" placeholder="Nome do produto">
+                </div>
 
-                    </tbody>
-                </table>
+                <div class="form-group">
+                    <label for="linkAcesso"></label>
+                    <input type="text" class="form-control" id="linkAcesso" placeholder="Insira o link do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for=""></label>
+                    <input type="text" class="form-control" id="titulo" placeholder="E-mail">
+                </div>
+
+                <div class="form-group">
+                    <label for="linkAcesso"></label>
+                    <input type="text" class="form-control" id="titulo" placeholder="E-mail">
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="titulo"></label>
+                            <input type="text" class="form-control" id="titulo" placeholder="Senha">
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <input type="text" class="form-control" id="titulo" placeholder="Confimar senha">
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
-
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col"></th>
-                            <th scope="col">Produto</th>
-                            <th scope="col" class="d-flex justify-content-center">Nome do produto</th>
-                            <th scope="col">Preço unitário</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
-                            <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt=""></td>
-                            <td>Livro - A menina que roubava livros</td>
-                            <td>R$ 49,99</td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
-
+            <div class="modal-footer d-flex justify-content-center form-group button">
+                <button type="button" class="btn btn-primary ">Enviar</button>
             </div>
-
         </div>
     </div>
 </div>
