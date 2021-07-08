@@ -25,9 +25,6 @@ import { CardsProdutoComponent } from './components-produto/cards-produto/cards-
 import { ListaCategoriaComponent } from './components-produto/lista-categoria/lista-categoria.component';
 import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
-import { PaginaAdministradorComponent } from './pagina-administrador/pagina-administrador.component';
-import { CategoriaComponent} from './components-produto/categoria/categoria.component';
-import { CategoriaDeleteComponent } from './components-produto/categoria-delete/categoria-delete.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -48,11 +45,7 @@ import { AppRoutingModule } from './app-routing.module';
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    ProdutosFavoritosComponent,
-    PaginaAdministradorComponent,  
-    CategoriaDeleteComponent,
-    CategoriaComponent
-
+    ProdutosFavoritosComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -29,11 +28,7 @@ cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Obse
   return this.htpp.post<Produto>(`http://localhost:8083/cadastro-produto/usuario/${idUsuario}/categoria/${idCategoria}`, produto, this.token)
 
 }
-
-
 }
-
-
 
 
 
