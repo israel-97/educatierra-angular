@@ -25,10 +25,19 @@ todosProdutos(): Observable<Produto[]>{
 }
 
 cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto> {
-  return this.htpp.post<Produto>(`http://localhost:8083/cadastro-produto/usuario/${idUsuario}/categoria/${idCategoria}`, produto, this.token)
-
-}
+  return this.htpp.post<Produto>(`http://localhost:8083/usuarios/cadastro-produto/${idUsuario}/${idCategoria}`, produto, this.token)
 }
 
+alterarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto>{
+  return this.htpp.post<Produto>(`http://localhost:8083/usuarios/altera-produto/${idUsuario}/${idCategoria}`, produto, this.token)
+}
 
+produtoPeloId(idProduto: number): Observable<Produto>{
+  return this.htpp.get<Produto>(`http://localhost:8083/produtos/${idProduto}`, this.token)
+}
 
+apagarProduto(idProduto: number, idUsuario: number){
+  return this.htpp.delete(`http://localhost:8083/usuarios/exclusao-produto/${idUsuario}/${idProduto}`,this.token)
+}
+
+}

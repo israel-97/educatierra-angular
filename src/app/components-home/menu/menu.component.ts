@@ -40,13 +40,13 @@ export class MenuComponent implements OnInit {
       environment.email = this.usuarioLogin.email
       environment.usuario = this.usuarioLogin.usuario
       environment.adminUsuario = this.usuarioLogin.adminUsuario
-      console.log(environment.adminUsuario) 
+      console.log(environment.id) 
       
       if(environment.adminUsuario == true){
        this.router.navigate(['/categorias'])
       }
       else{
-        this.router.navigate(['/home'])
+        this.router.navigate(['/produtos'])
       }
      
     }, erro =>{
