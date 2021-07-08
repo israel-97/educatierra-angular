@@ -18,7 +18,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   categoria: Categoria = new Categoria()
   listaProdutos: Produto[]
 
-  listaCategorias: Categoria[]
+  listaCategorias: Categoria[] 
   idCategoria: number
   user: User = new User()
   idUser = environment.id
@@ -34,18 +34,24 @@ export class ProdutosFavoritosComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home']) 
     }
+    this.produtoService.refreshToken()
+    this.categoriaService.refreshToken()
     this.todasCategorias()
     this.todosProdutos()
+    
+   
+    
   }
 
   todasCategorias(){
-    this.categoriaService.todasCategorias().subscribe((resposta: Categoria []) => {
+    this.categoriaService.todasCategorias().subscribe((resposta: Categoria[]) => {
     this.listaCategorias = resposta
+    console.log(this.listaCategorias)
   })
 }
 
   findByIdCategoria() {
-    this.categoriaService.categoriaPeloId(this.idCategoria).subscribe((resposta: Categoria) => {
+    this.categoriaService.findByIdCategoria(this.idCategoria).subscribe((resposta: Categoria) => {
       this.categoria = resposta
     })
   }
@@ -56,13 +62,17 @@ export class ProdutosFavoritosComponent implements OnInit {
     })
   }
 
+
   cadastrarProduto() {   
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
       alert('Produto cadastrado com sucesso!')
       this.produto = new Produto()
+
+      this.todosProdutos()
     })
 
   }
+
 
 }
