@@ -1,4 +1,3 @@
-
 import { Produto } from './../../model/Produto';
 import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
