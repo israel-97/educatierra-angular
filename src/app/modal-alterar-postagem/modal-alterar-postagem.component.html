@@ -51,7 +51,10 @@
 
                             <tbody>
                                 <tr>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
+                                    <!-- [routerLink]="['/produto-editar'], item.produto]" -->
+                                    <th scope="row"><button type="button" class="btn btn-warning mr-3"  data-bs-toggle="modal" data-bs-target="#editModal">
+                                        Alterar material
+                                    </button><button type="button" class="btn btn-outline-dark ">x</button></th>
                                     <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt="">
                                     </td>
                                     <td>Livro - A menina que roubava livros</td>
@@ -70,16 +73,19 @@
 
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
+
+
+
+
+
+  
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
+                <h5 class="modal-title " id="exampleModalLabel">Alterar Produto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -128,6 +134,7 @@
             <div class="modal-footer d-flex justify-content-center form-group button">
                 <button type="button" class="btn btn-primary" data-bs-dismiss='modal' >Cancelar</button>
                 <button type="button" class="btn btn-primary" (click)='cadastrarProduto()'>Publicar </button>
+                
             </div>
         </div>
     </div>

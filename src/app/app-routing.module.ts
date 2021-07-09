@@ -9,6 +9,7 @@ import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.c
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
+import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,8 @@ const routes: Routes = [
     {path:'categorias', component: CategoriaComponent},
     {path: 'categoria-edit/:id',component:CategoriaEditComponent},
     {path: 'categoria-delete/:id',component:CategariaDeleteComponent},
+
+    {path: 'modal-alterar-postagem', component: ModalAlterarPostagemComponent},
 
     {path: 'produto-editar/:id', component: ProdutoEditarComponent}
 

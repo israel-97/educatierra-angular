@@ -31,6 +31,7 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
 
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
 import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
+import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
 
 
 
@@ -58,7 +59,8 @@ import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.c
     ProdutoDeleteComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
-    CategoriaEditComponent,  
+    CategoriaEditComponent,
+    ModalAlterarPostagemComponent,  
 
     
 
