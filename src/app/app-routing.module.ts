@@ -16,16 +16,12 @@ const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path:'home', component:HomeComponent},
     {path:'produtos', component:ProdutosComponent},
-    {path:'produto-delete/:id', component: ProdutoDeleteComponent},
     {path:'categorias', component: CategoriaComponent},
-    {path: 'categoria-edit/:id',component:CategoriaEditComponent},
-    {path: 'categoria-delete/:id',component:CategariaDeleteComponent},
-
+    {path:'categoria-edit/:id',component:CategoriaEditComponent},
+    {path:'categoria-delete/:id',component:CategariaDeleteComponent},
+    {path:'produto-editar/:id', component: ProdutoEditarComponent},
+    {path:'produto-delete/:id', component: ProdutoDeleteComponent}
     {path: 'modal-alterar-postagem', component: ModalAlterarPostagemComponent},
-
-    {path: 'produto-editar/:id', component: ProdutoEditarComponent}
-
-
 ];
 
 @NgModule({
