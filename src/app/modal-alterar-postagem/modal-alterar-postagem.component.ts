@@ -1,19 +1,19 @@
-import { Produto } from './../../model/Produto';
-import { environment } from './../../../environments/environment.prod';
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
-import { AuthService } from 'src/app/service/auth.service';
+import { environment } from 'src/environments/environment.prod';
+import { Produto } from '../model/Produto';
 
 @Component({
-  selector: 'app-produtos-favoritos',
-  templateUrl: './produtos-favoritos.component.html',
-  styleUrls: ['./produtos-favoritos.component.css']
+  selector: 'app-modal-alterar-postagem',
+  templateUrl: './modal-alterar-postagem.component.html',
+  styleUrls: ['./modal-alterar-postagem.component.css']
 })
-export class ProdutosFavoritosComponent implements OnInit {
+export class ModalAlterarPostagemComponent implements OnInit {
 
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
@@ -27,21 +27,20 @@ export class ProdutosFavoritosComponent implements OnInit {
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService,
-    private authService: AuthService
+    private categoriaService: CategoriaService
   ) { }
 
   ngOnInit() {
 
     if(environment.token == ''){
-      this.router.navigate(['/home'])  
+      this.router.navigate(['/home']) 
     }
-    
     this.produtoService.refreshToken()
     this.categoriaService.refreshToken()
     this.todasCategorias()
     this.todosProdutos()
-    this.findByIdUser()  
+    
+   
     
   }
 
@@ -64,11 +63,6 @@ export class ProdutosFavoritosComponent implements OnInit {
     })
   }
 
-findByIdUser(){
-this.produtoService.getByIdUser(this.idUser).subscribe((resposta: User) =>{
-  this.user = resposta
-})
-}
 
   cadastrarProduto() {   
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
@@ -80,6 +74,6 @@ this.produtoService.getByIdUser(this.idUser).subscribe((resposta: User) =>{
     })
 
   }
-
+  
 
 }
