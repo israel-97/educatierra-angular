@@ -6,6 +6,7 @@ import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-produtos-favoritos',
@@ -26,7 +27,8 @@ export class ProdutosFavoritosComponent implements OnInit {
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -34,12 +36,12 @@ export class ProdutosFavoritosComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home']) 
     }
+    
     this.produtoService.refreshToken()
     this.categoriaService.refreshToken()
     this.todasCategorias()
     this.todosProdutos()
-    
-   
+    this.findByIdUser()  
     
   }
 
@@ -62,6 +64,11 @@ export class ProdutosFavoritosComponent implements OnInit {
     })
   }
 
+findByIdUser(){
+this.produtoService.getByIdUser(this.idUser).subscribe((resposta: User) =>{
+  this.user = resposta
+})
+}
 
   cadastrarProduto() {   
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
