@@ -1,24 +1,3 @@
-<div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
-    <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title text-center">{{item.nome}}</h5>
-        <p class="card-text">{{item.descricao}}</p>
-        <p class="card-text">{{item.linkAcesso}}</p>
-
-        <p class="card-text">by: {{item.usuario.usuario}}</p>
-
-    </div>
-    <div class="card-footer">
-        <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
-        <div>
-            <a class="me-3" href="">Atualizar</a>
-            <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
-        </div>
-    </div>
-</div>
-
-
 <div class="container">
 
     <div class="row">
@@ -37,36 +16,29 @@
 
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Produto</th>
-                                    <th scope="col" class="d-flex justify-content-center">
-                                        Nome</th>
-                                    <th scope="col">Descrição</th>
-                                    <th scope="col">Tipo</th>
-                                </tr>
-                            </thead>
+                        <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
+                            <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{item.nome}}</h5>
+                                <p class="card-text">{{item.descricao}}</p>
+                                <p class="card-text">{{item.linkAcesso}}</p>
 
-                            <tbody>
-                                <tr *ngFor='let item of user.meusProdutos'>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark">x</button></th>
-                                    <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
-                                            width="50px" height="50px" alt=""></td>
-                                    <td>{{item.nome}}</td>
-                                    <td>{{item.descricao}}</td>
-                                    <td>{{item.tipoProduto}}</td>
-                                </tr>
+                                <p class="card-text">by: {{item.usuario.usuario}}</p>
 
-                            </tbody>
-                        </table>
-
+                            </div>
+                            <div class="card-footer">
+                                <span
+                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
+                                <div>
+                                    <a class="me-3"  href="">Atualizar</a>
+                                    <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                         aria-labelledby="v-pills-profile-tab">
-
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -79,7 +51,10 @@
 
                             <tbody>
                                 <tr>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
+                                    <!-- [routerLink]="['/produto-editar'], item.produto]" -->
+                                    <th scope="row"><button type="button" class="btn btn-warning mr-3"  data-bs-toggle="modal" data-bs-target="#editModal">
+                                        Alterar material
+                                    </button><button type="button" class="btn btn-outline-dark ">x</button></th>
                                     <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt="">
                                     </td>
                                     <td>Livro - A menina que roubava livros</td>
@@ -98,24 +73,26 @@
 
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-</button>
+
+
+
+
+
+  
+
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
+                <h5 class="modal-title " id="exampleModalLabel">Alterar Produto</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
 
                 <div class="form-group">
                     <label for="texto">Escolha uma categoria</label>
-                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-                        (change)='findByIdCategoria()'>
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
                         <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}</option>
                     </select>
                 </div>
@@ -155,8 +132,9 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-primary" data-bs-dismiss='modal'>Cancelar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss='modal' >Cancelar</button>
                 <button type="button" class="btn btn-primary" (click)='cadastrarProduto()'>Publicar </button>
+                
             </div>
         </div>
     </div>
