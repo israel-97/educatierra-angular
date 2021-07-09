@@ -1,0 +1,59 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-secondary">Atualizar Produto</h1>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="texto">Escolha uma categoria</label>
+                <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria' (change)='findByIdCategoria()'>
+                    <option *ngFor='let item of listaCategoria' value="{{item.id}}">{{item.materia}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nome"></label>
+                <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+                    placeholder="Nome do produto">
+            </div>
+
+            <div class="form-group">
+                <label for="descricao"></label>
+                <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
+                    placeholder="Insira aqui a descrição do produto"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="linkAcesso"></label>
+                <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
+                    placeholder="Compartilhe aqui o link do produto">
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="linkImagem"></label>
+                <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
+                    placeholder="Insira aqui o link da imagem do produto">
+            </div>
+ 
+            <div class="form-group">
+                <select class="form-control" aria-label="tipoProduto">
+                    <option selected>selecione o tipo de produto</option>
+                    <option value="VÍDEO">vídeo</option>
+                    <option value="EBOOK">e-book</option>
+                    <option value="RESUMO">resumo</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center form-group button">
+            <button type="button" class="btn btn-danger" routerLink='/home' >Cancelar</button>
+            <button type="button" class="btn btn-primary" (click)='atualizar()'>Atualizar</button>
+
+        </div>
+    </div>
+</div>
