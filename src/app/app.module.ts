@@ -24,6 +24,7 @@ import { ListaCategoriaComponent } from './components-produto/lista-categoria/li
 import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
+import { SearchProdutoComponent } from './components-produto/search-produto/search-produto.component';
 
 
 
@@ -46,6 +47,7 @@ import { ProdutosFavoritosComponent } from './components-produto/produtos-favori
     ListaCategoriaComponent,
     MenuProdutosComponent,
     ProdutosFavoritosComponent,  
+    SearchProdutoComponent
   ],
   imports: [
     BrowserModule,
