@@ -29,7 +29,7 @@ export class CategariaDeleteComponent implements OnInit {
   }
 
   categoriaPeloId(id:number){
-    this.categoriaService.categoriaPeloId(id).subscribe((resp:Categoria)=>{
+    this.categoriaService.findByIdCategoria(id).subscribe((resp:Categoria)=>{
       this.categoria = resp
     })
   }
