@@ -32,7 +32,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   ngOnInit() {
 
     if(environment.token == ''){
-      this.router.navigate(['/home']) 
+      this.router.navigate(['/home'])  
     }
     this.produtoService.refreshToken()
     this.categoriaService.refreshToken()

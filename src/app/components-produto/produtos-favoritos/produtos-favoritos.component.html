@@ -10,11 +10,13 @@
                     <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Meus Favoritos</button>
-                </div>
+                 </div>
 
                 <div class="tab-content" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+
+                    
                         aria-labelledby="v-pills-home-tab">
                         <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
                             <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
@@ -30,7 +32,7 @@
                                 <span
                                     class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
                                 <div>
-                                    <a class="me-3"  href="">Atualizar</a>
+                                    <a [routerLink]="['/produto-editar', produto.id]" class="me-3"  href="">Atualizar</a>
                                     <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
                                 </div>
                             </div>
