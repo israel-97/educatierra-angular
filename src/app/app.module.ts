@@ -24,6 +24,7 @@ import { ListaCategoriaComponent } from './components-produto/lista-categoria/li
 import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
+import { SearchProdutoComponent } from './components-produto/search-produto/search-produto.component';
 
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
@@ -54,17 +55,14 @@ import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-al
     CardsProdutoComponent,
     ListaCategoriaComponent,
     MenuProdutosComponent,
-    ProdutosFavoritosComponent,
+    ProdutosFavoritosComponent,  
+    SearchProdutoComponent,
     ProdutoEditarComponent,
     ProdutoDeleteComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
     CategoriaEditComponent,
     ModalAlterarPostagemComponent,  
-
-    
-
-
   ],
   imports: [
     BrowserModule,

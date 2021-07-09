@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-produto-delete',
@@ -11,10 +10,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./produto-delete.component.css']
 })
 export class ProdutoDeleteComponent implements OnInit {
-
   produto: Produto = new Produto()
   idProduto: number
   idUsuario: number
+
 
   constructor(
     private router: Router,
