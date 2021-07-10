@@ -15,19 +15,19 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class ProdutoEditarComponent implements OnInit {
 
-  produto: Produto = new Produto()
-  categoria: Categoria = new Categoria()
+  produto: Produto = new Produto() 
+  categoria: Categoria = new Categoria() 
   idProduto: number
-  idCategoria: number
-  listaCategoria: Categoria[]
-  idUsuario = environment.id
+  idCategoria: number 
+  listaCategoria: Categoria[] 
+  idUsuario = environment.id 
 
   constructor(
-    private router: Router,
-    private route: ActivatedRoute,
+    private router: Router, 
+    private route: ActivatedRoute, 
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService
+   
   ) { }
 
   ngOnInit() {
