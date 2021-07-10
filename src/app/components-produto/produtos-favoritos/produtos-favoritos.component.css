@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar{
+    height: 70px;
+    background: #F9A844;
+}
+
+.navbar small{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    
+    line-height: 1.1em;
+}
+
+.nav-link{
+    color: white;
+
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.nav-item{
+    margin-left: 15px;
+}
+
+.nav-link{
+    color: #fff;
+    text-decoration: none;
+  
+    display: inline-block;
+    position: relative;
+}
+
+.nav-link:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+
+    height: 2px;
+    width: 0;
+    left: 50%;
+
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;   
+}
+
+.nav-link:hover:after { 
+    width: 100%; 
+    left: 0;  
+}
+
+/*estilização do modal de cadastro e login*/
+.modal-content{
+    border-radius: 15px;
+}
+
+.modal-header{
+    border-bottom: none;
+    height: 10px;
+
+    padding: 30px 0px 0px 0px;
+}
+
+#fecharModal {
+    color: #0F5C8C;
+    font-size: 35px;
+    font-weight: 900;
+
+    text-decoration: none;
+    box-shadow: none;
+}
+
+#fecharModal:hover,
+#fecharModal:focus{
+  color:#aaaaaa;
+  text-decoration: none;
+}
+
+#pills-home-tab, 
+#pills-profile-tab{
+    background-color: transparent;
+
+    border-radius: 0;
+    text-align: center;
+
+    letter-spacing: .1em;
+    color:#0F5C8C;
+    font-size: 18px;
+    font-weight: 600;
+
+    padding: 10px 10px 5px 5px;/* topo | direita | inferior | esquerda */
+}
+
+.nav-link.active{
+    border-bottom: 2px solid #0F5C8C;
+    transition: left 0.3s ease 0s; 
+
+}
+
+.form-control{
+    padding-left: 15px;
+    border-radius: 20px;
+}
+
+/* .form-group input{
+    border:1.5px solid #0F5C8C;
+    background-color: transparent;
+    color: #0F5C8C;
+} */
+
+.form-group button{
+    border-radius: 25px;
+    padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
+
+    background-color: #0F5C8C;
+
+    color: white;
+    font-weight: 500;
+}
+
+.form-group button:hover{
+    border:2px solid #0F5C8C;
+    background-color: transparent;
+
+    color: #0F5C8C;
+}
+
+.form-group button:focus,
+.form-group input:focus, 
+.form-group select{
+    box-shadow: none;
+}
+
+select {
+    box-shadow: none;
+    outline: none;
+}
+
+option{
+    width: 30px;
+}
