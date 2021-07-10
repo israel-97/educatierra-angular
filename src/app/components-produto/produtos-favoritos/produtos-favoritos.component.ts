@@ -8,6 +8,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { AuthService } from 'src/app/service/auth.service';
 
+
 @Component({
   selector: 'app-produtos-favoritos',
   templateUrl: './produtos-favoritos.component.html',
@@ -23,6 +24,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   idCategoria: number
   user: User = new User()
   idUser = environment.id
+  idProduto = environment.id
 
   constructor(
     private router: Router,
@@ -42,6 +44,7 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.todasCategorias()
     this.todosProdutos()
     this.findByIdUser()  
+    this.favoritarProduto()
     
   }
 
@@ -78,8 +81,12 @@ this.produtoService.getByIdUser(this.idUser).subscribe((resposta: User) =>{
 
       this.todosProdutos()
     })
-
   }
 
+  favoritarProduto(){
+    this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: User) => {
+      this.user = resposta
+    })
+  }
 
 }
