@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
        this.router.navigate(['/categorias'])
       }
       else{
-        this.router.navigate(['/produtos'])
+        this.router.navigate(['/meusprodutos'])
       }
      
     }, erro =>{

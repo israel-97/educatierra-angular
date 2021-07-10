@@ -1,23 +1,19 @@
 <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
-    <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title text-center">{{item.nome}}</h5>
-        <p class="card-text">{{item.descricao}}</p>
-        <p class="card-text">{{item.linkAcesso}}</p>
+<img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+    <h5 class="card-title text-center">{{item.nome}}</h5>
+    <p class="card-text">{{item.descricao}}</p>
+    <p class="card-text">{{item.linkAcesso}}</p>
 
-        <p class="card-text">by: {{item.usuario.usuario}}</p>
-
-    </div>
-    <div class="card-footer">
-        <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
-        <div>
-           <a [routerLink]="['/produto-editar', produto.id]" class="me-3" href="">Atualizar</a>
-           <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
-        </div>
-    </div>
+    <p class="card-text">by: {{item.usuario.usuario}}</p>
+<button (click)='favoritarProduto()'>Favoritar</button>
 </div>
+<div class="card-footer">
+    <span
+        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
 
+</div> 
+</div>
 
 <div class="container">
 
@@ -31,15 +27,13 @@
                     <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Meus Favoritos</button>
-                 </div>
+                </div>
 
                 <div class="tab-content" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-
-                    
                         aria-labelledby="v-pills-home-tab">
-                      
+
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -54,7 +48,10 @@
 
                             <tbody>
                                 <tr *ngFor='let item of user.meusProdutos'>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark">x</button></th>
+                                    <th scope="row"><a [routerLink]="['/produto-editar', produto.id]" class="me-3"
+                                            href="">Atualizar</a>
+                                        <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
+                                    </th>
                                     <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
                                             width="50px" height="50px" alt=""></td>
                                     <td>{{item.nome}}</td>
@@ -64,7 +61,7 @@
 
                             </tbody>
                         </table>
-                      
+
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
@@ -81,12 +78,16 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
-                                    <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt="">
-                                    </td>
-                                    <td>Livro - A menina que roubava livros</td>
-                                    <td>R$ 49,99</td>
+                                <tr *ngFor='let item of user.meusFavoritos'>
+                                    <th scope="row"><a [routerLink]="['/produto-editar', produto.id]" class="me-3"
+                                            href="">Atualizar</a>
+                                        <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
+                                    </th>
+                                    <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
+                                            width="50px" height="50px" alt=""></td>
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.descricao}}</td>
+                                    <td>{{item.tipoProduto}}</td>
                                 </tr>
 
                             </tbody>
@@ -101,11 +102,11 @@
 
 </div>
 
-<!-- Button trigger modal -->
+<!-- Botão Cadastrar Produto -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
+   Cadastrar Produto
 </button>
-<!-- Modal -->
+<!-- Modal Cadastrar Produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -155,7 +156,7 @@
                         <option value="RESUMO">resumo</option>
                     </select>
                 </div>
-
+                
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
                 <button type="button" class="btn btn-primary" data-bs-dismiss='modal'>Cancelar</button>

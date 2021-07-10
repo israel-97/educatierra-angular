@@ -12,36 +12,41 @@ import { environment } from 'src/environments/environment.prod';
 export class ProdutoDeleteComponent implements OnInit {
   produto: Produto = new Produto()
   idProduto: number
-  idUsuario: number
+  idUsuario = environment.id
 
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+   
   ) { }
 
   ngOnInit() {
-
+    window.scroll(0,0)
     if(environment.token == ''){
       this.router.navigate(['/home']) 
     }
 
-    this.idProduto = this.route.snapshot.params['idProduto']
-    this.produtoPeloId(this.idProduto)
+    this.idProduto = this.route.snapshot.params['id']
+    this.findByIdProduto(this.idProduto)
+          
   }
+    
+    findByIdProduto(idProduto: number){
+      this.produtoService.produtoPeloId(idProduto).subscribe((resposta: Produto) => {
+        this.produto = resposta
+      })
+    }
 
-  produtoPeloId(idProduto: number) {
-    this.produtoService.produtoPeloId(idProduto).subscribe((resposta: Produto) => {
-      this.produto = resposta
-    })
-  }
+    apagarProduto() {
+    this.produtoService.apagarProduto(this.idProduto, this.idUsuario).subscribe(() =>{
+alert('Produto deletado com sucesso!')
+this.router.navigate(['/meusprodutos'])
 
-  apagarProduto(){
-    this.produtoService.apagarProduto(this.idProduto, this.idUsuario).subscribe(() => {
-      alert('Postagem apagada com sucesso!')
-      this.router.navigate(['/home']) 
     })
-  }
+        
+      }
+    
 
 }
