@@ -1,79 +1,68 @@
-/* 
-.gradient1 {
-   
-    background-image: linear-gradient(  #aabdbf, #899a9c, #586566  ) ;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
+
+*{
+    font-family: 'Poppins', sans-serif;
 }
 
-.gradient2 {
-   
-    background-image: linear-gradient(  #f0fc03, #fcdb03, #ccb208 ) ;
+.testimonial-section{
+    background-color: #ffffff;
+
 }
 
-.gradient3 {
-   
-    background-image: linear-gradient(  #00ffea, #0abfb0, #099186 ) ;
-} */
-/* 
-#wati-color{
-    display: block;
-    text-align: center;
-    background-image: linear-gradient(#a6ff00,rgb(12, 85, 16));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-/* 
-#carouselExampleControls{
-    height: 55vh;
+.testi-img .img-box-inner{
+    position: relative;
+    border-radius: 0 0 180px 180px;
+    overflow:hidden;
 }
 
-.carousel-inner{
-    background-color: darkgoldenrod;
+.testimonial-section .carousel-inner{
+    margin-bottom: 20px;
 }
-
-.carousel-indicators{
-   bottom:0;
+.testimonial-section .carousel-control-prev{
+    margin-right: 10px;
 }
-.carousel-indicators button{
-    border-radius: 100%;
-    height:20px;
-    width: 20px;
-    background-color: black;
-}
-
-.carousel-control-prev-icon , .carousel-control-next-icon {
-    height: 30px;
-    width: 30px;
+.testimonial-section .carousel-control-next, 
+.testimonial-section .carousel-control-prev{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: #003b71;   
+    display: inline-flex;
     border-radius: 50%;
-    background-color: darkblue ;
-   
 }
-
-
-.next-icon{
+.testimonial-section .carousel-control-prev img,
+.testimonial-section .carousel-control-next img{
+    width: 15px;
+}
+.testi-item p{
     font-size: 10px;
-} */
-/* 
-.numeros{
-    font-weight: 700;
-    
-    color: #0F5C8C;
-    font-size: 200px;
-
-    margin-left: 30px;
 }
- */
-
-
- .carousel-control-prev-icon , .carousel-control-next-icon {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: darkblue ;
-   
+.testi-item h3{
+    text-transform: uppercase;
+    font-size: 30px;
 }
-
-.carousel-control-next,
-.carousel-control-prev{
-    width: 30px;
+.numero{
+    font-size: 40px;
+    z-index: -4;
+}
+/* Responsive */
+@media(max-width:991px){
+    .testi-img .img-box{
+        max-width: 300px;
+    }
+    .testi-img .circle{
+        height: 300px;
+        width: 300px;
+    }
+    .testi-img .img-box-inner{
+        border-radius: 0 0 150px 150px;
+    }
+    .testi-img .img-box-inner img{
+        max-width: 230px;
+    }
+}
+@media(max-width:767px){
+    .testi-img{
+        margin-bottom: 25px;
+    }
 }
