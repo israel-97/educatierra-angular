@@ -1,9 +1,27 @@
-#img-bg{
-    background-image: url('https://media.discordapp.net/attachments/844199007819661403/859126877699309609/support-team_1.png?width=541&height=468');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
 
-    min-height: 70px;
+#img-bg{
+    background-image: url('https://i.imgur.com/J1WCTZU.png');
+
+    width: 400px;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
 } 
+
+.textP{
+    margin: 0;
+    text-align: justify;
+}
+
+
+.me-6{
+    margin-right: 100px
+}
+
+.text-font-pop{ /* distanciamento componente anterior */
+	font-family: "Poppins", sans-serif;
+	
+}
