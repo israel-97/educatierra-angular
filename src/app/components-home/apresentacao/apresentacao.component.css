@@ -41,3 +41,49 @@ button:hover{
 .btn:focus{
     box-shadow: none;
 }
+
+.nav-link{
+    color: white;
+
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    
+}
+
+.nav-item{
+    margin-left: 15px;
+}
+
+
+.form-group button{
+    border-radius: 25px;
+    padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
+
+    background-color: #0F5C8C;
+
+    color: white;
+    font-weight: 500;
+}
+
+.form-group button:hover{
+    border:2px solid #0F5C8C;
+    background-color: transparent;
+
+    color: #0F5C8C;
+}
+
+.form-group button:focus,
+.form-group input:focus, 
+.form-group select{
+    box-shadow: none;
+}
+
+select {
+    box-shadow: none;
+    outline: none;
+}
+
+option{
+    width: 30px;
+}

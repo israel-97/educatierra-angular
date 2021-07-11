@@ -131,7 +131,4 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/home'])
     environment.token = ''
   }
-
-
-
 }

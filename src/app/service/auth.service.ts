@@ -10,6 +10,7 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
+  
   constructor(
     private http: HttpClient
   ) { }
@@ -23,10 +24,7 @@ export class AuthService {
     return this.http.post<User>('http://localhost:8083/usuarios/cadastro', usuario)
   }
 
-
-    
-  
-
+     
   logado(){
     let logado: boolean = false
     if(environment.token != ''){

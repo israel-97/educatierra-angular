@@ -1,5 +1,47 @@
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"); */
 
-  .square{
-      width: 200px;
-      height: 200px;
-  }
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css");
+ 
+ .icon-produt1 { /* esfera 1 icone degrade */
+  position:absolute; 
+  bottom: 24px;
+  left: 30%;
+  transform: translate(-50%,50%);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #003b71;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.icon1 { /* esfera 1 icone fundo */
+background: none;
+background-color: #fff;
+color: #003b71;
+}
+
+.icon-produt2 { /* esfera 1 icone degrade */
+  position:absolute; 
+  bottom:24px;
+  left: 70%;
+  transform: translate(-50%,50%);
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #003b71;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.icon2 { /* esfera 1 icone fundo */
+background: none;
+background-color: #fff;
+color: #003b71;
+}

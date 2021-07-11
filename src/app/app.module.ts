@@ -23,6 +23,7 @@ import { CardsProdutoComponent } from './components-produto/cards-produto/cards-
 import { ListaCategoriaComponent } from './components-produto/lista-categoria/lista-categoria.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
+import { SearchProdutoComponent } from './components-produto/search-produto/search-produto.component';
 
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
@@ -30,6 +31,7 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
 
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
 import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
+import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
 
 
 @NgModule({
@@ -49,12 +51,16 @@ import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.c
     EditPerfilComponent,
     CardsProdutoComponent,
     ListaCategoriaComponent,
-    ProdutosFavoritosComponent,
+    MenuProdutosComponent,
+    ProdutosFavoritosComponent,  
+    SearchProdutoComponent,
     ProdutoEditarComponent,
     ProdutoDeleteComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
-    CategoriaEditComponent,  
+    CategoriaEditComponent,
+    ModalAlterarPostagemComponent,  
+
   ],
   imports: [
     BrowserModule,

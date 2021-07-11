@@ -1,36 +1,72 @@
-.leaderboard {
-  background: #ededed;
-  font-family: "Source Sans Pro", sans-serif;
-  border-radius: 3px;
-  width: 100%;
-  max-width: 600px;
-  min-height: 100px;
-  padding: 5px;
-  margin: 20px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  margin-left: auto;
-  margin-right: auto;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
+
+*{
+  font-family: "Poppins", sans-serif;
 }
 
-.leaderboard img {
-  width: 65px;
-  height: 65px;
-  float: right;
+.leaderboard { /*tamanho do ranking*/
+  max-width: 650px; /*cumprimento*/
+  width: 100%; /*cumprimento*/
+  border-radius: 12px; /*bordinha arredondada do corpo*/
+}
+.leaderboard header {
+background-color: #0f5c8c; /*cor do fundo*/
+  height: 130px; /*altura*/
 
+  color: #fff; /*cor da letra*/
+  position: relative; /*posição do topo*/
+  border-radius: 12px 12px 0 0; /*bordinha arredondada*/
+  overflow: hidden; /*hover*/
+}
+
+.leaderboard header .leaderboard__title { /*título*/
+  text-align: center;
+  margin-top: 40px;
+}
+
+.leaderboard__profiles { /*caixinhas*/
+  background-color: #0f5c8c;
+  border-radius: 0 0 12px 12px;
+  padding: 15px 15px 20px; /*margem do bloco*/
+  display: grid; /*separando os blocos*/
+  row-gap: 8px; /*tamanho da separação*/
+}
+.leaderboard__profile { /*caixinhas*/
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+  padding: 10px 30px 10px 10px;  
+  border-radius: 10px;
+  box-shadow: 0 5px 7px -1px rgba(51, 51, 51, 0.23);  
+  transition: transform 0.25s;
+  background-color: #fff;
+}
+.leaderboard__profile:hover { /*hover dos usuários */
+  transform: scale(1.2);
+  }
+
+.leaderboard__picture { /*tamanho da imagem dos usuários*/
+  max-width: 100%;
+  width: 60px;
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  
+}
+.leaderboard__name { /*nome dos usuários*/
+  color: #0f5c8c;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.64px;
+  margin-left: 12px;
+}
+.leaderboard__value { /*pontuação*/
+  color: #0f5c8c;
+  font-weight: 700;
+  font-size: 25px;
+  text-align: right;
 }
 
-.leaderboardname {
-  font-family: "Zilla Slab", serif;
-  font-size: 20px;
-  text-decoration: bold;
-}
-
-.sendscore {
-  text-decoration: none;
-  color: #27ae60;
-  font-size: 20px;
-  font-family: "Source Sans Pro", sans-serif;
+.leaderboard { /*sombra do ranking*/
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
 }
