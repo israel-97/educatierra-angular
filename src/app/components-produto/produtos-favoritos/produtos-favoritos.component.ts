@@ -23,7 +23,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   idCategoria: number
   user: User = new User()
   idUser = environment.id
-  idProduto = environment.id
+  idProduto: number
 
   constructor(
     private router: Router,
@@ -47,7 +47,8 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.findByIdUser()
     this.favoritarProduto()
     this.findByIdCategoria()
-    this.findByIdProduto(id)
+    this.findByIdProduto(this.idProduto)
+    this.atualizar()
   }
   findByIdProduto(idProduto: number) {
     this.produtoService.produtoPeloId(idProduto).subscribe((resposta: Produto) => {
@@ -97,14 +98,22 @@ export class ProdutosFavoritosComponent implements OnInit {
   }
 
   atualizar() {
-    this.produtoService.alterarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resp: Produto) => {
+    this.produtoService.alterarProduto(this.idProduto, this.idCategoria, this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert('Produto atualizado com sucesso!')
       this.router.navigate(['/home'])
 
     })
   }
+  
+  apagarProduto() {
+    this.produtoService.apagarProduto(this.idProduto, this.idUser).subscribe(() =>{
+alert('Produto deletado com sucesso!')
+this.router.navigate(['/meusprodutos'])
 
+    })
+        
+      }
 
 }
 

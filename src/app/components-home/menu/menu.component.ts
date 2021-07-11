@@ -22,7 +22,8 @@ export class MenuComponent implements OnInit {
   linkFotoValido: boolean = false
   tipoUsuarioValido: boolean = false
   confirmaSenhaValido: boolean = false
-  
+  nomeCompleto = environment.nomeCompleto
+  foto = environment.foto
 
   constructor(
     private auth: AuthService,
@@ -32,6 +33,10 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(){
     window.scroll(0,0)
+    if (environment.token == '') {
+      this.router.navigate(['/home'])
+    }
+    
   }
 
   confirmSenha(event: any) {
@@ -52,7 +57,10 @@ export class MenuComponent implements OnInit {
       environment.pontuacao = this.usuarioLogin.pontuacao
       environment.foto = this.usuarioLogin.foto
       console.log(this.usuarioLogin) 
+      console.log(environment.foto)
       
+
+
       if(environment.adminUsuario == true){
        this.router.navigate(['/categorias'])
       }
