@@ -5,5 +5,8 @@ export const environment = {
   id: 0,
   email: '',
   usuario: '',
-  adminUsuario: false
+  adminUsuario: false,
+  tipoUsuario: '',
+  pontuacao: 0,
+  foto: ''
 };

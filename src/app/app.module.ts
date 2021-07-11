@@ -21,7 +21,6 @@ import { RankingComponent } from './components-home/ranking/ranking.component';
 import { EditPerfilComponent } from './components-produto/edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './components-produto/cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './components-produto/lista-categoria/lista-categoria.component';
-import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 
@@ -31,8 +30,6 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
 
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
 import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
-
-
 
 
 @NgModule({
@@ -52,17 +49,12 @@ import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.c
     EditPerfilComponent,
     CardsProdutoComponent,
     ListaCategoriaComponent,
-    MenuProdutosComponent,
     ProdutosFavoritosComponent,
     ProdutoEditarComponent,
     ProdutoDeleteComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
     CategoriaEditComponent,  
-
-    
-
-
   ],
   imports: [
     BrowserModule,
