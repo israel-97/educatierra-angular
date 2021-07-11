@@ -20,8 +20,8 @@ const routes: Routes = [
     {path:'categoria-edit/:id',component:CategoriaEditComponent},
     {path:'categoria-delete/:id',component:CategariaDeleteComponent},
     {path:'produto-editar/:id', component: ProdutoEditarComponent},
-    {path:'produto-delete/:id', component: ProdutoDeleteComponent}
-    {path: 'modal-alterar-postagem', component: ModalAlterarPostagemComponent},
+    {path:'produto-delete/:id', component: ProdutoDeleteComponent},
+    {path:'modal-alterar-postagem', component: ModalAlterarPostagemComponent},
 ];
 
 @NgModule({
