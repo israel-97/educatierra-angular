@@ -11,7 +11,7 @@
 
 
 
-<div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
+ <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
     <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title text-center">{{item.nome}}</h5>
@@ -19,6 +19,7 @@
         <p class="card-text">{{item.linkAcesso}}</p>
 
         <p class="card-text">by: {{item.usuario.usuario}}</p>
+        <p></p>
         <button (click)='favoritarProduto()'>Favoritar</button>
     </div>
     <div class="card-footer">
@@ -26,7 +27,7 @@
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
 
     </div>
-</div>
+</div> 
 
 <div class="container-fluid">
 
@@ -74,7 +75,7 @@
                                     <th scope="row">
                                         <button class="me-3 btn btn-primary form-group button" data-bs-toggle="modal"
                                             data-bs-target="#alterarModal" href="">Atualizar</button>
-                                        <button class="btn btn-danger" [routerLink]="['/produto-delete', produto.id]"
+                                        <button class="btn btn-danger" click="apagarProduto()"
                                             href="">Deletar</button>
                                     </th>
                                 </tr>
@@ -99,7 +100,7 @@
 
                             <tbody>
                                 <tr *ngFor='let item of user.meusFavoritos'>
-                                    <th scope="row"><a [routerLink]="['/produto-editar', produto.id]" class="me-3"
+                                    <th scope="row"><a routerLink="/meusprodutos" class="me-3"
                                             href="">Atualizar</a>
                                         <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
                                     </th>
@@ -259,7 +260,7 @@
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
                 <button type="button" class="btn btn-danger" routerLink='/meusprodutos'>Cancelar</button>
-                <button type="button" class="btn btn-primary" (click)='atualizar()'>Atualizar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='atualizar()'>Atualizar</button>
 
             </div>
         </div>

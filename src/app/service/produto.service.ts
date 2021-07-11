@@ -29,8 +29,8 @@ cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Obse
   return this.http.post<Produto>(`http://localhost:8083/usuarios/cadastro-produto/${idUsuario}/${idCategoria}`, produto, this.token)
 }
 
-alterarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto>{
-  return this.http.put<Produto>(`http://localhost:8083/usuarios/altera-produto/${idUsuario}/${idCategoria}`, produto, this.token)
+alterarProduto(idProduto: number, idCategoria: number, produto: Produto): Observable<Produto>{
+  return this.http.put<Produto>(`http://localhost:8083/usuarios/altera-produto/${idProduto}/${idCategoria}`, produto, this.token)
 }
 
 produtoPeloId(idProduto: number): Observable<Produto>{
