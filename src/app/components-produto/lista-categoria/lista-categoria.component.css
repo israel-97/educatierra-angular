@@ -1,8 +1,19 @@
-/* .menu {
-    background: #686868 repeat left top;
-    left: -350px;
-    height: 100%;
-    top: 0;
-    position: fixed;
-    width: 350px;
-} */
+.accordion-item {
+    border-style: none;
+
+}
+
+.accordion-button {
+    box-shadow: none;
+    list-style-type: none;
+    background-color: white;
+    padding: 16px 20px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.accordion-button:after {
+}
+
+code {
+color: #2f2f30;
+}
