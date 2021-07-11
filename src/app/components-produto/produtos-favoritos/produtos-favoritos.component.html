@@ -1,4 +1,17 @@
-<div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
+<app-menu></app-menu>
+
+<div class="container-fluid">
+    <div class="row bg-light align-content-center text-center">
+        <div class="col">
+            <h1 class="mb-3">Meus Produtos</h1>
+            <h6><a style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Meus Produtos</h6>
+        </div>
+    </div>
+</div>
+
+
+
+ <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
     <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title text-center">{{item.nome}}</h5>
@@ -6,23 +19,20 @@
         <p class="card-text">{{item.linkAcesso}}</p>
 
         <p class="card-text">by: {{item.usuario.usuario}}</p>
-
+        <p></p>
+        <button (click)='favoritarProduto()'>Favoritar</button>
     </div>
     <div class="card-footer">
         <span
             class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
-        <div>
-           <a [routerLink]="['/produto-editar', produto.id]" class="me-3" href="">Atualizar</a>
-           <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
-        </div>
+
     </div>
-</div>
+</div> 
 
-
-<div class="container">
+<div class="container-fluid">
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-5">
             <div class="d-flex align-items-start">
                 <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
@@ -31,40 +41,48 @@
                     <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
                         data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                         aria-selected="false">Meus Favoritos</button>
-                 </div>
+                </div>
 
                 <div class="tab-content" id="v-pills-tabContent">
 
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-
-                    
                         aria-labelledby="v-pills-home-tab">
-                      
-                        <table class="table table-bordered">
+
+
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Produto</th>
+                                    <th scope="col">Imagem</th>
+                                    <th scope="col">Nome</th>
                                     <th scope="col" class="d-flex justify-content-center">
-                                        Nome</th>
-                                    <th scope="col">Descrição</th>
+                                        Descrição</th>
                                     <th scope="col">Tipo</th>
+                                    <th scope="col">Link</th>
+                                    <th></th>
                                 </tr>
                             </thead>
 
                             <tbody>
                                 <tr *ngFor='let item of user.meusProdutos'>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark">x</button></th>
                                     <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
                                             width="50px" height="50px" alt=""></td>
                                     <td>{{item.nome}}</td>
                                     <td>{{item.descricao}}</td>
                                     <td>{{item.tipoProduto}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="{{item.linkAcesso}}" target="_blank">Link</a>
+                                    </td>
+                                    <th scope="row">
+                                        <button class="me-3 btn btn-primary form-group button" data-bs-toggle="modal"
+                                            data-bs-target="#alterarModal" href="">Atualizar</button>
+                                        <button class="btn btn-danger" click="apagarProduto()"
+                                            href="">Deletar</button>
+                                    </th>
                                 </tr>
 
                             </tbody>
                         </table>
-                      
+
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
@@ -81,12 +99,16 @@
                             </thead>
 
                             <tbody>
-                                <tr>
-                                    <th scope="row"><button type="button" class="btn btn-outline-dark ">x</button></th>
-                                    <td><img src="https://i.imgur.com/MTPnYUh.jpg" width="50px" height="50px" alt="">
-                                    </td>
-                                    <td>Livro - A menina que roubava livros</td>
-                                    <td>R$ 49,99</td>
+                                <tr *ngFor='let item of user.meusFavoritos'>
+                                    <th scope="row"><a routerLink="/meusprodutos" class="me-3"
+                                            href="">Atualizar</a>
+                                        <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
+                                    </th>
+                                    <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
+                                            width="50px" height="50px" alt=""></td>
+                                    <td>{{item.nome}}</td>
+                                    <td>{{item.descricao}}</td>
+                                    <td>{{item.tipoProduto}}</td>
                                 </tr>
 
                             </tbody>
@@ -101,16 +123,19 @@
 
 </div>
 
-<!-- Button trigger modal -->
+<!-- Botão Cadastrar Produto -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
+    Cadastrar Produto
 </button>
-<!-- Modal -->
+<!-- Modal Cadastrar Produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
+                <div class="mx-auto" >
+                    <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
+                  </div>
+                
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -148,12 +173,23 @@
                 </div>
 
                 <div class="form-group">
-                    <select class="form-control" aria-label="tipoProduto">
-                        <option selected>selecione o tipo de produto</option>
+                    <label for="">Selecione o tipo de produto</label>
+                    <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
                         <option value="VÍDEO">vídeo</option>
                         <option value="EBOOK">e-book</option>
                         <option value="RESUMO">resumo</option>
                     </select>
+                </div>
+
+
+                <!-- Button trigger modal dos Termos de Uso e Políticas  -->
+                <div class="mx-auto d-flex justify-content-center" style="width: 200px;">
+                    <div class="form-group mt-4">
+                        
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#termosModal">
+                        Termos de uso e Privacidade
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -164,3 +200,122 @@
         </div>
     </div>
 </div>
+
+
+
+<!-- Modal Alterar Produto -->
+<div class="modal fade" id="alterarModal" tabindex="-1" aria-labelledby="alterarModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="alterarModal">Atualizar Produto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <label for="texto">Escolha uma categoria</label>
+                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
+                        (change)='findByIdCategoria()'>
+                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}</option>
+                    </select>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="nome"></label>
+                    <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+                        placeholder="Nome do produto">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="descricao"></label>
+                    <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
+                        placeholder="Insira aqui a descrição do produto"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="linkAcesso"></label>
+                    <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
+                        placeholder="Compartilhe aqui o link do produto">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="linkImagem"></label>
+                    <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
+                        placeholder="Insira aqui o link da imagem do produto">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Selecione o tipo de produto</label>
+                    <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
+                        <option value="VÍDEO">vídeo</option>
+                        <option value="EBOOK">e-book</option>
+                        <option value="RESUMO">resumo</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center form-group button">
+                <button type="button" class="btn btn-danger" routerLink='/meusprodutos'>Cancelar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='atualizar()'>Atualizar</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scrollable modal Termos de Uso e Políticas -->
+<div class="modal-dialog modal-dialog-scrollable">
+
+  
+    <!-- Modal dos Termos de Uso e Políticas -->
+    <div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          
+          <div class="modal-header">
+              <div class="mx-auto" >
+                  <h5 class="modal-title" id="exampleModalLabel">Termos de Uso e Políticas</h5>
+                </div>
+            
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+               <p>Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site.</p> 
+               <p>1. DIREITOS DE PROPRIEDADE INTELECTUAL </p>
+               <p>     O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal.
+               A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. </p>
+               <p>O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
+                  Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.</p>
+              
+              <p>2. LINKS PARA OUTROS WEBSITES </p>
+              A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
+               <p>O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</p>
+              
+              
+          </div>
+  
+          <div class="mx-auto">
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Aceito os Termos e Condições</label>
+                </div>
+            </div>
+  
+          
+  
+          <div class="modal-footer">
+              
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Não Aceito</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Aceito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- /////// Modal dos Termos de Uso e Políticas -->
+

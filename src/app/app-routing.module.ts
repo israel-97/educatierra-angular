@@ -10,6 +10,7 @@ import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
 import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
+import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
     {path:'categoria-delete/:id',component:CategariaDeleteComponent},
     {path:'produto-editar/:id', component: ProdutoEditarComponent},
     {path:'produto-delete/:id', component: ProdutoDeleteComponent},
-    {path:'modal-alterar-postagem', component: ModalAlterarPostagemComponent},
+    {path: 'meusprodutos', component: ProdutosFavoritosComponent}
 ];
 
 @NgModule({

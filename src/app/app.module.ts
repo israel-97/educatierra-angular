@@ -21,7 +21,6 @@ import { RankingComponent } from './components-home/ranking/ranking.component';
 import { EditPerfilComponent } from './components-produto/edit-perfil/edit-perfil.component';
 import { CardsProdutoComponent } from './components-produto/cards-produto/cards-produto.component';
 import { ListaCategoriaComponent } from './components-produto/lista-categoria/lista-categoria.component';
-import { MenuProdutosComponent } from './components-produto/menu-produtos/menu-produtos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 import { SearchProdutoComponent } from './components-produto/search-produto/search-produto.component';
@@ -33,8 +32,6 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
 import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
 import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
-
-
 
 
 @NgModule({
@@ -53,8 +50,7 @@ import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-al
     RankingComponent,
     EditPerfilComponent,
     CardsProdutoComponent,
-    ListaCategoriaComponent,
-    MenuProdutosComponent,
+    ListaCategoriaComponent,   
     ProdutosFavoritosComponent,  
     SearchProdutoComponent,
     ProdutoEditarComponent,
@@ -63,6 +59,7 @@ import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-al
     CategariaDeleteComponent,
     CategoriaEditComponent,
     ModalAlterarPostagemComponent,  
+
   ],
   imports: [
     BrowserModule,

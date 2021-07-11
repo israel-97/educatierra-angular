@@ -29,8 +29,9 @@ cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Obse
   return this.http.post<Produto>(`http://localhost:8083/usuarios/cadastro-produto/${idUsuario}/${idCategoria}`, produto, this.token)
 }
 
-alterarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto>{
-  return this.http.put<Produto>(`http://localhost:8083/usuarios/altera-produto/${idUsuario}/${idCategoria}`, produto, this.token)
+
+alterarProduto(idProduto: number, idCategoria: number, produto: Produto): Observable<Produto>{
+  return this.http.put<Produto>(`http://localhost:8083/usuarios/altera-produto/${idProduto}/${idCategoria}`, produto, this.token)
 }
 
 produtoPeloId(idProduto: number): Observable<Produto>{
@@ -39,11 +40,16 @@ produtoPeloId(idProduto: number): Observable<Produto>{
 
 
 apagarProduto(idProduto: number, idUsuario: number){
-  return this.http.delete(`http://localhost:8083/usuarios/exclusao-produto/${idUsuario}/${idProduto}`,this.token)
+  return this.http.delete(`http://localhost:8083/usuarios/exclusao-produto/${idUsuario}/${idProduto}`, this.token)
 }
 
 getByIdUser(id:number): Observable<User>{
   return this.http.get<User>(`http://localhost:8083/usuarios/${id}`, this.token)
+  }
+
+favoritarProduto(idUsuario: number, idProduto: number): Observable<User>{
+    return this.http.put<User>(`http://localhost:8083/usuarios/favoritos/usuario/${idUsuario}/produto/${idProduto}`, this.token)
+   
   }
 
 }

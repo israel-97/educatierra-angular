@@ -5,7 +5,7 @@
 }
 h1{
     font-weight: 700;
-    line-height: 2.5rem;
+    line-height: 3rem;
 
 }
 .fs-40{
@@ -24,7 +24,7 @@ h1{
     border-radius: 25px;
     padding:10px 20px 8px 20px;/* topo | direita | inferior | esquerda */
 
-    background-color: #0F5C8C;
+    background-color: #003b71;
 
     color: white;
     font-weight: 500;
@@ -32,10 +32,10 @@ h1{
 }
 
 button:hover{
-    border:2px solid #0F5C8C;
+    border:2px solid #003b71;
     background-color: transparent;
 
-    color: #0F5C8C;
+    color: #003b71;
 }
 
 .btn:focus{

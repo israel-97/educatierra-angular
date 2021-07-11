@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap%27');
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css");
+
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -57,6 +61,12 @@
     left: 0;  
 }
 
+.badge{
+    background-color: #003b71;
+    height: 24px;
+    width: 24px;
+}
+
 /*estilização do modal de cadastro e login*/
 .modal-content{
     border-radius: 15px;
@@ -70,7 +80,7 @@
 }
 
 #fecharModal {
-    color: #0F5C8C;
+    color: #003b71;
     font-size: 35px;
     font-weight: 900;
 
@@ -92,7 +102,7 @@
     text-align: center;
 
     letter-spacing: .1em;
-    color:#0F5C8C;
+    color:#003b71;
     font-size: 18px;
     font-weight: 600;
 
@@ -100,7 +110,7 @@
 }
 
 .nav-link.active{
-    border-bottom: 2px solid #0F5C8C;
+    border-bottom: 2px solid #003b71;
     transition: left 0.3s ease 0s; 
 
 }
@@ -120,17 +130,17 @@
     border-radius: 25px;
     padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
 
-    background-color: #0F5C8C;
+    background-color: #003b71;
 
     color: white;
     font-weight: 500;
 }
 
 .form-group button:hover{
-    border:2px solid #0F5C8C;
+    border:2px solid #003b71;
     background-color: transparent;
 
-    color: #0F5C8C;
+    color: #003b71;
 }
 
 .form-group button:focus,
@@ -146,4 +156,36 @@ select {
 
 option{
     width: 30px;
+}
+
+/* ícones especificios para quando o usuario estiver logado */
+a{
+    text-decoration: none;
+    color: white;
+}
+.dropdown-item{
+    color: black;
+}
+
+.dropdown{
+    border-radius: 100px;
+    height: 22px;
+    width: 22px;
+
+    background-color: #003b71;
+
+    color: white;
+
+    border:0;
+}
+
+strong{
+    color: white;
+}
+#pontuacao{
+    background: #003b71;
+    color: white;
+    font-weight: 400;
+    padding: 5px 10px 5px 10px; /* topo | direita | inferior | esquerda */
+    border-radius: 30px;
 }
