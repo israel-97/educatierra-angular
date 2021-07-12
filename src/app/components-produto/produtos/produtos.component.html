@@ -3,34 +3,31 @@
 <div class="container-fluid">
     <div class="row bg-light align-content-center text-center">
         <div class="col">
-        <h1 class="mb-3">Materiais</h1>
-        <h6><a style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Produtos</h6>
+            <h1 class="mb-3">Materiais</h1>
+            <h6><a style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Produtos</h6>
         </div>
     </div>
-    
+
     <div class="container d-flex justify-content-center mt-6">
 
         <div class="container col-md-3">
-            <div class="row ms-4">
+            <div class="row d-flex align-item-center ms-4">
                 <app-search-produto></app-search-produto>
             </div>
 
             <div class="row mt-4 ms-4">
                 <app-lista-categoria></app-lista-categoria>
-            </div>    
+            </div>
         </div>
 
-        <div class="row col-md-12">            
-            <div class="row">
+        <div class="row">
+            <div class="row d-flex justify-content-start">
 
-                <div class="col">
-                    <div class="card text-center" *ngFor='let item of listaProdutos'>
-                        <img src="{{item.linkImagem}}" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">{{item.nome}}</h4>
-                            <p class="card-text">postado por: {{item.usuario.usuario}}</p>
-                            <!-- <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div> -->
+                <div class="card text-center mt-4 ms-3 me-3" *ngFor='let item of listaProdutos'>
+                    <img src="{{item.linkImagem}}" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body p-2">
+                        <h4 class="card-title">{{item.nome}}</h4>
+                        <p class="card-text">postado por: {{item.usuario.usuario}}</p>
 
                         <div class="card-footer p-4">
                             <a class="icon-produt1" data-bs-toggle="modal" data-bs-target="#visualizarProduto">
@@ -38,38 +35,16 @@
                             </a>
                             <a (click)='favoritarProduto()' class="icon-produt2">
                                 <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-                
-               <!--  <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
-
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
                             </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
                         </div>
                     </div>
                 </div>
-                 -->
 
             </div>
 
         </div>
-            
+
     </div>
 
-</div>
-  
 
-  <app-view-prod></app-view-prod>
+    <app-view-prod></app-view-prod>
