@@ -132,11 +132,23 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+
                 <div class="mx-auto">
                     <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
                 </div>
 
-                <button type="button " class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                
+                    
+                      
+              
+                
+                
+                
+
             </div>
             <div class="modal-body">
 
@@ -192,11 +204,12 @@
                         </button>
                     </div>
                 </div>
+                <!-- ///// Button trigger modal dos Termos de Uso e Políticas  -->
 
             </div>
-            <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-primary" data-bs-dismiss='modal'>Cancelar</button>
-                <button type="button" class="btn btn-primary" (click)='cadastrarProduto()'>Publicar </button>
+            <div class="d-flex justify-content-center form-group button">
+                <button type="button" class="btn btn-primary me-4 mb-3 mt-3" data-bs-dismiss='modal'>Cancelar</button>
+                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'>Publicar </button>
             </div>
         </div>
     </div>
@@ -275,62 +288,53 @@
 
     <!-- Modal dos Termos de Uso e Políticas -->
     <div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
 
-                <div class="modal-header">
-                    <div class="mx-auto">
-                        <h5 class="modal-title" id="exampleModalLabel">Termos de Uso e Políticas</h5>
-                    </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          
+          <div class="modal-header">
+              <div class="mx-auto" >
+                  <h5 class="modal-title mb-3" id="exampleModalLabel">Termos de Uso e Políticas</h5>
                 </div>
-                <div class="modal-body">
-                    <p>Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site.
-                        Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de
-                        Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar
-                        este site.</p>
-                    <p>1. DIREITOS DE PROPRIEDADE INTELECTUAL </p>
-                    <p> O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos,
-                        arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela
-                        Constituição Federal.
-                        A utilização das propriedades sem a devida autorização de seus titulares configurará violação a
-                        direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais
-                        cabíveis e previstas na legislação específica que rege a matéria. </p>
-                    <p>O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de
-                        outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e
-                        resultar na exclusão do usuário da Plataforma.
-                        Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à
-                        Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer
-                        responsabilidade civil ou criminalmente sobre tal conteúdo.</p>
-
-                    <p>2. LINKS PARA OUTROS WEBSITES </p>
-                    A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do
-                    usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do
-                    site sobre outros websites, respectivo conteúdo ou titulares.
-                    <p>O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</p>
+            
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div> 
+          <div class="modal-body">
+            
 
 
-                </div>
-
-                <div class="mx-auto">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault">Aceito os Termos e
-                            Condições</label>
-                    </div>
-                </div>
-
-
-
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Não
-                        Aceito</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                        aria-label="Close">Aceito</button>
+               <p>Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site.</p> 
+               <p>1. DIREITOS DE PROPRIEDADE INTELECTUAL </p>
+               <p>     O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal.
+               A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. </p>
+               <p>O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
+                  Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.</p>
+              
+              <p>2. LINKS PARA OUTROS WEBSITES </p>
+              A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
+               <p>O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</p>
+              
+              
+          </div>
+  
+          <div class="mx-auto">
+              <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">Aceito os Termos e Condições</label>
                 </div>
             </div>
+  
+            
+          <div class="modal-footer d-flex justify-content-center form-group button">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Não Aceito</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Aceito</button>
+            
+          </div> 
+
         </div>
     </div>
 </div>

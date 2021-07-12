@@ -20,10 +20,30 @@
             </div>    
         </div>
 
-        <div class="container col-md-10">            
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+        <div class="container col-md-12">            
+            <!-- <div class="row row-cols-1 row-cols-2 row-cols-4"> -->
 
-                <div class="col d-inline-flex mb-5">
+                <div class="col mb-5">
+                    <div class="card d-inline-flex text-center" *ngFor='let item of listaProdutos'>
+                        <img src="{{item.linkImagem}}" class="card-img-top" alt="...">
+                        <div class="card-body p-2">
+                            <h4 class="card-title">{{item.nome}}</h4>
+                            <p class="card-text">postado por: {{item.usuario.usuario}}</p>
+                            <!-- <p class="card-text mt-3">#PDF #Video #Ebook</p>
+                        </div> -->
+
+                        <div class="card-footer p-4">
+                            <a class="icon-produt1" data-bs-toggle="modal" data-bs-target="#visualizarProduto">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a (click)='favoritarProduto()' class="icon-produt2">
+                                <i class="fa fa-heart"></i>
+                            </a>                           
+                        </div>
+                    </div>
+                </div>
+                
+               <!--  <div class="col d-inline-flex mb-5">
                     <div class="card d-inline-flex text-center">
                         <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
                         <div class="card-body p-2">
@@ -41,119 +61,15 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
+                 -->
 
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
-
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
-
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
-
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col d-inline-flex mb-5">
-                    <div class="card d-inline-flex text-center">
-                        <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                        <div class="card-body p-2">
-                            <h4 class="card-title">Card title</h4>
-                            <p class="card-text mt-3">#PDF #Video #Ebook</p>
-                        </div>
-
-                        <div class="card-footer p-4">
-                            <a class="icon-produt1" href="">
-                                <i class="fa fa-expand"></i>
-                            </a>
-                            <a class="icon-produt2" href="">
-                                <i class="fa fa-heart"></i>
-                            </a>                           
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                
-                
-
-                
-
-
-
-
-            </div>
+            <!-- </div> -->
 
         </div>
             
     </div>
 
 </div>
-   
+  
 
-
+  <app-view-prod></app-view-prod>

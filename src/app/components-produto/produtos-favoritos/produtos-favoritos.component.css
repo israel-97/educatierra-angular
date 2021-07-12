@@ -132,3 +132,18 @@ border-color: white;
 color: white;
 }
 
+
+
+
+
+
+
+
+
+#fecharModal:hover,
+#fecharModal:focus{
+  color:#aaaaaa;
+  text-decoration: none;
+}
+
+
