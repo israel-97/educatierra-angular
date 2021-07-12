@@ -35,6 +35,8 @@ a,h1,h6 {
     color: #0F5C8C;
     font-size: 35px;
     font-weight: 900;
+    background-color: transparent;
+    border: none;
 
     text-decoration: none;
     box-shadow: none;
@@ -128,22 +130,11 @@ option{
 }
 
 #botao_deletar:hover{
-border-color: white;
-color: white;
+border-color: red;
+color: red;
+background-color: transparent;
 }
 
 
-
-
-
-
-
-
-
-#fecharModal:hover,
-#fecharModal:focus{
-  color:#aaaaaa;
-  text-decoration: none;
-}
 
 
