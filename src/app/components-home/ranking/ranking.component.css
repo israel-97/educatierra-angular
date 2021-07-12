@@ -70,3 +70,7 @@ background-color: #0f5c8c; /*cor do fundo*/
 .leaderboard { /*sombra do ranking*/
   box-shadow: 0 0 40px -10px rgba(0, 0, 0, .4);
 }
+
+.mt-6{
+  margin-top: 150px;
+}

@@ -69,3 +69,9 @@ color: #ff9d00;
 color: #ff9d00;
 }
 
+img {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
