@@ -1,7 +1,7 @@
 
 
 
-<div class="container-fluid">
+<div class="container-fluid mt-5">
     <div class="row bg-light align-content-center text-center">
         <div class="col">
             <h1 class="mb-3">Meus Produtos</h1>
@@ -61,9 +61,9 @@
                         <td>{{item.descricao}}</td>
                         <td>{{item.tipoProduto}}</td>
                         <td>
-                            <a class="btn " href="{{item.linkAcesso}}" target="_blank">Link</a>
+                            <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
                         </td>
-                        <th scope="row" class="colar">
+                        <th scope="row">
                             <button class="me-3 btn" data-bs-toggle="modal" data-bs-target="#alterarModal"
                                 href="">Atualizar</button>
                             <button class="btn" id="botao_deletar" click="apagarProduto()" href="">Deletar</button>
@@ -127,11 +127,9 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                <div class="mx-auto">
-                    <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
-                </div>
+                
 
-                  <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
+                  <button class="ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
 
@@ -202,7 +200,7 @@
 
             </div>
             <div class="d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-primary me-4 mb-3 mt-3" data-bs-dismiss='modal'>Cancelar</button>
+                <button type="button" id="botao_deletar" class="btn me-4 mb-3 mt-3" data-bs-dismiss='modal'>Cancelar</button>
                 <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'>Publicar </button>
             </div>
         </div>
@@ -216,8 +214,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title " id="alterarModal">Atualizar Produto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               
+                <button class="btn ms-auto me-3" type="button" id="fecharModal" data-bs-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
 
@@ -267,8 +267,8 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-danger" routerLink='/meusprodutos'>Cancelar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                <button type="button" class="btn"  id="botao_deletar" routerLink='/meusprodutos'>Cancelar</button>
+                <button type="button"  class="btn btn-primary" data-bs-dismiss="modal"
                     (click)='atualizar()'>Atualizar</button>
 
             </div>
