@@ -1,4 +1,5 @@
-<app-menu></app-menu>
+
+
 
 <div class="container-fluid">
     <div class="row bg-light align-content-center text-center">
@@ -11,136 +12,143 @@
 
 
 
- <div class="card h-100" *ngFor='let item of listaProdutos' style="max-width: 18rem;">
-    <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title text-center">{{item.nome}}</h5>
-        <p class="card-text">{{item.descricao}}</p>
-        <p class="card-text">{{item.linkAcesso}}</p>
 
-        <p class="card-text">by: {{item.usuario.usuario}}</p>
-        <p></p>
-        <button (click)='favoritarProduto()'>Favoritar</button>
-    </div>
-    <div class="card-footer">
-        <span
-            class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 cursor-pointer">#new</span>
+<div class="container mt-5">
 
-    </div>
-</div> 
-
-<div class="container-fluid">
-
-    <div class="row">
-        <div class="col-md-12 mt-5">
-            <div class="d-flex align-items-start">
-                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                        aria-selected="true">Meus Produtos</button>
-                    <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
-                        aria-selected="false">Meus Favoritos</button>
-                </div>
-
-                <div class="tab-content" id="v-pills-tabContent">
-
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                        aria-labelledby="v-pills-home-tab">
+     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
 
 
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Imagem</th>
-                                    <th scope="col">Nome</th>
-                                    <th scope="col" class="d-flex justify-content-center">
-                                        Descrição</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Link</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                data-mdb-toggle="tab" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Meus
+                Produtos</button>
+        </li>
 
-                            <tbody>
-                                <tr *ngFor='let item of user.meusProdutos'>
-                                    <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
-                                            width="50px" height="50px" alt=""></td>
-                                    <td>{{item.nome}}</td>
-                                    <td>{{item.descricao}}</td>
-                                    <td>{{item.tipoProduto}}</td>
-                                    <td>
-                                        <a class="btn btn-primary" href="{{item.linkAcesso}}" target="_blank">Link</a>
-                                    </td>
-                                    <th scope="row">
-                                        <button class="me-3 btn btn-primary form-group button" data-bs-toggle="modal"
-                                            data-bs-target="#alterarModal" href="">Atualizar</button>
-                                        <button class="btn btn-danger" click="apagarProduto()"
-                                            href="">Deletar</button>
-                                    </th>
-                                </tr>
 
-                            </tbody>
-                        </table>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Meus Favoritos</button>
+        </li>
 
-                    </div>
 
-                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                        aria-labelledby="v-pills-profile-tab">
+    </ul> 
 
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col">Produto</th>
-                                    <th scope="col" class="d-flex justify-content-center">Nome do produto</th>
-                                    <th scope="col">Preço unitário</th>
-                                </tr>
-                            </thead>
 
-                            <tbody>
-                                <tr *ngFor='let item of user.meusFavoritos'>
-                                    <th scope="row"><a routerLink="/meusprodutos" class="me-3"
-                                            href="">Atualizar</a>
-                                        <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
-                                    </th>
-                                    <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}"
-                                            width="50px" height="50px" alt=""></td>
-                                    <td>{{item.nome}}</td>
-                                    <td>{{item.descricao}}</td>
-                                    <td>{{item.tipoProduto}}</td>
-                                </tr>
+     <div class="tab-content" id="pills-tabContent"> 
 
-                            </tbody>
-                        </table>
 
-                    </div>
 
-                </div>
-            </div>
+
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="d-flex justify-content-center">
+                            Descrição</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Link</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor='let item of user.meusProdutos'>
+                        <td class="d-flex justify-content-center "><img src="{{item.linkImagem}}" width="50px"
+                                height="50px" alt=""></td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.descricao}}</td>
+                        <td>{{item.tipoProduto}}</td>
+                        <td>
+                            <a class="btn " href="{{item.linkAcesso}}" target="_blank">Link</a>
+                        </td>
+                        <th scope="row" class="colar">
+                            <button class="me-3 btn" data-bs-toggle="modal" data-bs-target="#alterarModal"
+                                href="">Atualizar</button>
+                            <button class="btn" id="botao_deletar" click="apagarProduto()" href="">Deletar</button>
+                        </th>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
-    </div>
 
+
+
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col" class="d-flex justify-content-center">
+                            Descrição</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Link</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor='let item of user.meusFavoritos'>
+                        <th scope="row"><a routerLink="/meusprodutos" class="me-3" href="">Atualizar</a>
+                            <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
+                        </th>
+                        <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="50px"
+                                height="50px" alt=""></td>
+                        <td>{{item.nome}}</td>
+                        <td>{{item.descricao}}</td>
+                        <td>{{item.tipoProduto}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+
+
+    </div> 
+
+
+    
 </div>
 
+
+
+
+
+
+
+
 <!-- Botão Cadastrar Produto -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Cadastrar Produto
-</button>
+<div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Cadastrar Produto
+    </button>
+</div>
 <!-- Modal Cadastrar Produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+
+                <div class="mx-auto">
+                    <h5 class="modal-title " id="exampleModalLabel">Cadastrar Produto</h5>
+                </div>
+
+                  <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
                 
                     
                       
-                 <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+              
                 
                 
                 
+
             </div>
             <div class="modal-body">
 
@@ -189,9 +197,10 @@
                 <!-- Button trigger modal dos Termos de Uso e Políticas  -->
                 <div class="mx-auto d-flex justify-content-center" style="width: 200px;">
                     <div class="form-group mt-4">
-                        
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#termosModal">
-                        Termos de uso e Privacidade
+
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#termosModal">
+                            Termos de uso e Privacidade
                         </button>
                     </div>
                 </div>
@@ -265,7 +274,8 @@
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
                 <button type="button" class="btn btn-danger" routerLink='/meusprodutos'>Cancelar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)='atualizar()'>Atualizar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                    (click)='atualizar()'>Atualizar</button>
 
             </div>
         </div>
@@ -275,9 +285,10 @@
 <!-- Scrollable modal Termos de Uso e Políticas -->
 <div class="modal-dialog modal-dialog-scrollable">
 
-  
+
     <!-- Modal dos Termos de Uso e Políticas -->
     <div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -323,9 +334,9 @@
             <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Aceito</button>
             
           </div> 
+
         </div>
-      </div>
     </div>
-  </div>
-  
-  <!-- /////// Modal dos Termos de Uso e Políticas -->
+</div>
+
+<!-- /////// Modal dos Termos de Uso e Políticas -->
