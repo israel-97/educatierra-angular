@@ -163,3 +163,18 @@ option{
 }
 
 
+
+
+
+
+
+
+
+
+#fecharModal:hover,
+#fecharModal:focus{
+  color:#aaaaaa;
+  text-decoration: none;
+}
+
+
