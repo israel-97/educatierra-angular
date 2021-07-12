@@ -12,6 +12,7 @@ p {
     border-bottom: solid 1px #003b71;
     padding-bottom: 5px;
     margin-top: 30px;
+    margin-right: 80px;
 }
   
 
@@ -22,6 +23,10 @@ p {
     background-color:#003b71 ;
 }
 
+.carousel-control-next, .carousel-control-prev {
+    margin: -80px;
+}
+
 .bottom-slide{
     height: 37px;
     width: 40px;
@@ -29,8 +34,8 @@ p {
 }
 
 img {
-    height: 300px;
-    margin-left: 100px;
+    height: 400px;
+    margin-left: 50px;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -41,4 +46,14 @@ img {
     border-radius: 100%;
     color: white;
     font-size: 20px;
+}
+
+.carousel-indicators {
+    margin-bottom: -60px;
+    margin-left: auto;
+
+}
+
+.text-carrosel {
+    margin-left: -80px;
 }
