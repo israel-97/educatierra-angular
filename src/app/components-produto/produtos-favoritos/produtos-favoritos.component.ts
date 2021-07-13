@@ -34,7 +34,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
     if (environment.token == '') {
       this.router.navigate(['/home'])
     }
@@ -85,34 +85,53 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
       alert('Produto cadastrado com sucesso!')
+      this.router.navigate(['/home'])
+      setTimeout(() => {
+        this.router.navigate(['/meusprodutos'])
+      }, 5);
       this.produto = new Produto()
-
       this.todosProdutos()
+      
     })
   }
 
   favoritarProduto() {
-    this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: User) => {
-      this.user = resposta
-    })
+    // this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: Produto) => {
+    //   this.user = resposta
+    // })
+  }
+
+  selectUpdate(produto: Produto) {
+    this.produto = produto
+  }
+
+  cancelUpdate() {
+    this.produto = new Produto()
+    this.router.navigate(['/home'])
+    setTimeout(() => {
+      this.router.navigate(['/meusprodutos'])
+    }, 10);
   }
 
   atualizar() {
-    this.produtoService.alterarProduto(this.idProduto, this.idCategoria, this.produto).subscribe((resp: Produto) => {
+    this.produtoService.alterarProduto(this.produto.id, this.idCategoria, this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       alert('Produto atualizado com sucesso!')
       this.router.navigate(['/home'])
-
+      setTimeout(() => {
+        this.router.navigate(['/meusprodutos'])
+      }, 10);
     })
   }
-  
-  apagarProduto() {
-    this.produtoService.apagarProduto(this.idProduto, this.idUser).subscribe(() =>{
-alert('Produto deletado com sucesso!')
-this.router.navigate(['/meusprodutos'])
 
+  apagarProduto(produto: Produto) {
+    this.produtoService.apagarProduto(this.idUser, produto.id).subscribe(() => {
+      alert('Produto deletado com sucesso!')
+      this.router.navigate(['/home'])
+      setTimeout(() => {
+        this.router.navigate(['/meusprodutos'])
+      }, 10);
     })
-        
-      }
+  }
 
 }

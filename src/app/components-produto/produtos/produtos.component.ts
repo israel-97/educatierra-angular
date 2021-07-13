@@ -28,6 +28,9 @@ export class ProdutosComponent implements OnInit {
   idUser = environment.id
   idProduto: number
 
+  img: string
+  nome: string
+  descricao: string
   constructor(
     //private produtoService:ProdutoService
     private router: Router,
@@ -39,7 +42,7 @@ export class ProdutosComponent implements OnInit {
 
   ngOnInit() {
     //this.loadAllProdutos();
-    window.scroll(0,0)
+    window.scroll(0, 0)
     if (environment.token == '') {
       this.router.navigate(['/home'])
     }
@@ -49,9 +52,9 @@ export class ProdutosComponent implements OnInit {
     this.categoriaService.refreshToken()
     this.todasCategorias()
     this.todosProdutos()
-  
+
   }
-  
+
 
   /*loadAllProdutos(){
     this.produtoService.todosProdutos().subscribe( data => this.produtos = data,
@@ -76,16 +79,26 @@ export class ProdutosComponent implements OnInit {
       this.produto = resposta
       alert('Produto cadastrado com sucesso!')
       this.produto = new Produto()
-
       this.todosProdutos()
+      this.router.navigate(['/home'])
+    setTimeout(() => {
+      this.router.navigate(['/meusprodutos'])
+    }, 10);
     })
   }
 
-  favoritarProduto() {
-    this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: User) => {
-      this.user = resposta
+  favoritarProduto(id: number) {
+    this.produtoService.favoritarProduto(this.idUser, id).subscribe((resposta: User) => {
+     alert('produto favoritado com sucesso!') 
     })
   }
 
+  selecionarProduto(id: number) {
+    this.produtoService.produtoPeloId(id).subscribe((resp: Produto) => {
+      this.img = resp.linkImagem
+      this.nome = resp.nome
+      this.descricao = resp.descricao
+    })
+  }
 
 }
