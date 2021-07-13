@@ -1,10 +1,10 @@
 <app-menu></app-menu>
 
-<div class="container-fluid mt-5">
+<div class="container-fluid">
     <div class="row bg-light align-content-center text-center">
         <div class="col">
             <h1 class="mb-3">Meus Produtos</h1>
-            <h6><a style="text-decoration: none; color: #ff9d00;"routerLink='/home'>Home</a> / Meus Produtos</h6>
+            <h6><a style="text-decoration: none; color: #ff9d00;" routerLink='/home'>Home</a> / Meus Produtos</h6>
         </div>
     </div>
 </div>
@@ -14,7 +14,7 @@
 
 <div class="container mt-5">
 
-     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> 
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
 
         <li class="nav-item" role="presentation">
@@ -30,22 +30,21 @@
         </li>
 
 
-    </ul> 
+    </ul>
 
 
-     <div class="tab-content" id="pills-tabContent"> 
+    <div class="tab-content" id="pills-tabContent">
 
 
 
 
         <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Imagem</th>
                         <th scope="col">Nome</th>
-                        <th scope="col" class="d-flex justify-content-center">
-                            Descrição</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Link</th>
                         <th></th>
@@ -57,15 +56,15 @@
                         <td class="d-flex justify-content-center "><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td>{{item.descricao}}</td>
-                        <td>{{item.tipoProduto}}</td>
+                        <td class="text-break scroll">{{item.descricao}}</td>
+                        <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
                         </td>
                         <th scope="row" class="colar">
-                            <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)' data-bs-target="#alterarModal"
+                            <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)'
+                                data-bs-target="#alterarModal">Atualizar</button>
 
-                                href="">Atualizar</button>
                             <button class="btn" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
                         </th>
                     </tr>
@@ -80,10 +79,9 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">Imagem</th>
+                        <th scope="col" class="">Imagem</th>
                         <th scope="col">Nome</th>
-                        <th scope="col" class="d-flex justify-content-center">
-                            Descrição</th>
+                        <th scope="col">Descrição</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Link</th>
                         <th></th>
@@ -92,14 +90,18 @@
 
                 <tbody>
                     <tr *ngFor='let item of user.meusFavoritos'>
-                        <th scope="row"><a routerLink="/meusprodutos" class="me-3" href="">Atualizar</a>
-                            <a [routerLink]="['/produto-delete', produto.id]" href="">Deletar</a>
-                        </th>
                         <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
                         <td>{{item.descricao}}</td>
-                        <td>{{item.tipoProduto}}</td>
+                        <td class="tipoProduto">{{item.tipoProduto}}</td>
+                        <td>
+                            <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
+                        </td>
+                        <th>
+                            <button class="btn" id="botao_deletar"
+                                [routerLink]="['/produto-delete', produto.id]">Deletar</button>
+                        </th>
                     </tr>
 
                 </tbody>
@@ -108,15 +110,15 @@
         </div>
 
 
-    </div> 
+    </div>
 
 
-    
+
 </div>
 
 
 <!-- Botão Cadastrar Produto -->
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-5">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         Cadastrar Produto
     </button>
@@ -127,19 +129,19 @@
         <div class="modal-content">
             <div class="modal-header">
 
-                
 
-                  <button class="ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
+
+                <button class="ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
 
-                
-                    
-                      
-              
-                
-                
-                
+
+
+
+
+
+
+
 
             </div>
             <div class="modal-body">
@@ -155,29 +157,29 @@
                 <div class="form-group">
                     <label for="nome"></label>
                     <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
-                        placeholder="Nome do produto">
+                        placeholder="Nome do material">
                 </div>
 
                 <div class="form-group">
                     <label for="descricao"></label>
                     <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
-                        placeholder="Insira aqui a descrição do produto"></textarea>
+                        placeholder="Insira aqui a descrição do material"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="linkAcesso"></label>
                     <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
-                        placeholder="Compartilhe aqui o link do produto">
+                        placeholder="Compartilhe aqui o link do material">
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="linkImagem"></label>
                     <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
-                        placeholder="Insira aqui o link da imagem do produto">
+                        placeholder="Insira aqui o link da foto do material">
                 </div>
 
                 <div class="form-group">
-                    <label for="">Selecione o tipo de produto</label>
+                    <label for="">Selecione o tipo de material</label>
                     <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
                         <option value="VÍDEO">vídeo</option>
                         <option value="EBOOK">e-book</option>
@@ -185,24 +187,42 @@
                     </select>
                 </div>
 
+                <div class="form-group mt-3">
+                    <textarea name="" id="" cols="55"
+                        rows="7">
+Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site. 
 
-                <!-- Button trigger modal dos Termos de Uso e Políticas  -->
-                <div class="mx-auto d-flex justify-content-center" style="width: 200px;">
-                    <div class="form-group mt-4">
+1. DIREITOS DE PROPRIEDADE INTELECTUAL
+O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal. 
+A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. 
 
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#termosModal">
-                            Termos de uso e Privacidade
-                        </button>
+O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
+
+Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.
+                               
+2. LINKS PARA OUTROS WEBSITES 
+A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
+
+O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</textarea>
+
+                    <div class="mx-auto">
+                        <div class="form-check form-switch d-flex justify-content-center">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"> Aceito os Termos e
+                                Condições</label>
+                        </div>
                     </div>
+
+
                 </div>
-                <!-- ///// Button trigger modal dos Termos de Uso e Políticas  -->
+
 
             </div>
             <div class="d-flex justify-content-center form-group button">
 
-                <button type="button" class="btn btn-primary me-4 mb-3 mt-3" data-bs-dismiss='modal'>Cancelar</button>
-                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()' data-bs-dismiss='modal'>Publicar </button>
+                <button type="button" class="btn me-4 mb-3 mt-3" id="botao_deletar" data-bs-dismiss='modal'>Cancelar</button>
+                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'
+                    data-bs-dismiss='modal'>Publicar </button>
 
             </div>
         </div>
@@ -216,7 +236,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-               
+
                 <button class="btn ms-auto me-3" type="button" id="fecharModal" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -270,9 +290,9 @@
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
 
-                <button type="button" class="btn btn-danger"data-bs-dismiss='modal' (click)='cancelUpdate()'>Cancelar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss='modal'
+                    (click)='cancelUpdate()'>Cancelar</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-
                     (click)='atualizar()'>Atualizar</button>
 
             </div>
@@ -281,60 +301,13 @@
 </div>
 
 <!-- Scrollable modal Termos de Uso e Políticas -->
-<div class="modal-dialog modal-dialog-scrollable">
+
+<!-- Modal dos Termos de Uso e Políticas -->
+
+<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
 
 
-    <!-- Modal dos Termos de Uso e Políticas -->
-    <div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-            <button class="btn ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
-                <span aria-hidden="true">&times;</span>
-            </button>
-          
-          <div class="modal-header">
-              <div class="mx-auto" >
-                  <h5 class="modal-title mb-3" id="exampleModalLabel">Termos de Uso e Políticas</h5>
-                </div>
-            
-                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-          </div> 
-          <div class="modal-body">
-            
 
 
-               <p>Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site.</p> 
-               <p>1. DIREITOS DE PROPRIEDADE INTELECTUAL </p>
-               <p>     O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal.
-               A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. </p>
-               <p>O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
-                  Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.</p>
-              
-              <p>2. LINKS PARA OUTROS WEBSITES </p>
-              A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
-               <p>O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</p>
-              
-              
-          </div>
-  
-          <div class="mx-auto">
-              <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                  <label class="form-check-label" for="flexSwitchCheckDefault">Aceito os Termos e Condições</label>
-                </div>
-            </div>
-  
-            
-          <div class="modal-footer d-flex justify-content-center form-group button">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Não Aceito</button>
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Aceito</button>
-            
-          </div> 
-
-        </div>
-    </div>
-</div>
 
 <!-- /////// Modal dos Termos de Uso e Políticas -->
