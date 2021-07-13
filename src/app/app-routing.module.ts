@@ -9,7 +9,6 @@ import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.c
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
-import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 
 

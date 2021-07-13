@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
   confirmaSenhaValido: boolean = false
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
+  pontuacao = environment.pontuacao
 
   constructor(
     private auth: AuthService,
@@ -56,10 +57,6 @@ export class MenuComponent implements OnInit {
       environment.tipoUsuario = this.usuarioLogin.tipoUsuario
       environment.pontuacao = this.usuarioLogin.pontuacao
       environment.foto = this.usuarioLogin.foto
-      console.log(this.usuarioLogin) 
-      console.log(environment.foto)
-      
-
 
       if(environment.adminUsuario == true){
        this.router.navigate(['/categorias'])
@@ -119,7 +116,7 @@ export class MenuComponent implements OnInit {
   }
 
   validaLinkFoto(event: any){
-    this.tipoUsuarioValido = this.validacao(event.target.value.indexOf('https://') == -1, event)
+    this.linkFotoValido = this.validacao(event.target.value.indexOf('https://') == -1, event)
   }
 
   confirmaSenha (event: any){

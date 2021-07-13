@@ -79,23 +79,26 @@
     padding: 30px 0px 0px 0px;
 }
 
-#fecharModal {
+.fecharModal {
+    background-color: transparent;
+
     color: #003b71;
     font-size: 35px;
     font-weight: 900;
 
     text-decoration: none;
     box-shadow: none;
+    border: none;
 }
 
-#fecharModal:hover,
-#fecharModal:focus{
+.fecharModal:hover,
+.fecharModal:focus{
   color:#aaaaaa;
   text-decoration: none;
 }
 
-#pills-home-tab, 
-#pills-profile-tab{
+#pills-login-tab, 
+#pills-cadastro-tab{
     background-color: transparent;
 
     border-radius: 0;
@@ -149,10 +152,15 @@
     box-shadow: none;
 }
 
-select {
-    box-shadow: none;
-    outline: none;
+label{
+    color: #003b71;
+    font-weight: 500;
 }
+
+select:focus{
+    box-shadow: none;
+}
+
 
 option{
     width: 30px;
@@ -182,10 +190,9 @@ a{
 strong{
     color: white;
 }
-#pontuacao{
-    background: #003b71;
-    color: white;
-    font-weight: 400;
-    padding: 5px 10px 5px 10px; /* topo | direita | inferior | esquerda */
-    border-radius: 30px;
+
+#fotoUsuario{
+    background-color: transparent;
+    box-shadow: none;
+    border:none;
 }

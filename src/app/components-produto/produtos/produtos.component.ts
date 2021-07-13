@@ -101,4 +101,12 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
+  logado(){
+    let logado: boolean = false
+    if(environment.token != ''){
+      logado =true
+    }
+    return logado
+  }
+  
 }
