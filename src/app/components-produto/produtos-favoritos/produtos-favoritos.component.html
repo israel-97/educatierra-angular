@@ -1,11 +1,10 @@
-
-
+<app-menu></app-menu>
 
 <div class="container-fluid">
     <div class="row bg-light align-content-center text-center">
         <div class="col">
             <h1 class="mb-3">Meus Produtos</h1>
-            <h6><a style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Meus Produtos</h6>
+            <h6><a style="text-decoration: none; color: #ff9d00;"routerLink='/home'>Home</a> / Meus Produtos</h6>
         </div>
     </div>
 </div>
@@ -19,14 +18,14 @@
 
 
         <li class="nav-item" role="presentation">
-            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#meusProdutos"
                 data-mdb-toggle="tab" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Meus
                 Produtos</button>
         </li>
 
 
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#meusFavoritos"
                 type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Meus Favoritos</button>
         </li>
 
@@ -39,7 +38,7 @@
 
 
 
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
             <table class="table">
                 <thead>
                     <tr>
@@ -64,9 +63,9 @@
                             <a class="btn " href="{{item.linkAcesso}}" target="_blank">Link</a>
                         </td>
                         <th scope="row" class="colar">
-                            <button class="me-3 btn" data-bs-toggle="modal" data-bs-target="#alterarModal"
+                            <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)' data-bs-target="#alterarModal"
                                 href="">Atualizar</button>
-                            <button class="btn" id="botao_deletar" click="apagarProduto()" href="">Deletar</button>
+                            <button class="btn" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
                         </th>
                     </tr>
 
@@ -76,7 +75,7 @@
 
 
 
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="tab-pane fade" id="meusFavoritos" role="tabpanel" aria-labelledby="pills-profile-tab">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -203,7 +202,7 @@
             </div>
             <div class="d-flex justify-content-center form-group button">
                 <button type="button" class="btn btn-primary me-4 mb-3 mt-3" data-bs-dismiss='modal'>Cancelar</button>
-                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'>Publicar </button>
+                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()' data-bs-dismiss='modal'>Publicar </button>
             </div>
         </div>
     </div>
@@ -267,7 +266,7 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center form-group button">
-                <button type="button" class="btn btn-danger" routerLink='/meusprodutos'>Cancelar</button>
+                <button type="button" class="btn btn-danger"data-bs-dismiss='modal' (click)='cancelUpdate()'>Cancelar</button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
                     (click)='atualizar()'>Atualizar</button>
 

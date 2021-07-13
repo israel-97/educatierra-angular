@@ -65,7 +65,11 @@ export class MenuComponent implements OnInit {
        this.router.navigate(['/categorias'])
       }
       else{
-        this.router.navigate(['/home'])
+        this.router.navigate(['/meusprodutos'])
+        setTimeout(() => {
+          this.router.navigate(['/home'])
+        },10);
+        
       }
      
     }, erro =>{

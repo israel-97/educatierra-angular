@@ -11,18 +11,18 @@
       </button>
       </div>
 
-      <div class="modal-body" *ngFor='let item of listaProdutos'>
+      <div class="modal-body">
 
         <div class="row mt-2">
 
           <div class="col-md-6 d-flex justify-content-center">
-            <img src="{{item.linkImagem}}" alt="" srcset="" width="80px" height="280px">
+            <img src="{{img}}" alt="" srcset="" width="80px" height="280px">
           </div>
 
           <div class="col-md-6">
 
-            <p class="nome_produto">{{item.nome}}</p>
-            <p class="descricao_produto">{{item.descricao}}</p>
+            <p class="nome_produto">{{nome}}</p>
+            <p class="descricao_produto">{{descricao}}</p>
             <button class="btn mt-5"  id="favorito_btn" type="button">
               <i class="fa "></i>
             </button>

@@ -8,5 +8,6 @@ export const environment = {
   adminUsuario: false,
   tipoUsuario: '',
   pontuacao: 0,
-  foto: ''
+  foto: '',
+  idProduto: 0,
 };
