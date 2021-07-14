@@ -57,4 +57,8 @@ export class ProdutoService {
     return produto
   }
 
+  getByMateriaPostagem(titulo: string ): Observable<Produto[]>{
+    return this.http.get<Produto[]>(`http://localhost:8083/produtos/titulo/${titulo}`, this.token)
+  }
+
 }

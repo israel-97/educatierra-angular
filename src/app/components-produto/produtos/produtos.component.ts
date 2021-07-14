@@ -32,6 +32,7 @@ export class ProdutosComponent implements OnInit {
   img: string
   nome: string
   descricao: string
+  tituloPost: string
   constructor(
     //private produtoService:ProdutoService
     private router: Router,
@@ -109,6 +110,16 @@ export class ProdutosComponent implements OnInit {
       logado =true
     }
     return logado
+  }
+
+  findByTituloPostagem(){
+    if (this.tituloPost == '') {
+      this.todosProdutos()
+    } else {
+      this.produtoService.getByMateriaPostagem(this.tituloPost).subscribe((resp: Produto[]) => {
+        this.listaProdutos = resp
+      })
+    }
   }
   
 }
