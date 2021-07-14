@@ -135,6 +135,20 @@ color: red;
 background-color: transparent;
 }
 
+.tipoProduto{
+    text-transform: lowercase;
+}
+
+.scroll{
+    width: 330px;
+    height: 100px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.mt{
+    margin-top: 100px;
+}
 
 
 
