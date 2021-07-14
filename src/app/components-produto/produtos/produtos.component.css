@@ -1,8 +1,35 @@
-/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"); */
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css");
+
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"); */
  
- .icon-produt1 { /* esfera 1 icone degrade */
+p,a,h1,h2,h3,h4,h5,h6 { 
+	margin: 0;
+	padding: 0;
+}
+
+#titles-center{
+  display: flex;
+  justify-content : center;
+  align-items : center
+}
+
+.bg-light{
+  height: 300px;
+}
+
+.mt-6{
+  margin-top: 70px;
+}
+
+.mx-6{
+  margin-right: 40px;
+}
+
+.card{
+  width: 200px;
+}
+
+ .icon-produt1  { /* esfera 1 icone */
   position:absolute; 
   bottom: 24px;
   left: 30%;
@@ -13,18 +40,16 @@
   line-height: 40px;
   text-align: center;
   background-color: #003b71;
-  color: #fff;
+  color: rgb(255, 254, 254);
   border-radius: 50%;
   font-size: 20px;
 }
 
-.icon1 { /* esfera 1 icone fundo */
-background: none;
-background-color: #fff;
-color: #003b71;
+.icon-produt1:hover { /* esfera 1 icone fundo */
+color: #ff9d00;
 }
 
-.icon-produt2 { /* esfera 1 icone degrade */
+.icon-produt2 { /* esfera 2 icone */
   position:absolute; 
   bottom:24px;
   left: 70%;
@@ -40,8 +65,13 @@ color: #003b71;
   font-size: 20px;
 }
 
-.icon2 { /* esfera 1 icone fundo */
-background: none;
-background-color: #fff;
-color: #003b71;
+.icon-produt2:hover { /* esfera 2 icone fundo */
+color: #ff9d00;
+}
+
+img {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
 }

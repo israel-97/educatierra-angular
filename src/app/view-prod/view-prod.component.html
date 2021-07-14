@@ -1,56 +1,37 @@
+
+<!-- modal de para visualizar os dados do produto -->
+
 <!-- Modal -->
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  MODAL FODAO DO TITIO ARTHUR :D !!
-</button>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">    
-      <div class="modal-body">
-        <div class="row ">
-          <div class="col-md-12 ">
-            <div class="row">
-
-              <!--COR DO BG DO MODAL AQUI-->
-              <div class="col-md-6 bg-white d-flex align-items-center">
-
-                <!--{{ADD A IMG DO MATERIA AQUI}}-->               
-                <img width="360px" height="360px"
-                  src="http://productive-stoner.com/wp-content/uploads/2019/02/Illustration-1024x901.png"
-                  alt="">
-              </div>
-
-              <!--COR DO BG DO MODAL AQUI-->
-              <div class="col-md-6 bg-light ">
-
-                <!--{{NOME DO PRODUTO AQUI}}-->
-                <br> <!--...sim eu coloquei o BR heuhuehue br :D hehe referencias -->
-                <p>Produto Nome</p>
-                <div class="col-md-11">
-                  <div>
-                    <div class="mb-3 ">
-                      <p>Descrição:</p>
-
-                      <!--{{DESCRICAO AQUI}}-->
-                      <div class="  bg-color form-control" height="400px">
-                        JOAKIN O ESQUILO Q FUMAVA MACONHA O LIVRO. MELHOR LIVRO Q JA LIkkk... quia totam!
-                        Perferendis quo repudiandae blanditiis harum veniam molestias amet nihil nesciunt autem ut!
-                        Minima tempora esse impedit commodi velit.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="d-flex justify-content-end me-4">
-                  
-                  <!--IMG DO BUTAO AQUI-->
-                  <button class="btn "  type="button">
-                     <img height='35px' weight='35px' src="https://cdn.discordapp.com/attachments/844199007819661403/860949013942501376/unknown_3.png" alt="">
-                    </button>
-                </div>
-              </div>              
-            </div>
-          </div>
-        </div>
+<div class="modal fade" id="visualizarProduto" tabindex="-1" aria-labelledby="visualizarProdutoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg d-flex justify-content-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="btn ms-auto me-3" type="button" id="fecharModal" data-bs-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+      </button>
       </div>
+
+      <div class="modal-body">
+
+        <div class="row mt-2">
+
+          <div class="col-md-6 d-flex justify-content-center">
+            <img src="{{img}}" alt="" srcset="" width="230px" height="230px">
+          </div>
+
+          <div class="col-md-5">
+
+            <p class="nome_produto text-break">{{nome}}</p>
+            <p class="descricao_produto scroll text-break">{{descricao}}</p>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+      
+
     </div>
   </div>
+</div>

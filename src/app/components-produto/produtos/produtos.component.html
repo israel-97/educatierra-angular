@@ -1,63 +1,51 @@
 <app-menu></app-menu>
 
 <div class="container-fluid">
-    <div class="row bg-light text-center p-5">
-        <h1>Materiais</h1>
-        <h5><a href="">Home</a> / Produtos</h5>
+    <div class="row bg-light align-content-center text-center">
+        <div class="col">
+            <h1 class="mb-3">Materiais</h1>
+            <h6><a style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Produtos</h6>
+        </div>
     </div>
-    
-    <div class="container d-flex justify-content-center mt-5">
 
-        <div class="container col-md-3 bg-warning">
+    <div class="container d-flex justify-content-center mt-6">
 
-            <div class="row">
+        <div class="container col-md-3">
+            <div class="row d-flex align-item-center ms-4">
                 <app-search-produto></app-search-produto>
             </div>
 
-            <div class="row mt-4">
+            <div class="row mt-4 ms-4">
                 <app-lista-categoria></app-lista-categoria>
-            </div>    
+            </div>
         </div>
 
-        <div class="container col-md-9 bg-info">
-            
-                <div class="row  text-center">
+        <div class="row">
+            <div class="row d-flex justify-content-start">
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+                <div class="card text-center mt-4 ms-3 me-3" *ngFor='let item of listaProdutos'>
+                    <img src="{{item.linkImagem}}"class="card-img-top img-fluid" alt="...">
+                    <div class="card-body p-2">
+                        <h4 class="card-title">{{item.nome}}</h4>
+                        <p class="card-text">postado por: {{item.usuario.usuario}}</p>
 
-                      <div class="col">
-                        <div class="card h-100" style="max-width: 18rem;">
-                            <img src="https://i.imgur.com/OQf5I2x.jpg" class="card-img-top" alt="...">
-                            
-                            <div class="card-body">
-                                <h5 class="card-title text-center" >Card title</h5>
-                            </div>
-
-                            <div class="card-footer p-4">
-                                <span class="icon-produt1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-                                    <i class="fa fa-expand" disabled></i>
-                                </span>
-                                <span class="icon-produt2">
-                                    <i class="fa fa-heart"></i>
-                                </span>
-                            </div>
-                            
+                        <div class="card-footer p-4">
+                            <a (click)='selecionarProduto(item.id)' class="icon-produt1" data-bs-toggle="modal" data-bs-target="#visualizarProduto">
+                                <i class="fa fa-expand"></i>
+                            </a>
+                            <a (click)='favoritarProduto(item.id)' class="icon-produt2">
+                                <i class="fa fa-heart"></i>
+                            </a>
                         </div>
-                      </div>
-
-                      <div class="col">Column</div>
-
-                      <div class="col">Column</div>
-
-                      <div class="col">Column</div>
-
                     </div>
+                    
+                </div>
 
-                  </div>
-            
+            </div>
+
         </div>
 
     </div>
-   
-</div>
 
+
+    <app-view-prod [img]='img' [nome]='nome' [descricao]='descricao'></app-view-prod>
