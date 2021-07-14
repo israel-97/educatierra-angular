@@ -196,3 +196,8 @@ strong{
     box-shadow: none;
     border:none;
 }
+
+html
+{
+    scroll-behavior: smooth;
+}

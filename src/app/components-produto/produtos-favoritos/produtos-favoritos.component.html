@@ -35,8 +35,7 @@
 
     <div class="tab-content" id="pills-tabContent">
 
-
-
+         <!-- Tab - Meus Produtos -->
 
         <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
             <table class="table table-bordered">
@@ -56,7 +55,7 @@
                         <td class="d-flex justify-content-center "><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td class="text-break scroll">{{item.descricao}}</td>
+                        <td class="text-break"> <textarea name="" id="" cols="35" rows="2">{{item.descricao}}</textarea></td> 
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
@@ -73,7 +72,7 @@
             </table>
         </div>
 
-
+        <!-- Tab - Meus Favoritos -->
 
         <div class="tab-pane fade" id="meusFavoritos" role="tabpanel" aria-labelledby="pills-profile-tab">
             <table class="table table-bordered">
@@ -93,7 +92,7 @@
                         <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td>{{item.descricao}}</td>
+                        <td class="text-break"><textarea name="" id="" cols="50" rows="2">{{item.descricao}}</textarea></td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
