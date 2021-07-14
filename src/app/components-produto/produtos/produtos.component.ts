@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
@@ -111,11 +111,14 @@ export class ProdutosComponent implements OnInit {
   }
 
   findByTituloPostagem(){
+    console.log(this.tituloPost)
     if (this.tituloPost == '') {
       this.todosProdutos()
     } else {
       this.produtoService.getByMateriaPostagem(this.tituloPost).subscribe((resp: Produto[]) => {
+        
         this.listaProdutos = resp
+        console.log(this.listaProdutos)
       })
     }
   }

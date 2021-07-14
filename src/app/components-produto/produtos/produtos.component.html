@@ -12,9 +12,10 @@
 
         <div class="container col-md-3">
             <div class="row d-flex align-item-center ms-4">
-                <form>
-                    <input type="search"  class="form-group" id="materia" placeholder="Search" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem'>
-                </form>
+                <div>
+                    <input type="search"  class="form-group" id="materia" placeholder="Search"
+                     [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+                </div>
             </div>
 
             <div class="row mt-4 ms-4">
