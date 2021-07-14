@@ -75,6 +75,11 @@ img {
     width: auto;
     height: auto;
 }
+
+.mb-produtos{
+  margin-bottom: 100px;
+}
+
 input { /* pré-estilizacao */
 	outline: none;
 }
