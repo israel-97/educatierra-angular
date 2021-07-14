@@ -7,6 +7,7 @@ import { ProdutoService } from 'src/app/service/produto.service';
 import { Produto } from 'src/app/model/Produto';
 import { Categoria } from 'src/app/model/Categoria';
 import { AuthService } from 'src/app/service/auth.service';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-produto-editar',
@@ -27,6 +28,7 @@ export class ProdutoEditarComponent implements OnInit {
     private route: ActivatedRoute, 
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
    
   ) { }
 
@@ -68,7 +70,7 @@ export class ProdutoEditarComponent implements OnInit {
     atualizar() {
       this.produtoService.alterarProduto(this.idUsuario, this.idCategoria, this.produto).subscribe((resp: Produto) => {
         this.produto = resp
-        alert ('Produto atualizado com sucesso!')
+        this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
         this.router.navigate(['/home'])
         
       })

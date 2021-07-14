@@ -7,6 +7,7 @@ import { User } from 'src/app/model/User';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 
 @Component({
@@ -30,7 +31,8 @@ export class ProdutosFavoritosComponent implements OnInit {
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
   ) { }
 
   ngOnInit() {
@@ -84,7 +86,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   cadastrarProduto() {
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
-      alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.router.navigate(['/home'])
       setTimeout(() => {
         this.router.navigate(['/meusprodutos'])
@@ -116,7 +118,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   atualizar() {
     this.produtoService.alterarProduto(this.produto.id, this.idCategoria, this.produto).subscribe((resp: Produto) => {
       this.produto = resp
-      alert('Produto atualizado com sucesso!')
+      this.alertas.showAlertSuccess('Produto atualizado com sucesso!')
       this.router.navigate(['/home'])
       setTimeout(() => {
         this.router.navigate(['/meusprodutos'])
@@ -126,7 +128,7 @@ export class ProdutosFavoritosComponent implements OnInit {
 
   apagarProduto(produto: Produto) {
     this.produtoService.apagarProduto(this.idUser, produto.id).subscribe(() => {
-      alert('Produto deletado com sucesso!')
+      this.alertas.showAlertDanger('Produto deletado com sucesso!')
       this.router.navigate(['/home'])
       setTimeout(() => {
         this.router.navigate(['/meusprodutos'])
