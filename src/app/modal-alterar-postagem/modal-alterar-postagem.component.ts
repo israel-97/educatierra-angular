@@ -7,6 +7,7 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-modal-alterar-postagem',
@@ -27,7 +28,8 @@ export class ModalAlterarPostagemComponent implements OnInit {
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
   ) { }
 
   ngOnInit() {
@@ -67,7 +69,7 @@ export class ModalAlterarPostagemComponent implements OnInit {
   cadastrarProduto() {   
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
-      alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.produto = new Produto()
 
       this.todosProdutos()

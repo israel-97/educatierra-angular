@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-produto-delete',
@@ -19,6 +20,7 @@ export class ProdutoDeleteComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
    
   ) { }
 
@@ -41,7 +43,7 @@ export class ProdutoDeleteComponent implements OnInit {
 
     apagarProduto() {
     this.produtoService.apagarProduto(this.idProduto, this.idUsuario).subscribe(() =>{
-alert('Produto deletado com sucesso!')
+this.alertas.showAlertDanger('Produto deletado com sucesso!')
 this.router.navigate(['/meusprodutos'])
 
     })
