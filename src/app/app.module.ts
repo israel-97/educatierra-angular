@@ -32,6 +32,8 @@ import { CategoriaEditComponent } from './categoria-edit/categoria-edit.componen
 import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
 import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
 import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
+import { AlertasComponent } from './alertas/alertas.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -58,7 +60,8 @@ import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-al
     CategoriaComponent,
     CategariaDeleteComponent,
     CategoriaEditComponent,
-    ModalAlterarPostagemComponent,  
+    ModalAlterarPostagemComponent,
+    AlertasComponent,  
 
   ],
   imports: [
@@ -67,6 +70,7 @@ import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-al
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot()  // Adicionado acionar os Alerts
     //NgxPaginationModule
   ],
   providers: [],
