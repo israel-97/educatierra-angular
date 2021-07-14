@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵtrustConstantResourceUrl } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
@@ -31,13 +32,15 @@ export class ProdutosComponent implements OnInit {
   img: string
   nome: string
   descricao: string
+  tituloPost: string
   constructor(
     //private produtoService:ProdutoService
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
   ) { }
 
   ngOnInit() {
@@ -77,7 +80,7 @@ export class ProdutosComponent implements OnInit {
   cadastrarProduto() {
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
-      alert('Produto cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
       this.produto = new Produto()
       this.todosProdutos()
       this.router.navigate(['/home'])
@@ -89,7 +92,7 @@ export class ProdutosComponent implements OnInit {
 
   favoritarProduto(id: number) {
     this.produtoService.favoritarProduto(this.idUser, id).subscribe((resposta: User) => {
-     alert('produto favoritado com sucesso!') 
+     this.alertas.showAlertSuccess('produto favoritado com sucesso!') 
     })
   }
 
@@ -107,6 +110,19 @@ export class ProdutosComponent implements OnInit {
       logado =true
     }
     return logado
+  }
+
+  findByTituloPostagem(){
+    console.log(this.tituloPost)
+    if (this.tituloPost == '') {
+      this.todosProdutos()
+    } else {
+      this.produtoService.getByMateriaPostagem(this.tituloPost).subscribe((resp: Produto[]) => {
+        
+        this.listaProdutos = resp
+        console.log(this.listaProdutos)
+      })
+    }
   }
   
 }
