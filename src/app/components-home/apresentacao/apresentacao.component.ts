@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../../model/User';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-apresentacao',
@@ -29,8 +30,8 @@ export class ApresentacaoComponent implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private router: Router 
-  
+    private router: Router,
+    private alertas: AlertasService //implementacao do ALERT personalizado.
   ) { }
 
   ngOnInit(){
@@ -72,7 +73,7 @@ export class ApresentacaoComponent implements OnInit {
      
     }, erro =>{
       if(erro.status == 500){
-        alert('Usuário ou senha estão incorretos')
+        this.alertas.showAlertDanger('Usuário ou senha estão incorretos')
       }
     })
   }
@@ -81,11 +82,11 @@ export class ApresentacaoComponent implements OnInit {
     this.auth.cadastrar(this.user).subscribe((resposta: User) => {
       this.user = resposta
      /*  this.router.navigate(['/home']) */
-      alert('Usuário cadastrado com sucesso!')
+      this.alertas.showAlertSuccess('Usuário cadastrado com sucesso!')
 
     }, erro =>{
       if(erro.status == 400){
-        alert('Usuário já cadastrado!')
+        this.alertas.showAlertDanger('Usuário já cadastrado!')
       }
     })
   }
