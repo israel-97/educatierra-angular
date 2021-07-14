@@ -14,3 +14,8 @@
 code {
 color: #2f2f30;
 }
+
+.fix {
+    position: fixed;
+      
+}
