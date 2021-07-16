@@ -97,9 +97,9 @@ a,h1,h6 {
     color: #0F5C8C;
 }
 
-.form-group button:focus,
-.form-group input:focus, 
-.form-group select{
+.btn:focus,
+input:focus, 
+select{
     box-shadow: none;
 }
 
@@ -115,8 +115,6 @@ option{
 .colar{
     border-radius: 20px;
     padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
-    
-
 }
 
 .button-link{
@@ -146,9 +144,37 @@ background-color: transparent;
     overflow-y: hidden;
 }
 
+textarea{
+    border-radius: 10px;
+}
+
+textarea:focus{
+    border: none;
+}
+
 .mt{
     margin-top: 100px;
 }
 
+pagination-controls{
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+}
 
+.termo{
+    overflow: scroll;
+    height: 150px;
+}
 
+label, .form-check-label{
+    color: #003b71;
+    font-weight: 600;
+}
+
+.descricao{
+    overflow: scroll;
+
+    height: 100px;
+    width:250px;
+}

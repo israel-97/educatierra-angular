@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-// import {NgxPaginationModule} from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroselHomeComponent } from './components-home/carrosel-home/carrosel-home.component';
 import { ProdutosComponent } from './components-produto/produtos/produtos.component';
 import { RodapeComponent } from './components-home/rodape/rodape.component';
-
 import { MenuComponent } from './components-home/menu/menu.component';
 import { SobreNosComponent } from './components-home/sobre-nos/sobre-nos.component';
 import { DevsHomeComponent } from './components-home/devs-home/devs-home.component';
@@ -24,17 +23,11 @@ import { ListaCategoriaComponent } from './components-produto/lista-categoria/li
 import { AppRoutingModule } from './app-routing.module';
 import { ProdutosFavoritosComponent } from './components-produto/produtos-favoritos/produtos-favoritos.component';
 import { SearchProdutoComponent } from './components-produto/search-produto/search-produto.component';
-
 import { CategoriaComponent } from './categoria/categoria.component';
 import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.component';
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
-
-import { ProdutoEditarComponent } from './editar/produto-editar/produto-editar.component';
-import { ProdutoDeleteComponent } from './editar/produto-delete/produto-delete.component';
-import { ModalAlterarPostagemComponent } from './modal-alterar-postagem/modal-alterar-postagem.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-
 
 @NgModule({
   declarations: [
@@ -54,15 +47,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CardsProdutoComponent,
     ListaCategoriaComponent,   
     ProdutosFavoritosComponent,  
-    SearchProdutoComponent,
-    ProdutoEditarComponent,
-    ProdutoDeleteComponent,  
+    SearchProdutoComponent,  
     CategoriaComponent,
     CategariaDeleteComponent,
     CategoriaEditComponent,
-    ModalAlterarPostagemComponent,
-    AlertasComponent,  
-
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,8 +59,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()  // Adicionado acionar os Alerts
-    //NgxPaginationModule
+    ModalModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

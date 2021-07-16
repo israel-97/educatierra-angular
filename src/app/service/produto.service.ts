@@ -38,9 +38,8 @@ export class ProdutoService {
     return this.http.get<Produto>(`http://localhost:8083/produtos/${idProduto}`, this.token)
   }
 
-
-  apagarProduto(idUsuario: number, idProduto: number) {
-    return this.http.delete(`http://localhost:8083/usuarios/exclusao-produto/${idUsuario}/${idProduto}`, this.token)
+  apagarProduto(id: number) {
+    return this.http.delete(`http://localhost:8083/produtos/exclusao-produto/${id}`, this.token)
   }
 
   getByIdUser(id: number): Observable<User> {
@@ -49,7 +48,6 @@ export class ProdutoService {
 
   favoritarProduto(idUsuario: number, idProduto: number): Observable<User> {
     return this.http.put<User>(`http://localhost:8083/usuarios/favoritos/usuario/${idUsuario}/produto/${idProduto}`, null, this.token)
-
   }
 
   produtoSelecionado(produto?: Produto) {
