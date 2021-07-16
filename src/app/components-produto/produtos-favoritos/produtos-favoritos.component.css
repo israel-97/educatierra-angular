@@ -26,9 +26,6 @@ a,h1,h6 {
     padding: 0;
 }
 
-.bg-light{
-  height: 300px;
-}
 
 
 #fecharModal {
@@ -156,11 +153,17 @@ textarea:focus{
     margin-top: 100px;
 }
 
+
 pagination-controls{
     height: 20px;
     width: 20px;
     border-radius: 100%;
 }
+
+.banner{
+    width: 350px;
+    height: 350;
+  }
 
 .termo{
     overflow: scroll;
