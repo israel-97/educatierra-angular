@@ -26,9 +26,6 @@ a,h1,h6 {
     padding: 0;
 }
 
-.bg-light{
-  height: 300px;
-}
 
 
 #fecharModal {
@@ -150,5 +147,9 @@ background-color: transparent;
     margin-top: 100px;
 }
 
+.banner{
+    width: 350px;
+    height: 350;
+  }
 
 
