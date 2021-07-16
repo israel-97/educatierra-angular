@@ -105,14 +105,6 @@ select {
     outline: none;
 }
 
-option{
-    width: 30px;
-}
-
-.colar{
-    border-radius: 20px;
-    padding:7px 20px 8px 20px;/* topo | direita | inferior | esquerda */
-}
 
 .button-link{
     border-radius: 15px;
@@ -166,7 +158,7 @@ pagination-controls{
   }
 
 .termo{
-    overflow: scroll;
+    overflow-y: scroll;
     height: 150px;
 }
 
@@ -176,8 +168,13 @@ label, .form-check-label{
 }
 
 .descricao{
-    overflow: scroll;
+    overflow-y: scroll;
 
     height: 100px;
-    width:250px;
+    width:200px;
+}
+
+.table>:not(caption)>*>* {
+    padding: .5rem 0rem .5rem 0rem;
+   
 }

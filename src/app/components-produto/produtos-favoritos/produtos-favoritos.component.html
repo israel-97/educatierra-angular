@@ -54,20 +54,19 @@
                 <tbody>
                     <tr
                         *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusProdutos}'>
-                        <td class="d-flex justify-content-center "><img src="{{item.linkImagem}}" width="50px"
-                                height="50px" alt=""></td>
-                        <td>{{item.nome}}</td>
+                        <td class="d-flex justify-content-center" id="tamanhoImagem"> <div class="bg-danger" ><img src="{{item.linkImagem}}" width="100px" height="100px" alt=""></div> </td>
+                        <td class="text-break">{{item.nome}}</td>
                         <td class="text-break"> <div class="descricao" name="" id="">{{item.descricao}}</div>
                         </td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
                         </td>
-                        <th scope="row" class="colar">
+                        <th scope="row">
                             <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)'
                                 data-bs-target="#alterarModal">Atualizar</button>
 
-                            <button class="btn" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
+                            <button class="btn sm-mt-2" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
                         </th>
                     </tr>
                 </tbody>
@@ -99,8 +98,8 @@
                 <tbody>
                     <tr
                         *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusFavoritos}'>
-                        <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="50px"
-                                height="50px" alt=""></td>
+                        <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="100px"
+                                height="100px" alt=""></td>
                         <td>{{item.nome}}</td>
                         <td class="text-break"><div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
                         </td>
