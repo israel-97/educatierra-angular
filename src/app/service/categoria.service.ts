@@ -26,7 +26,7 @@ export class CategoriaService {
   }
 
   findByIdCategoria(id: number): Observable<Categoria>{
-    return this.http.get<Categoria>(`https://educatierra-g4.herokuapp.com/${id}`, this.token)
+    return this.http.get<Categoria>(`https://educatierra-g4.herokuapp.com/categorias/${id}`, this.token)
   }
 
   inserirCategoria(categoria: Categoria): Observable<Categoria>{

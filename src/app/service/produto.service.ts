@@ -26,7 +26,7 @@ export class ProdutoService {
   }
 
   cadastrarProduto(idUsuario: number, idCategoria: number, produto: Produto): Observable<Produto> {
-    return this.http.post<Produto>(`https://educatierra-g4.herokuapp.com/cadastro-produto/${idUsuario}/${idCategoria}`, produto, this.token)
+    return this.http.post<Produto>(`https://educatierra-g4.herokuapp.com/usuarios/cadastro-produto/${idUsuario}/${idCategoria}`, produto, this.token)
   }
 
 
