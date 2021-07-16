@@ -1,26 +1,21 @@
 <div class="container-fluid" id="mt-20">
 
-    <div class="container d-flex justify-content-center">
+    <div class="container">
 
-        <div class="row d-flex align-items-center">
+        <div class="row d-flex align-items-center justify-content-center">
             <div class="col-md-6">
 
-                <div class="row d-flex justify-content-start">
+                <div class="row d-flex align-items-end mb-5 mt-5">
                     <div class="col-md-11 mt-5">
                         <h1>Busque materiais digitais e encontre caminhos alternativos para seus estudos. </h1>
                     </div>
                     <div class="col-md-11 mt-3">
-                        <h6 class='fs-10'>Uma plataforma exclusiva para o compartilhamento seguro, rápido e gratuito de
-                            materiais digitais.</h6>
+                        <h6 class='fs-10'>Uma plataforma exclusiva para o compartilhamento seguro, rápido e gratuito.
+                        </h6>
                     </div>
                 </div>
-
-                <div class="row f-flex justify-content-start mt-3 mb-5">
-                    <div class="col-md-11 ms-auto">
-                        <button class="btn mt-3" data-bs-toggle="modal"
-                            data-bs-target="#loginCadastro">Cadastre-se</button>
-                        <!--  data-bs-toggle="modal" data-bs-target="#novaPostagem" -->
-                    </div>
+                <div>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#loginCadastro">Cadastre-se</button>
                 </div>
 
             </div>
@@ -71,8 +66,8 @@
 
                         <div class="form-group mb-4">
                             <label class="mb-2" for="">Selecione o tipo de usuário</label>
-                            <select class="form-control" id="usuario_tipo" aria-label="tipoEstudante" [(ngModel)]='user.tipoUsuario'
-                                required>
+                            <select class="form-control" id="usuario_tipo" aria-label="tipoEstudante"
+                                [(ngModel)]='user.tipoUsuario' required>
                                 <option value="PROFESSOR">professor</option>
                                 <option value="ESTUDANTE">estudante</option>
                                 <option value="OUTRO">outro</option>

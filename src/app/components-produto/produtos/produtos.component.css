@@ -29,6 +29,10 @@ p,a,h1,h2,h3,h4,h5,h6 {
   width: 200px;
 }
 
+.card-footer{
+background-color: #fff;
+}
+
  .icon-produt1  { /* esfera 1 icone */
   position:absolute; 
   bottom: 24px;
