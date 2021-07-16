@@ -115,7 +115,6 @@
 .nav-link.active{
     border-bottom: 2px solid #003b71;
     transition: left 0.3s ease 0s; 
-
 }
 
 .form-control{

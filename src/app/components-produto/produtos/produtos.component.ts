@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
 import { AlertasService } from 'src/app/service/alertas.service';
-import { AuthService } from 'src/app/service/auth.service';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
@@ -39,7 +38,6 @@ export class ProdutosComponent implements OnInit {
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService,
     private alertas: AlertasService //implementacao do ALERT personalizado.
   ) { }
 
@@ -92,7 +90,7 @@ export class ProdutosComponent implements OnInit {
 
   favoritarProduto(id: number) {
     this.produtoService.favoritarProduto(this.idUser, id).subscribe((resposta: User) => {
-     this.alertas.showAlertSuccess('produto favoritado com sucesso!') 
+     this.alertas.showAlertSuccess('Produto favoritado com sucesso!') 
     })
   }
 

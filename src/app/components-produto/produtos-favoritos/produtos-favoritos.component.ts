@@ -6,7 +6,6 @@ import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
-import { AuthService } from 'src/app/service/auth.service';
 import { AlertasService } from 'src/app/service/alertas.service';
 
 
@@ -18,6 +17,8 @@ import { AlertasService } from 'src/app/service/alertas.service';
 export class ProdutosFavoritosComponent implements OnInit {
 
   produto: Produto = new Produto()
+  produtoDeletar: Produto = new Produto()
+
   categoria: Categoria = new Categoria()
   listaProdutos: Produto[]
   listaCategorias: Categoria[]
@@ -26,13 +27,16 @@ export class ProdutosFavoritosComponent implements OnInit {
   idUser = environment.id
   idProduto: number
 
+  totalMeusProdutos: any
+  totalMeusFavoritos: any
+  pagina: number = 1
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private authService: AuthService,
-    private alertas: AlertasService //implementacao do ALERT personalizado.
+    private alertas: AlertasService 
   ) { }
 
   ngOnInit() {
@@ -41,7 +45,7 @@ export class ProdutosFavoritosComponent implements OnInit {
       this.router.navigate(['/home'])
     }
 
-    let id = this.route.snapshot.params['id']
+    this.idProduto= this.route.snapshot.params['id']
     this.produtoService.refreshToken()
     this.categoriaService.refreshToken()
     this.todasCategorias()
@@ -52,6 +56,7 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.findByIdProduto(this.idProduto)
     this.atualizar()
   }
+
   findByIdProduto(idProduto: number) {
     this.produtoService.produtoPeloId(idProduto).subscribe((resposta: Produto) => {
       this.produto = resposta
@@ -61,7 +66,6 @@ export class ProdutosFavoritosComponent implements OnInit {
   todasCategorias() {
     this.categoriaService.todasCategorias().subscribe((resposta: Categoria[]) => {
       this.listaCategorias = resposta
-      console.log(this.listaCategorias)
     })
   }
 
@@ -80,6 +84,9 @@ export class ProdutosFavoritosComponent implements OnInit {
   findByIdUser() {
     this.produtoService.getByIdUser(this.idUser).subscribe((resposta: User) => {
       this.user = resposta
+
+      this.totalMeusProdutos = resposta.meusProdutos.length
+      this.totalMeusFavoritos = resposta.meusFavoritos.length
     })
   }
 
@@ -87,24 +94,30 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
       this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
+      console.log(environment.pontuacao)
+
       this.router.navigate(['/home'])
       setTimeout(() => {
         this.router.navigate(['/meusprodutos'])
-      }, 5);
+      }, 10);
+
       this.produto = new Produto()
       this.todosProdutos()
-      
     })
   }
 
-  favoritarProduto() {
-    // this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: Produto) => {
-    //   this.user = resposta
-    // })
-  }
+  favoritarProduto() {}
 
   selectUpdate(produto: Produto) {
     this.produto = produto
+
+    console.log(this.produto)
+  }
+
+  selectDeletar(produto: Produto){
+    this.produtoDeletar = produto
+
+    console.log(this.produtoDeletar)
   }
 
   cancelUpdate() {
@@ -127,7 +140,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   }
 
   apagarProduto(produto: Produto) {
-    this.produtoService.apagarProduto(this.idUser, produto.id).subscribe(() => {
+    this.produtoService.apagarProduto(produto.id).subscribe(() => {
       this.alertas.showAlertDanger('Produto deletado com sucesso!')
       this.router.navigate(['/home'])
       setTimeout(() => {

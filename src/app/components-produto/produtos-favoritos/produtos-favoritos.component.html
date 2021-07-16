@@ -17,34 +17,27 @@
     </div>
 </div>
 
-
-
-
 <div class="container mt-5">
 
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-
         <li class="nav-item" role="presentation">
-            <button class="nav-link active " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#meusProdutos"
-                data-mdb-toggle="tab" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Meus
+            <button class="nav-link active me-3 " id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#meusProdutos" data-mdb-toggle="tab" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">Meus
                 Produtos</button>
         </li>
-
 
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#meusFavoritos"
                 type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Meus Favoritos</button>
         </li>
 
-
     </ul>
 
+    <div class="tab-content mt-3" id="pills-tabContent">
 
-    <div class="tab-content" id="pills-tabContent">
-
-         <!-- Tab - Meus Produtos -->
-
+        <!-- Tab - Meus Produtos -->
         <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
             <table class="table table-bordered">
                 <thead>
@@ -59,11 +52,13 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor='let item of user.meusProdutos'>
+                    <tr
+                        *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusProdutos}'>
                         <td class="d-flex justify-content-center "><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td class="text-break"> <textarea name="" id="" cols="35" rows="2">{{item.descricao}}</textarea></td> 
+                        <td class="text-break"> <div class="descricao" name="" id="">{{item.descricao}}</div>
+                        </td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
@@ -75,13 +70,18 @@
                             <button class="btn" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
                         </th>
                     </tr>
-
                 </tbody>
+
+                <div class="row mt-2">
+                    <div>
+                        <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+                    </div>
+                </div>
+
             </table>
         </div>
 
         <!-- Tab - Meus Favoritos -->
-
         <div class="tab-pane fade" id="meusFavoritos" role="tabpanel" aria-labelledby="pills-profile-tab">
             <table class="table table-bordered">
                 <thead>
@@ -96,38 +96,38 @@
                 </thead>
 
                 <tbody>
-                    <tr *ngFor='let item of user.meusFavoritos'>
+                    <tr
+                        *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusFavoritos}'>
                         <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="50px"
                                 height="50px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td class="text-break"><textarea name="" id="" cols="50" rows="2">{{item.descricao}}</textarea></td>
+                        <td class="text-break"><div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
+                        </td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
                             <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
                         </td>
                         <th>
-                            <button class="btn" id="botao_deletar"
-                                [routerLink]="['/produto-delete', produto.id]">Deletar</button>
+                            <button class="btn" id="botao_deletar">Deletar</button>
                         </th>
                     </tr>
-
                 </tbody>
+
+                <div class="row mt-2">
+                    <div class="col-md-12 ms-auto">
+                        <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+                    </div>
+                </div>
             </table>
-
         </div>
-
-
     </div>
-
-
-
 </div>
 
 
 <!-- Botão Cadastrar Produto -->
 <div class="d-flex justify-content-center mb-5">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Cadastrar Produto
+    <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        cadastrar produto
     </button>
 </div>
 <!-- Modal Cadastrar Produto -->
@@ -136,19 +136,9 @@
         <div class="modal-content">
             <div class="modal-header">
 
-
-
                 <button class="ms-auto me-0" type="button" id="fecharModal" data-bs-dismiss="modal">
                     <span aria-hidden="true">&times;</span>
                 </button>
-
-
-
-
-
-
-
-
 
             </div>
             <div class="modal-body">
@@ -186,7 +176,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Selecione o tipo de material</label>
+                    <label for="" class="mb-2">Selecione o tipo de material</label>
                     <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
                         <option value="VÍDEO">vídeo</option>
                         <option value="EBOOK">e-book</option>
@@ -195,27 +185,32 @@
                 </div>
 
                 <div class="form-group mt-3">
-                    <textarea name="" id="" cols="55"
-                        rows="7">
-Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site. 
+                    <div class="termo">
+                        <p>
+                            Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site.
+                        </p>
 
-1. DIREITOS DE PROPRIEDADE INTELECTUAL
-O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal. 
-A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. 
+                        <p class="mt-2"><strong> 1. DIREITOS DE PROPRIEDADE INTELECTUAL</strong></p>
+                        <p>
+                            O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal. 
+                            A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. 
 
-O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
+                            O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
 
-Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.
-                               
-2. LINKS PARA OUTROS WEBSITES 
-A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
+                            Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.
+                        </p>
+                        
+                        <p class="mt-2"><strong>2. LINKS PARA OUTROS WEBSITES </strong></p>
+                        <p>
+                            A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
+                            O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.
+                        </p>
 
-O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.</textarea>
-
-                    <div class="mx-auto">
+                        </div>
+                    <div class="mx-auto mt-3">
                         <div class="form-check form-switch d-flex justify-content-center">
-                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label" for="flexSwitchCheckDefault"> Aceito os Termos e
+                            <input class="form-check-input ms-2" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label mb-2" for="flexSwitchCheckDefault"> Aceito os Termos e
                                 Condições</label>
                         </div>
                     </div>
@@ -227,7 +222,8 @@ O acesso aos websites vinculados a tais links não está sujeito aos Documentos 
             </div>
             <div class="d-flex justify-content-center form-group button">
 
-                <button type="button" class="btn me-4 mb-3 mt-3" id="botao_deletar" data-bs-dismiss='modal'>Cancelar</button>
+                <button type="button" class="btn me-4 mb-3 mt-3" id="botao_deletar"
+                    data-bs-dismiss='modal'>Cancelar</button>
                 <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'
                     data-bs-dismiss='modal'>Publicar </button>
 
@@ -235,8 +231,6 @@ O acesso aos websites vinculados a tais links não está sujeito aos Documentos 
         </div>
     </div>
 </div>
-
-
 
 <!-- Modal Alterar Produto -->
 <div class="modal fade" id="alterarModal" tabindex="-1" aria-labelledby="alterarModal" aria-hidden="true">
@@ -258,14 +252,11 @@ O acesso aos websites vinculados a tais links não está sujeito aos Documentos 
                     </select>
                 </div>
 
-
-
                 <div class="form-group">
                     <label for="nome"></label>
                     <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
                         placeholder="Nome do produto">
                 </div>
-
 
                 <div class="form-group">
                     <label for="descricao"></label>
@@ -307,14 +298,3 @@ O acesso aos websites vinculados a tais links não está sujeito aos Documentos 
     </div>
 </div>
 
-<!-- Scrollable modal Termos de Uso e Políticas -->
-
-<!-- Modal dos Termos de Uso e Políticas -->
-
-<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-
-
-
-
-
-<!-- /////// Modal dos Termos de Uso e Políticas -->
