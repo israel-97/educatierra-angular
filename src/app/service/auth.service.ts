@@ -16,12 +16,12 @@ export class AuthService {
   ) { }
 
   logar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin>{
-    return this.http.post<UsuarioLogin>('http://localhost:8083/usuarios/login', usuarioLogin)
+    return this.http.post<UsuarioLogin>('https://educatierra-g4.herokuapp.com/usuarios/login', usuarioLogin)
 
   }
 
   cadastrar(usuario: User): Observable<User>{
-    return this.http.post<User>('http://localhost:8083/usuarios/cadastro', usuario)
+    return this.http.post<User>('https://educatierra-g4.herokuapp.com/usuarios/cadastro', usuario)
   }
 
      
