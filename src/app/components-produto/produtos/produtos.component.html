@@ -6,7 +6,7 @@
             <div class="row">
                 <h2 class="mb-3 ms-3"><strong>Materiais</strong></h2>
                 <h6 class="d flex justify-content-center align-self-center ms-2"><a
-                        style="text-decoration: none; color: #ff9d00;" href="">Home</a> / Produtos</h6>
+                        style="text-decoration: none; color: #ff9d00;" routerLink='/home'>Home</a> / Produtos</h6>
             </div>
 
 
@@ -32,7 +32,7 @@
 
         <div class="col-md-9 mb-5">
             <div class="row row-cols-md-3 g-4">
-                <div class="col" *ngFor='let item of listaProdutos'>
+                <div class="col" *ngFor='let item of listaProdutos | paginate:{ itemsPerPage: 6 , currentPage: pagina, totalItems:totalProdutos}'>
                     <div class="card text-center mt-4 ms-3 me-3">
                         <img src="{{item.linkImagem}}" class="card-img-top img-fluid img" alt="...">
                         <div class="card-body p-2">
@@ -52,8 +52,18 @@
         
                     </div>
                 </div>
-            </div>   
+            </div>  
+            
+            
+           
         </div>
+
+        <div class="row mt-2">
+            <div class="paginacao">
+                <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+            </div>
+        </div>
+        
     </div>
 </div>
 

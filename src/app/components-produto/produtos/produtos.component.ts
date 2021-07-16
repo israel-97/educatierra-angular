@@ -16,9 +16,9 @@ import { Produto } from '../../model/Produto';
 })
 export class ProdutosComponent implements OnInit {
 
-  /*produtos: Produto[] = [];
-  contador: number = 5;
-  paginaAtual: number = 1 ;*/
+  pagina: number = 1 ;
+  totalProdutos: any
+
   produto: Produto = new Produto()
   categoria: Categoria = new Categoria()
   listaProdutos: Produto[]
@@ -33,12 +33,11 @@ export class ProdutosComponent implements OnInit {
   descricao: string
   tituloPost: string
   constructor(
-    //private produtoService:ProdutoService
     private router: Router,
     private route: ActivatedRoute,
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private alertas: AlertasService //implementacao do ALERT personalizado.
+    private alertas: AlertasService 
   ) { }
 
   ngOnInit() {
