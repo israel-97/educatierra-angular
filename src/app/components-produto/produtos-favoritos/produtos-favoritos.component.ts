@@ -17,8 +17,7 @@ import { AlertasService } from 'src/app/service/alertas.service';
 export class ProdutosFavoritosComponent implements OnInit {
 
   produto: Produto = new Produto()
-  produtoDeletar: Produto = new Produto()
-
+  
   categoria: Categoria = new Categoria()
   listaProdutos: Produto[]
   listaCategorias: Categoria[]
@@ -26,10 +25,12 @@ export class ProdutosFavoritosComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
   idProduto: number
-
+  favoritos: number = 0
   totalMeusProdutos: any
   totalMeusFavoritos: any
   pagina: number = 1
+
+
 
   constructor(
     private router: Router,
@@ -94,8 +95,7 @@ export class ProdutosFavoritosComponent implements OnInit {
     this.produtoService.cadastrarProduto(this.idUser, this.idCategoria, this.produto).subscribe((resposta: Produto) => {
       this.produto = resposta
       this.alertas.showAlertSuccess('Produto cadastrado com sucesso!')
-      console.log(environment.pontuacao)
-
+      
       this.router.navigate(['/home'])
       setTimeout(() => {
         this.router.navigate(['/meusprodutos'])
@@ -106,18 +106,13 @@ export class ProdutosFavoritosComponent implements OnInit {
     })
   }
 
-  favoritarProduto() {}
+  favoritarProduto() {
+    this.favoritos = this.favoritos + 1
+    console.log(this.favoritos)
+  }
 
   selectUpdate(produto: Produto) {
     this.produto = produto
-
-    console.log(this.produto)
-  }
-
-  selectDeletar(produto: Produto){
-    this.produtoDeletar = produto
-
-    console.log(this.produtoDeletar)
   }
 
   cancelUpdate() {

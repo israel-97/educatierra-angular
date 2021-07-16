@@ -117,3 +117,7 @@ input[placeholder=Search] { /* cor da pesquisa do search */
   width: 350px;
   height: 350;
 }
+
+.paginacao{
+  margin-left: 20px;
+}
