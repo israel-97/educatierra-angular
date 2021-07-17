@@ -53,8 +53,8 @@
 
                 <tbody>
                     <tr
-                        *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusProdutos}'>
-                        <td class="d-flex justify-content-center" id="tamanhoImagem"> <div class="bg-danger" ><img src="{{item.linkImagem}}" width="100px" height="100px" alt=""></div> </td>
+                        *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusProdutos}'>
+                        <td class="d-flex justify-content-center" id="tamanhoImagem"> <img src="{{item.linkImagem}}" width="100px" height="100px" alt=""> </td>
                         <td class="text-break">{{item.nome}}</td>
                         <td class="text-break"> <div class="descricao" name="" id="">{{item.descricao}}</div>
                         </td>
@@ -97,7 +97,7 @@
 
                 <tbody>
                     <tr
-                        *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 2, currentPage: pagina, totalItems:totalMeusFavoritos}'>
+                        *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusFavoritos}'>
                         <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="100px"
                                 height="100px" alt=""></td>
                         <td>{{item.nome}}</td>
@@ -115,7 +115,8 @@
 
                 <div class="row mt-2">
                     <div class="col-md-12 ms-auto">
-                        <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+                        <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
+                        nextLabel="próximo"></pagination-controls>
                     </div>
                 </div>
             </table>

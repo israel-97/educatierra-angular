@@ -32,7 +32,7 @@
 
         <div class="col-md-9 mb-5">
             <div class="row row-cols-md-3 g-4">
-                <div class="col" *ngFor='let item of listaProdutos | paginate:{ itemsPerPage: 6 , currentPage: pagina, totalItems:totalProdutos}'>
+                <div class="col" *ngFor='let item of listaProdutos | paginate:{ itemsPerPage: 6, currentPage: pagina, totalItems:totalProdutos}'>
                     <div class="card text-center mt-4 ms-3 me-3">
                         <img src="{{item.linkImagem}}" class="card-img-top img-fluid img" alt="...">
                         <div class="card-body p-2">
@@ -60,7 +60,8 @@
 
         <div class="row mt-2">
             <div class="paginacao">
-                <pagination-controls (pageChange)="pagina = $event"></pagination-controls>
+                <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
+                nextLabel="próximo"></pagination-controls>
             </div>
         </div>
         
