@@ -26,7 +26,6 @@ export class MenuComponent implements OnInit {
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
   pontuacao = environment.pontuacao
-  favoritos: number = 0;
 
   constructor(
     private auth: AuthService,
@@ -137,11 +136,6 @@ export class MenuComponent implements OnInit {
       valid = true;
     }
     return valid;
-  }
-
-  favoritarProduto() {
-    this.favoritos = this.favoritos + 1
-    console.log(this.favoritos)
   }
 
   sair(){

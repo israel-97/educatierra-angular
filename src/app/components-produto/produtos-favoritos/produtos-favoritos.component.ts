@@ -8,7 +8,6 @@ import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { AlertasService } from 'src/app/service/alertas.service';
 
-
 @Component({
   selector: 'app-produtos-favoritos',
   templateUrl: './produtos-favoritos.component.html',
@@ -29,8 +28,6 @@ export class ProdutosFavoritosComponent implements OnInit {
   totalMeusProdutos: any
   totalMeusFavoritos: any
   pagina: number = 1
-
-
 
   constructor(
     private router: Router,
@@ -107,8 +104,7 @@ export class ProdutosFavoritosComponent implements OnInit {
   }
 
   favoritarProduto() {
-    this.favoritos = this.favoritos + 1
-    console.log(this.favoritos)
+    
   }
 
   selectUpdate(produto: Produto) {

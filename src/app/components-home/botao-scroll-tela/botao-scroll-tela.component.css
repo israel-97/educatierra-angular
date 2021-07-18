@@ -1,0 +1,29 @@
+button {
+    height: 50px;
+    width: 50px;
+
+    position: fixed;
+    bottom: 15px;
+
+    border-radius: 100%;
+    background-color: #003b71;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+
+.fa-arrow-up{
+    color: white;
+    font-size: 20px;
+}
+
+.scroll-to-top {
+    position: relative;
+    opacity: 0;
+}
+
+.show-scrollTop {
+    opacity: 1;
+    transition: all .2s ease-in-out;
+}

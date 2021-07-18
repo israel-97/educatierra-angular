@@ -6,7 +6,7 @@
             <div class="row">
                 <h2 class="mb-3 ms-3"><strong>Meus Produtos</strong></h2>
                 <h6 class="d flex justify-content-center align-self-center ms-2"><a
-                        style="text-decoration: none; color: #ff9d00;" routerLink='/home' >Home</a> / Meus Produtos</h6>
+                        style="text-decoration: none; color: #ff9d00;" routerLink='/home'>Home</a> / Meus Produtos</h6>
             </div>
 
 
@@ -36,7 +36,6 @@
     </ul>
 
     <div class="tab-content mt-3" id="pills-tabContent">
-
         <!-- Tab - Meus Produtos -->
         <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
             <table class="table table-bordered">
@@ -54,9 +53,13 @@
                 <tbody>
                     <tr
                         *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusProdutos}'>
-                        <td class="d-flex justify-content-center" id="tamanhoImagem"> <img src="{{item.linkImagem}}" width="100px" height="100px" alt=""> </td>
+                        
+                        <td class="d-flex justify-content-center"> 
+                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt=""> </td>
                         <td class="text-break">{{item.nome}}</td>
-                        <td class="text-break"> <div class="descricao" name="" id="">{{item.descricao}}</div>
+
+                        <td class="text-break">
+                            <div class="descricao" name="" id="">{{item.descricao}}</div>
                         </td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
@@ -66,15 +69,18 @@
                             <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)'
                                 data-bs-target="#alterarModal">Atualizar</button>
 
-                            <button class="btn sm-mt-2" id="botao_deletar" (click)="apagarProduto(item)">Deletar</button>
+                            <button class="btn sm-mt-2" id="botao_deletar"
+                                (click)="apagarProduto(item)">Deletar</button>
                         </th>
                     </tr>
                 </tbody>
 
                 <div class="row mt-2">
-                    <div>
-                        <pagination-controls (pageChange)="pagina = $event"  previousLabel="anterior"
-                        nextLabel="próximo"></pagination-controls>
+                    <div class="col-md-11">
+                        <div>
+                            <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
+                                nextLabel="próximo"></pagination-controls>
+                        </div>
                     </div>
                 </div>
 
@@ -98,10 +104,11 @@
                 <tbody>
                     <tr
                         *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusFavoritos}'>
-                        <td class="d-flex justify-content-center"><img src="{{item.linkImagem}}" width="100px"
-                                height="100px" alt=""></td>
+                        <td class="d-flex justify-content-center">
+                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt=""></td>
                         <td>{{item.nome}}</td>
-                        <td class="text-break"><div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
+                        <td class="text-break">
+                            <div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
                         </td>
                         <td class="tipoProduto">{{item.tipoProduto}}</td>
                         <td>
@@ -112,14 +119,15 @@
                         </th>
                     </tr>
                 </tbody>
-
-                <div class="row mt-2">
-                    <div class="col-md-12 ms-auto">
+            </table>
+            <div class="row mt-2">
+                <div class="col-md-11">
+                    <div>
                         <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
-                        nextLabel="próximo"></pagination-controls>
+                            nextLabel="próximo"></pagination-controls>
                     </div>
                 </div>
-            </table>
+            </div>
         </div>
     </div>
 </div>
@@ -131,6 +139,7 @@
         cadastrar produto
     </button>
 </div>
+
 <!-- Modal Cadastrar Produto -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -142,92 +151,119 @@
                 </button>
 
             </div>
-            <div class="modal-body">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+                    <div class="modal-body">
 
-                <div class="form-group">
-                    <label for="texto">Escolha uma categoria</label>
-                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-                        (change)='findByIdCategoria()'>
-                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="nome"></label>
-                    <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
-                        placeholder="Nome do material">
-                </div>
-
-                <div class="form-group">
-                    <label for="descricao"></label>
-                    <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
-                        placeholder="Insira aqui a descrição do material"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="linkAcesso"></label>
-                    <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
-                        placeholder="Compartilhe aqui o link do material">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="linkImagem"></label>
-                    <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
-                        placeholder="Insira aqui o link da foto do material">
-                </div>
-
-                <div class="form-group">
-                    <label for="" class="mb-2">Selecione o tipo de material</label>
-                    <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
-                        <option value="VÍDEO">vídeo</option>
-                        <option value="EBOOK">e-book</option>
-                        <option value="RESUMO">resumo</option>
-                    </select>
-                </div>
-
-                <div class="form-group mt-3">
-                    <div class="termo">
-                        <p>
-                            Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou usar este site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou com o Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não deve acessar ou usar este site.
-                        </p>
-
-                        <p class="mt-2"><strong> 1. DIREITOS DE PROPRIEDADE INTELECTUAL</strong></p>
-                        <p>
-                            O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias, vídeos, arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais e pela Constituição Federal. 
-                            A utilização das propriedades sem a devida autorização de seus titulares configurará violação a direito de propriedade intelectual, ficando o infrator sujeito às penalidades civis e criminais cabíveis e previstas na legislação específica que rege a matéria. 
-
-                            O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar conteúdo de outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta grave e resultar na exclusão do usuário da Plataforma.
-
-                            Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado pelo usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a Plataforma de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.
-                        </p>
-                        
-                        <p class="mt-2"><strong>2. LINKS PARA OUTROS WEBSITES </strong></p>
-                        <p>
-                            A plataforma poderá conter links para websites de terceiros, inseridos apenas para a conveniência do usuário. A inclusão de tais links não implica qualquer vínculo, monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo ou titulares.
-                            O acesso aos websites vinculados a tais links não está sujeito aos Documentos da Plataforma.
-                        </p>
-
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="texto">Escolha uma categoria</label>
+                            <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
+                                (change)='findByIdCategoria()'>
+                                <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}
+                                </option>
+                            </select>
                         </div>
-                    <div class="mx-auto mt-3">
-                        <div class="form-check form-switch d-flex justify-content-center">
-                            <input class="form-check-input ms-2" type="checkbox" id="flexSwitchCheckDefault">
-                            <label class="form-check-label mb-2" for="flexSwitchCheckDefault"> Aceito os Termos e
-                                Condições</label>
+
+                        <div class="form-group mb-4">
+                            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+                                placeholder="Nome do material">
                         </div>
+
+                        <div class="form-group mb-4">
+                            <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id=""
+                                cols="3" placeholder="Insira aqui a descrição do material"></textarea>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="linkAcesso">Link para acessar o material</label>
+                            <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
+                                placeholder="Compartilhe aqui o link do material">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="linkImagem">Link da imagem do material</label>
+                            <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
+                                placeholder="Insira aqui o link da foto do material">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="mb-2" for="" class="mb-2">Selecione o tipo de material</label>
+                            <select class="form-select" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
+                                <option value="VÍDEO">vídeo</option>
+                                <option value="EBOOK">e-book</option>
+                                <option value="RESUMO">resumo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <div class="termo text-justify">
+                                <p>
+                                    Por favor, leia e analise essas Condições de Uso atentamente antes de acessar ou
+                                    usar este
+                                    site. Acessando ou usando este site, você reconhece que leu, entendeu e concordou
+                                    com o
+                                    Acordo de Condições de Uso. Se você não concordar com as Condições de Uso, você não
+                                    deve
+                                    acessar ou usar este site.
+                                </p>
+
+                                <p class="mt-2"><strong> 1. DIREITOS DE PROPRIEDADE INTELECTUAL</strong></p>
+                                <p>
+                                    O conteúdo da Plataforma abrange, mas não se limita a: ilustrações, fotografias,
+                                    vídeos,
+                                    arquivos e textos. Tais elementos são protegidos por leis e tratados internacionais
+                                    e pela
+                                    Constituição Federal.
+                                    A utilização das propriedades sem a devida autorização de seus titulares configurará
+                                    violação a direito de propriedade intelectual, ficando o infrator sujeito às
+                                    penalidades
+                                    civis e criminais cabíveis e previstas na legislação específica que rege a matéria.
+
+                                    O usuário se compromete a não utilizar conteúdo de terceiros, incluindo plagiar
+                                    conteúdo de
+                                    outros participantes da Plataforma Educa Tierra, o que poderá ser considerado falta
+                                    grave e
+                                    resultar na exclusão do usuário da Plataforma.
+
+                                    Todo conteúdo (textos, vídeos, imagens, áudio, documentos, dentre outros) enviado
+                                    pelo
+                                    usuário à Plataforma será de exclusiva responsabilidade do usuário, que isenta a
+                                    Plataforma
+                                    de qualquer responsabilidade civil ou criminalmente sobre tal conteúdo.
+                                </p>
+
+                                <p class="mt-2"><strong>2. LINKS PARA OUTROS WEBSITES </strong></p>
+                                <p>
+                                    A plataforma poderá conter links para websites de terceiros, inseridos apenas para a
+                                    conveniência do usuário. A inclusão de tais links não implica qualquer vínculo,
+                                    monitoramento ou responsabilidade do site sobre outros websites, respectivo conteúdo
+                                    ou
+                                    titulares.
+                                    O acesso aos websites vinculados a tais links não está sujeito aos Documentos da
+                                    Plataforma.
+                                </p>
+
+                            </div>
+                            <div class="mx-auto mt-3">
+                                <div class="form-check form-switch d-flex justify-content-center">
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                                    <label class="form-check-label mb-2 ms-2" for="flexSwitchCheckDefault"> Aceito os Termos
+                                        e
+                                        Condições</label>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
+                    <div class="d-flex justify-content-center form-group button">
 
+                        <button type="button" class="btn me-4 mb-3 mt-3" id="botao_deletar"
+                            data-bs-dismiss='modal'>Cancelar</button>
+                        <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'
+                            data-bs-dismiss='modal'>Publicar </button>
 
+                    </div>
                 </div>
-
-
-            </div>
-            <div class="d-flex justify-content-center form-group button">
-
-                <button type="button" class="btn me-4 mb-3 mt-3" id="botao_deletar"
-                    data-bs-dismiss='modal'>Cancelar</button>
-                <button type="button" class="btn btn-primary mb-3 mt-3" (click)='cadastrarProduto()'
-                    data-bs-dismiss='modal'>Publicar </button>
-
             </div>
         </div>
     </div>
@@ -243,59 +279,68 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
 
-                <div class="form-group">
-                    <label for="texto">Escolha uma categoria</label>
-                    <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
-                        (change)='findByIdCategoria()'>
-                        <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}</option>
-                    </select>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-11">
+
+                    <div class="modal-body">
+
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="texto">Escolha uma categoria</label>
+                            <select name="categoria" id="categoria" class="form-control" [(ngModel)]='idCategoria'
+                                (change)='findByIdCategoria()'>
+                                <option *ngFor='let item of listaCategorias' value="{{item.id}}">{{item.materia}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
+                                placeholder="Nome do produto">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label for="descricao"></label>
+                            <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id=""
+                                cols="3" placeholder="Insira aqui a descrição do produto"></textarea>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="linkAcesso">Link para acessar o material</label>
+                            <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
+                                placeholder="Compartilhe aqui o link do produto">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="mb-2" for="linkImagem">Link da imagem do material</label>
+                            <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
+                                placeholder="Insira aqui o link da imagem do produto">
+                        </div>
+
+                        <div class="form-group ">
+                            <label class="mb-2" for="">Selecione o tipo de produto</label>
+                            <select class="form-select" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
+                                <option value="VÍDEO">vídeo</option>
+                                <option value="EBOOK">e-book</option>
+                                <option value="RESUMO">resumo</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center form-group button">
+
+                        <button type="button" class="btn" data-bs-dismiss='modal'
+                            (click)='cancelUpdate()' id="botao_deletar" >Cancelar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                            (click)='atualizar()'>Atualizar</button>
+
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="nome"></label>
-                    <input [(ngModel)]='produto.nome' type="text" class="form-control" id="nome"
-                        placeholder="Nome do produto">
-                </div>
-
-                <div class="form-group">
-                    <label for="descricao"></label>
-                    <textarea [(ngModel)]='produto.descricao' class="form-control" name="descricao" id="" cols="3"
-                        placeholder="Insira aqui a descrição do produto"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="linkAcesso"></label>
-                    <input [(ngModel)]='produto.linkAcesso' type="text" class="form-control" id="linkAcesso"
-                        placeholder="Compartilhe aqui o link do produto">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="linkImagem"></label>
-                    <input [(ngModel)]='produto.linkImagem' type="text" class="form-control" id="titulo"
-                        placeholder="Insira aqui o link da imagem do produto">
-                </div>
-
-                <div class="form-group">
-                    <label for="">Selecione o tipo de produto</label>
-                    <select class="form-control" [(ngModel)]='produto.tipoProduto' aria-label="tipoProduto">
-                        <option value="VÍDEO">vídeo</option>
-                        <option value="EBOOK">e-book</option>
-                        <option value="RESUMO">resumo</option>
-                    </select>
-                </div>
-
             </div>
-            <div class="modal-footer d-flex justify-content-center form-group button">
 
-                <button type="button" class="btn btn-danger" data-bs-dismiss='modal'
-                    (click)='cancelUpdate()'>Cancelar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                    (click)='atualizar()'>Atualizar</button>
-
-            </div>
         </div>
     </div>
 </div>
 
+
+<app-rodape></app-rodape>

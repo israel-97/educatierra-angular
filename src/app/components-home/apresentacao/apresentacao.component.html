@@ -5,7 +5,7 @@
         <div class="row d-flex align-items-center justify-content-center">
             <div class="col-md-6">
 
-                <div class="row d-flex align-items-end mb-5 mt-5">
+                <div class="row d-flex align-items-end mb-4 mt-5">
                     <div class="col-md-11 mt-5">
                         <h1>Busque materiais digitais e encontre caminhos alternativos para seus estudos. </h1>
                     </div>
@@ -20,17 +20,14 @@
 
             </div>
 
-            <div class="col-md-5 d-flex justify-content-center mb-5">
+            <div class="col-md-5 d-flex justify-content-center mt-5">
                 <img src="https://i.imgur.com/iZrMaML.png" alt=" " width="350px" height="350px">
             </div>
-
-
         </div>
-
     </div>
 </div>
 
-<!-- modal de login e cadastro -->
+<!-- modal de cadastro -->
 <div class="modal fade" id="loginCadastro" tabindex="-1" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
@@ -66,7 +63,7 @@
 
                         <div class="form-group mb-4">
                             <label class="mb-2" for="">Selecione o tipo de usuário</label>
-                            <select class="form-control" id="usuario_tipo" aria-label="tipoEstudante"
+                            <select class="form-select" id="usuario_tipo" aria-label="tipoEstudante"
                                 [(ngModel)]='user.tipoUsuario' required>
                                 <option value="PROFESSOR">professor</option>
                                 <option value="ESTUDANTE">estudante</option>
@@ -106,7 +103,6 @@
                         </div>
 
                         <div class="form-group mb-4">
-
                             <input (keyup)='confirmaSenha($event)' [(ngModel)]='user.senha' class="form-control"
                                 type="password" name="confirmSenha" placeholder="confirme sua senha" required>
 
@@ -121,10 +117,9 @@
                                     data-bs-dismiss="modal">enviar</button>
                             </div>
                         </div>
+
                     </div>
                 </div>
-
-
 
             </div>
         </div>
