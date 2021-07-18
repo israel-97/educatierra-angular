@@ -28,6 +28,7 @@ import { CategariaDeleteComponent } from './categaria-delete/categaria-delete.co
 import { CategoriaEditComponent } from './categoria-edit/categoria-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { BotaoScrollTelaComponent } from './components-home/botao-scroll-tela/botao-scroll-tela.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     CategariaDeleteComponent,
     CategoriaEditComponent,
     AlertasComponent,
+    BotaoScrollTelaComponent,
   ],
   imports: [
     BrowserModule,

@@ -15,16 +15,7 @@
                 <small>tierra</small>
             </div>
             <!-- /nome do projeto -->
-
-            <!-- toggle com o nome do projeto -->
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <div class="d-flex d-none d-md-block flex-column text-white ms-1 mt-2 mb-3 ">
-                    <small>educa</small>
-                    <small>tierra</small>
-                </div>
-            </button> -->
+            
         </div>
 
         <!-- links para navegação no site -->
@@ -50,54 +41,58 @@
         <!--/ links para navegação no site -->
 
 
-        <ul class="navbar-nav flex-row me-2">
+        <ul class="navbar-nav flex-row ">
             <li *ngIf="!logado()" class="nav-item mb-2 mt-2">
                 <a href="" data-bs-toggle="modal" data-bs-target="#loginCadastroModal"><img class="img-fluid"
                         src="https://i.imgur.com/I2GCg69.png" width="65" height="65" alt=""></a>
             </li>
 
-            <li *ngIf="logado()" class="mb-2 mt-3 me-2">
+            <li *ngIf="logado()" class="nav-item mb-2 mt-3">
                 <a href="#">
-                    <!-- <span class="badge badge-pill rounded-circle align-items-center me-2"></span> -->
+                    <!-- <span class="badge badge-pill rounded-circle align-items-center me-2">3</span> -->
                     <span>
-                        <img  class="mt-3 mb-3" src="https://i.imgur.com/1nejG80.png " routerLink='/meusprodutos' alt="" width="50" height="50">
+                        <img class="mt-2 mb-3" src="https://i.imgur.com/1nejG80.png " alt=""
+                            width="50" height="50">
                     </span>
                 </a>
             </li>
 
-            <li *ngIf="logado()" class="btn-group d-flex">
+            <li *ngIf="logado()" class="nav-item mb-2 mt-2">
 
-                <button id="fotoUsuario" type="button" class="d-sm-flex align-items-sm-center sm-mt-1">
+                <div class="d-flex">
+                    
+                    <div class="btn-group">
+                      <button type="button" class="btn mt-2">
+                        <div id="fotoUsuario" class="d-sm-flex align-items-sm-center sm-mt-1">
 
-                    <img src="{{foto}}" class="rounded-circle" height="50" alt=""/>
-                    <strong class="d-none d-sm-block ms-3">Olá, {{nomeCompleto}}</strong>
+                            <img src="{{foto}}" class="rounded-circle" height="50" alt="" />
+                            <strong class="d-none d-sm-block ms-3">Olá, {{nomeCompleto}}</strong>
+    
+                        </div>
+                      </button>
 
-                </button>
+                      <button type="button" class="dropdown-toggle-split mt-4 mb-2" id="dropdownUsuario" data-bs-toggle="dropdown" aria-expanded="false" data-bs-reference="parent"><span class="dropdown-toggle ms-0"></span>
+                      </button>
 
-                <button type="button" class="dropdown dropdown-toggle ms-2 mt-5 mb-5" id="dropdownUsuario" data-bs-toggle="dropdown"
-                    aria-expanded="false"></button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownUsuario">
-                    <li><a class="dropdown-item m-0">sua pontuação: {{pontuacao}}</a></li>
-                    <li><a class="dropdown-item m-0" routerLink='/meusprodutos'>meus produtos</a></li>
-                    <li><a class="dropdown-item m-0">meus dados</a></li>
-                    <li><a class="dropdown-item m-0" href="#"></a></li>
-                    <li><a class="dropdown-item m-0" (click)='sair()' >
-                            <img width="19px" height="19px" class="me-2"
-                                src="https://i.imgur.com/gfPGh5m.png"
-                                alt="">sair
-                        </a>
-                    </li>
-                </ul>
-
+                      <ul class="dropdown-menu" aria-labelledby="dropdownUsuario">
+                        <li><a class="dropdown-item m-0">sua pontuação: {{pontuacao}}</a></li>
+                        <li><a class="dropdown-item m-0" routerLink='/meusprodutos'>meus produtos</a></li>
+                        <li><a class="dropdown-item m-0">meus dados</a></li>
+                        <li><a class="dropdown-item m-0" href="#"></a></li>
+                        <li><a class="dropdown-item m-0" (click)='sair()'>
+                                <img width="19px" height="19px" class="me-2" src="https://i.imgur.com/gfPGh5m.png"
+                                    alt="">sair
+                            </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
             </li>
-
         </ul>
 
     </div>
 </nav>
 <!-- Navbar -->
-
-
 
 
 <!-- modal de login e cadastro -->
@@ -183,9 +178,9 @@
                                 </div>
 
                                 <div class="form-group mb-4">
-                                    <label class= "mb-2" for="">Selecione o tipo de usuário</label>
-                                    <select class="form-control" aria-label="tipoEstudante"
-                                        [(ngModel)]='user.tipoUsuario' required>                                                                               
+                                    <label class="mb-2" for="">Selecione o tipo de usuário</label>
+                                    <select class="form-select" aria-label="tipoEstudante"
+                                        [(ngModel)]='user.tipoUsuario' required>
                                         <option value="PROFESSOR">professor</option>
                                         <option value="ESTUDANTE">estudante</option>
                                         <option value="OUTRO">outro</option>

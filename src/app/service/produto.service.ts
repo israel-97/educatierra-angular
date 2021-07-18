@@ -9,6 +9,7 @@ import { User } from '../model/User';
   providedIn: 'root'
 })
 export class ProdutoService {
+  favoritos: number = 0
 
   constructor(private http: HttpClient) { }
 
