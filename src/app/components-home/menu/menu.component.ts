@@ -142,4 +142,13 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['/home'])
     environment.token = ''
   }
+
+  toSobreNos(){
+    document.getElementById("rotaSobreNos")?.scrollIntoView({behavior:'smooth'});
+  }
+
+  toContato(){
+    document.getElementById("rotaContato")?.scrollIntoView({behavior:'smooth'});
+  }
+
 }
