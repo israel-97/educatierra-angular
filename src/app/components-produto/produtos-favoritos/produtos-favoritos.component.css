@@ -106,7 +106,6 @@ select {
 
 #botao_deletar{
     background-color: red;
-
 }
 
 #botao_deletar:hover{
@@ -168,12 +167,13 @@ label, .form-check-label{
     width:200px;
 }
 
-.table>:not(caption)>*>* {
+/* .table>:not(caption)>*>* {
     padding: .5rem 0rem .5rem 0rem;
    
+} */
+
+.table[_ngcontent-ihq-c82] > [_ngcontent-ihq-c82]:not(caption) > *[_ngcontent-ihq-c82] > *[_ngcontent-ihq-c82] {
+    padding: .5rem .5rem .5rem .5rem;
 }
 
-.ngx-pagination {
-    margin-left: 450px;
-    margin-bottom: 1rem;
-}
+
