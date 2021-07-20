@@ -194,3 +194,12 @@ strong{
     border:none;
 }
 
+.dropdown-item:hover{
+    background-color:#003b71 ;
+    color: white;
+    border-radius: 20px;
+}
+
+.dropdown-menu{
+    border:none;
+}

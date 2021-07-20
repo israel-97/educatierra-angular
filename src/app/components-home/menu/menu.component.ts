@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UsuarioLogin } from '../../model/UsuarioLogin';
 import { Router } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
@@ -26,6 +26,8 @@ export class MenuComponent implements OnInit {
   nomeCompleto = environment.nomeCompleto
   foto = environment.foto
   pontuacao = environment.pontuacao
+
+  @Input() favoritos: number
 
   constructor(
     private auth: AuthService,
@@ -150,5 +152,6 @@ export class MenuComponent implements OnInit {
   toContato(){
     document.getElementById("rotaContato")?.scrollIntoView({behavior:'smooth'});
   }
+
 
 }
