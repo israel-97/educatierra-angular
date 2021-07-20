@@ -32,6 +32,10 @@ export class ProdutosComponent implements OnInit {
   nome: string
   descricao: string
   tituloPost: string
+
+  favoritos: number = 0
+
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -120,6 +124,10 @@ export class ProdutosComponent implements OnInit {
         console.log(this.listaProdutos)
       })
     }
+  }
+
+  quantidadeFavoritos(){
+    this.favoritos = this.favoritos + 1
   }
   
 }

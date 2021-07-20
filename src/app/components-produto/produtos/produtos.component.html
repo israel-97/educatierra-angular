@@ -44,7 +44,7 @@
                                     data-bs-target="#visualizarProduto">
                                     <i class="fa fa-expand"></i>
                                 </a>
-                                <a (click)='favoritarProduto(item.id)' class="icon-produt2">
+                                <a (click)='favoritarProduto(item.id)' (click) = 'quantidadeFavoritos()' class="icon-produt2">
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
@@ -52,10 +52,7 @@
         
                     </div>
                 </div>
-            </div>  
-            
-            
-           
+            </div>     
         </div>
 
         <div class="row mt-2">

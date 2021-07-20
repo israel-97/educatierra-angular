@@ -38,10 +38,6 @@ export class ViewProdComponent implements OnInit {
 
 
 
-  // favoritarProduto() {
-  //   this.produtoService.favoritarProduto(this.idUser, this.idProduto).subscribe((resposta: User) => {
-  //     this.user = resposta
-  //   })
-  // }
+  
 
 }

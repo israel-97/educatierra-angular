@@ -38,7 +38,58 @@
     <div class="tab-content mt-3" id="pills-tabContent">
         <!-- Tab - Meus Produtos -->
         <div class="tab-pane fade show active" id="meusProdutos" role="tabpanel" aria-labelledby="pills-home-tab">
-            <table class="table table-bordered">
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Link</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr
+                        *ngFor='let item of user.meusProdutos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusProdutos}'>
+
+                        <td class="d-flex justify-content-center">
+                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt="">
+                        </td>
+
+                        <td class="text-break">{{item.nome}}</td>
+
+                        <td class="text-break">
+                            <div class="descricao" name="" id="">{{item.descricao}}</div>
+                        </td>
+
+                        <td class="tipoProduto">{{item.tipoProduto}}</td>
+
+                        <td>
+                            <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
+                        </td>
+
+                        <th scope="row">
+
+                            <button class="me-3 btn" data-bs-toggle="modal" (click)='selectUpdate(item)'
+                                data-bs-target="#alterarModal">Atualizar</button>
+                            <button class="btn sm-mt-2" id="botao_deletar"
+                                (click)="apagarProduto(item)">Deletar</button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="row mt-2">
+                <div class="col-md-11">
+                    <div>
+                        <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
+                            nextLabel="próximo"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">Imagem</th>
@@ -83,13 +134,62 @@
                         </div>
                     </div>
                 </div>
-
-            </table>
+            </table> -->
         </div>
 
         <!-- Tab - Meus Favoritos -->
         <div class="tab-pane fade" id="meusFavoritos" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <table class="table table-bordered">
+
+            <table class="table align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Imagem</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Link</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr
+                        *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusFavoritos}'>
+
+                        <td class="d-flex justify-content-center">
+                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt="">
+                        </td>
+
+                        <td>{{item.nome}}</td>
+
+                        <td class="text-break">
+                            <div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
+                        </td>
+
+                        <td class="tipoProduto">{{item.tipoProduto}}</td>
+
+                        <td>
+                            <a class="btn" href="{{item.linkAcesso}}" target="_blank">Link</a>
+                        </td>
+
+                        <th>
+                            <button class="btn" id="botao_deletar">Deletar</button>
+                        </th>
+
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row mt-2">
+                <div class="col-md-11">
+                    <div>
+                        <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
+                            nextLabel="próximo"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th scope="col" class="">Imagem</th>
@@ -105,7 +205,8 @@
                     <tr
                         *ngFor='let item of user.meusFavoritos | paginate:{ itemsPerPage: 4, currentPage: pagina, totalItems:totalMeusFavoritos}'>
                         <td class="d-flex justify-content-center">
-                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt=""></td>
+                            <img src="{{item.linkImagem}}" width="100px" height="100px" alt="">
+                        </td>
                         <td>{{item.nome}}</td>
                         <td class="text-break">
                             <div class="descricao" name="" id="" cols="50" rows="4">{{item.descricao}}</div>
@@ -119,22 +220,15 @@
                         </th>
                     </tr>
                 </tbody>
-            </table>
-            <div class="row mt-2">
-                <div class="col-md-11">
-                    <div>
-                        <pagination-controls (pageChange)="pagina = $event" previousLabel="anterior"
-                            nextLabel="próximo"></pagination-controls>
-                    </div>
-                </div>
-            </div>
+            </table> -->
+
         </div>
     </div>
 </div>
 
 
 <!-- Botão Cadastrar Produto -->
-<div class="d-flex justify-content-center mb-5">
+<div class="d-flex justify-content-center mb-5 mt-4">
     <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
         cadastrar produto
     </button>
@@ -247,9 +341,10 @@
                             <div class="mx-auto mt-3">
                                 <div class="form-check form-switch d-flex justify-content-center">
                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label mb-2 ms-2" for="flexSwitchCheckDefault"> Aceito os Termos
+                                    <label class="form-check-label mb-2 ms-2" for="flexSwitchCheckDefault"> Aceito os
+                                        Termos
                                         e
-                                        Condições</label>
+                                        Condições de Uso</label>
                                 </div>
                             </div>
                         </div>
@@ -329,8 +424,8 @@
                     </div>
                     <div class="modal-footer d-flex justify-content-center form-group button">
 
-                        <button type="button" class="btn" data-bs-dismiss='modal'
-                            (click)='cancelUpdate()' id="botao_deletar" >Cancelar</button>
+                        <button type="button" class="btn" data-bs-dismiss='modal' (click)='cancelUpdate()'
+                            id="botao_deletar">Cancelar</button>
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
                             (click)='atualizar()'>Atualizar</button>
 
@@ -341,6 +436,5 @@
         </div>
     </div>
 </div>
-
 
 <app-rodape></app-rodape>
