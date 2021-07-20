@@ -1,6 +1,6 @@
 import { Produto } from './../../model/Produto';
 import { environment } from './../../../environments/environment.prod';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { User } from 'src/app/model/User';
@@ -24,10 +24,12 @@ export class ProdutosFavoritosComponent implements OnInit {
   user: User = new User()
   idUser = environment.id
   idProduto: number
-  favoritos: number = 0
+
   totalMeusProdutos: any
   totalMeusFavoritos: any
   pagina: number = 1
+
+  @Input() favoritos:number
 
   constructor(
     private router: Router,

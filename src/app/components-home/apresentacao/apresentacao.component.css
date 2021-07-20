@@ -68,7 +68,8 @@ option{
     width: 10px;
 }
 
-select:focus{
+select:focus,
+.form-control:focus{
     box-shadow: none;
 }
 

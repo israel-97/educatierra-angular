@@ -59,7 +59,6 @@ export class ProdutosComponent implements OnInit {
 
   }
 
-
   /*loadAllProdutos(){
     this.produtoService.todosProdutos().subscribe( data => this.produtos = data,
       error => console.log('Erro serviço ' + error));
